@@ -33,18 +33,17 @@ public class IHMFXControleur {
     class ActionMove implements EventHandler<KeyEvent> {
         @Override
         public void handle(KeyEvent event) {
-            System.out.println("thgfhg");
             KeyCode input = event.getCode();
             String direction;
             if (input.equals(KeyCode.LEFT)) {
                 direction = "left";
             } else if (input.equals(KeyCode.RIGHT)) {
                 direction = "right";
-            } else if (input.equals(KeyCode.UP)) {
-                direction = "up";
             } else if (input.equals(KeyCode.DOWN)) {
                 direction = "down";
-            } else {
+            } else if (input.equals(KeyCode.UP)) {
+                direction = "up";
+            }  else {
                 direction = "null";
             }
             controleur.move(direction);

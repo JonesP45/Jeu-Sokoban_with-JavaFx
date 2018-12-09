@@ -14,178 +14,190 @@ public class ModeleConcret implements Modele {
     private int x_soko;
     private int y_soko;
 
-    public char[][] initialisePlateau() {
-        int hauteur = 9;
-        int largeur = 7;
-        char[][] plateau = new char[hauteur][largeur];
 
-        for (int i = 0; i < plateau[0].length; i++) {
-            plateau[0][i] = mur;
-            plateau[8][i] = mur;
+    private char[][] initialisePlateau() {
+        int hauteur = 7; //ligne
+        int largeur = 9; //colonne
+        char[][] _plateau = new char[hauteur][largeur];
+
+        for (int j = 0; j < _plateau[0].length; j++) {
+            _plateau[0][j] = mur;
+            _plateau[hauteur - 1][j] = mur;
         }
-        for (int i = 0; i < plateau.length; i++) {
-            plateau[i][0] = mur;
-            plateau[i][6] = mur;
+        for (int i = 0; i < _plateau.length; i++) {
+            _plateau[i][0] = mur;
+            _plateau[i][largeur - 1] = mur;
         }
-        for (int i = 1; i < plateau.length - 1; i++) {
-            for (int j = 1; j < plateau[0].length - 1; j++) {
-                plateau[i][j] = sol;
+        for (int i = 1; i < _plateau.length - 1; i++) {
+            for (int j = 1; j < _plateau[0].length - 1; j++) {
+                _plateau[i][j] = sol;
             }
         }
+
         x_soko = 1;
         y_soko = 1;
-        plateau[x_soko][y_soko] = soko;
-        plateau[4][2] = caisse;
-        plateau[6][4] = but;
-        return plateau;
+        _plateau[x_soko][y_soko] = soko;
+        _plateau[2][4] = caisse;
+        _plateau[4][6] = but;
+
+        return _plateau;
     }
+
+    private void afficherPlateau(char[][] _plateau) {
+        for (int i = 0; i < _plateau.length; i++) {
+            for (int j = 0; j < _plateau[0].length; j++) {
+                System.out.print(_plateau[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
 
     @Override
     public void move(String direction) {
-        System.out.println("move");
+        afficherPlateau(plateau);
         switch (direction) {
             case "up":
-                if (plateau[x_soko - 1][y_soko] == sol) {
-                    plateau[x_soko][y_soko] = sol;
-                    x_soko--;
-                    plateau[x_soko][y_soko] = soko;
-                }
-                else if (plateau[x_soko - 1][y_soko] == but) {
-                    plateau[x_soko][y_soko] = sol;
-                    x_soko--;
-                    plateau[x_soko][y_soko] = sokoSurBut;
-                }
-                else if (plateau[x_soko - 1][y_soko] == caisse || plateau[x_soko - 1][y_soko] == caisseSurBut) {
-                    if (plateau[x_soko - 2][y_soko] == sol) {
-                        plateau[x_soko][y_soko] = sol;
-                        x_soko--;
-                        plateau[x_soko][y_soko] = soko;
-                        x_soko--;
-                        plateau[x_soko][y_soko] = caisse;
-                    }
-                    else if (plateau[x_soko][y_soko] == caisse && plateau[x_soko - 2][y_soko] == but) {
-                        plateau[x_soko][y_soko] = sol;
-                        x_soko--;
-                        plateau[x_soko][y_soko] = soko;
-                        x_soko--;
-                        plateau[x_soko][y_soko] = caisseSurBut;
-                    }
-                    else if (plateau[x_soko][y_soko] == caisseSurBut && plateau[x_soko - 2][y_soko] == but) {
-                        plateau[x_soko][y_soko] = sol;
-                        x_soko--;
-                        plateau[x_soko][y_soko] = sokoSurBut;
-                        x_soko--;
-                        plateau[x_soko][y_soko] = caisseSurBut;
-                    }
-                }
+                moveUp();
                 break;
             case "down" :
-                if (plateau[x_soko + 1][y_soko] == sol) {
-                    plateau[x_soko][y_soko] = sol;
-                    x_soko++;
-                    plateau[x_soko][y_soko] = soko;
-                }
-                else if (plateau[x_soko + 1][y_soko] == but) {
-                    plateau[x_soko][y_soko] = sol;
-                    x_soko++;
-                    plateau[x_soko][y_soko] = sokoSurBut;
-                }
-                else if (plateau[x_soko + 1][y_soko] == caisse || plateau[x_soko + 1][y_soko] == caisseSurBut) {
-                    if (plateau[x_soko + 2][y_soko] == sol) {
-                        plateau[x_soko][y_soko] = sol;
-                        x_soko++;
-                        plateau[x_soko][y_soko] = soko;
-                        x_soko++;
-                        plateau[x_soko][y_soko] = caisse;
-                    }
-                    else if (plateau[x_soko][y_soko] == caisse && plateau[x_soko + 2][y_soko] == but) {
-                        plateau[x_soko][y_soko] = sol;
-                        x_soko++;
-                        plateau[x_soko][y_soko] = soko;
-                        x_soko++;
-                        plateau[x_soko][y_soko] = caisseSurBut;
-                    }
-                    else if (plateau[x_soko][y_soko] == caisseSurBut && plateau[x_soko + 2][y_soko] == but) {
-                        plateau[x_soko][y_soko] = sol;
-                        x_soko++;
-                        plateau[x_soko][y_soko] = sokoSurBut;
-                        x_soko++;
-                        plateau[x_soko][y_soko] = caisseSurBut;
-                    }
-                }
+                moveDown();
                 break;
             case "left" :
-                if (plateau[x_soko][y_soko - 1] == sol) {
-                    plateau[x_soko][y_soko] = sol;
-                    y_soko--;
-                    plateau[x_soko][y_soko] = soko;
-                }
-                else if (plateau[x_soko][y_soko - 1] == but) {
-                    plateau[x_soko][y_soko] = sol;
-                    y_soko--;
-                    plateau[x_soko][y_soko] = sokoSurBut;
-                }
-                else if (plateau[x_soko][y_soko - 1] == caisse || plateau[x_soko][y_soko - 1] == caisseSurBut) {
-                    if (plateau[x_soko][y_soko - 2] == sol) {
-                        plateau[x_soko][y_soko] = sol;
-                        y_soko--;
-                        plateau[x_soko][y_soko] = soko;
-                        y_soko--;
-                        plateau[x_soko][y_soko] = caisse;
-                    }
-                    else if (plateau[x_soko][y_soko] == caisse && plateau[x_soko][y_soko - 2] == but) {
-                        plateau[x_soko][y_soko] = sol;
-                        y_soko--;
-                        plateau[x_soko][y_soko] = soko;
-                        y_soko--;
-                        plateau[x_soko][y_soko] = caisseSurBut;
-                    }
-                    else if (plateau[x_soko][y_soko] == caisseSurBut && plateau[x_soko][y_soko - 2] == but) {
-                        plateau[x_soko][y_soko] = sol;
-                        y_soko--;
-                        plateau[x_soko][y_soko] = sokoSurBut;
-                        y_soko--;
-                        plateau[x_soko][y_soko] = caisseSurBut;
-                    }
-                }
+                moveLeft();
                 break;
             case "right" :
-                if (plateau[x_soko][y_soko + 1] == sol) {
-                    plateau[x_soko][y_soko] = sol;
-                    y_soko++;
+                moveRight();
+                break;
+        }
+        afficherPlateau(plateau);
+        System.out.println();
+    }
+
+
+    private void moveUp() {
+        if (plateau[x_soko][y_soko] == soko) {
+            moveX(-1, -2, sol);
+        }
+        else if (plateau[x_soko][y_soko] == sokoSurBut) {
+            moveX(-1, -2, but);
+        }
+    }
+
+    private void moveDown() {
+        if (plateau[x_soko][y_soko] == soko) {
+            moveX(1, 2, sol);
+        }
+        else if (plateau[x_soko][y_soko] == sokoSurBut) {
+            moveX(1, 2, but);
+        }
+    }
+
+    private void moveLeft() {
+        if (plateau[x_soko][y_soko] == soko) {
+            moveY(-1, -2, sol);
+        }
+        else if (plateau[x_soko][y_soko] == sokoSurBut) {
+            moveY(-1, -2, but);
+        }
+    }
+
+    private void moveRight() {
+        if (plateau[x_soko][y_soko] == soko) {
+            moveY(1, 2, sol);
+        }
+        else if (plateau[x_soko][y_soko] == sokoSurBut) {
+            moveY(1, 2, but);
+        }
+    }
+
+
+    private void moveX(int move1, int move2, char change) {
+        switch (plateau[x_soko + move1][y_soko]) {
+            case sol:
+                plateau[x_soko][y_soko] = change;
+                x_soko += move1;
+                plateau[x_soko][y_soko] = soko;
+                break;
+            case but:
+                plateau[x_soko][y_soko] = change;
+                x_soko += move1;
+                plateau[x_soko][y_soko] = sokoSurBut;
+                break;
+            case caisse:
+                if (plateau[x_soko + move2][y_soko] == sol) {
+                    plateau[x_soko][y_soko] = change;
+                    x_soko += move1;
                     plateau[x_soko][y_soko] = soko;
+                    plateau[x_soko + move1][y_soko] = caisse;
                 }
-                else if (plateau[x_soko][y_soko + 1] == but) {
-                    plateau[x_soko][y_soko] = sol;
-                    y_soko++;
+                else if (plateau[x_soko + move2][y_soko] == but) {
+                    plateau[x_soko][y_soko] = change;
+                    x_soko += move1;
+                    plateau[x_soko][y_soko] = soko;
+                    plateau[x_soko + move1][y_soko] = caisseSurBut;
+                }
+                break;
+            case caisseSurBut:
+                if (plateau[x_soko + move2][y_soko] == sol) {
+                    plateau[x_soko][y_soko] = change;
+                    x_soko += move1;
                     plateau[x_soko][y_soko] = sokoSurBut;
+                    plateau[x_soko + move1][y_soko] = caisse;
                 }
-                else if (plateau[x_soko][y_soko + 1] == caisse || plateau[x_soko][y_soko + 1] == caisseSurBut) {
-                    if (plateau[x_soko][y_soko + 2] == sol) {
-                        plateau[x_soko][y_soko] = sol;
-                        y_soko++;
-                        plateau[x_soko][y_soko] = soko;
-                        y_soko++;
-                        plateau[x_soko][y_soko] = caisse;
-                    }
-                    else if (plateau[x_soko][y_soko] == caisse && plateau[x_soko][y_soko + 2] == but) {
-                        plateau[x_soko][y_soko] = sol;
-                        y_soko++;
-                        plateau[x_soko][y_soko] = soko;
-                        y_soko++;
-                        plateau[x_soko][y_soko] = caisseSurBut;
-                    }
-                    else if (plateau[x_soko][y_soko] == caisseSurBut && plateau[x_soko][y_soko + 2] == but) {
-                        plateau[x_soko][y_soko] = sol;
-                        y_soko++;
-                        plateau[x_soko][y_soko] = sokoSurBut;
-                        y_soko++;
-                        plateau[x_soko][y_soko] = caisseSurBut;
-                    }
+                else if (plateau[x_soko + move2][y_soko] == but) {
+                    plateau[x_soko][y_soko] = change;
+                    x_soko += move1;
+                    plateau[x_soko][y_soko] = sokoSurBut;
+                    plateau[x_soko + move1][y_soko] = caisseSurBut;
                 }
                 break;
         }
     }
+
+    private void moveY(int move1, int move2, char change) {
+        switch (plateau[x_soko][y_soko + move1]) {
+            case sol:
+                plateau[x_soko][y_soko] = change;
+                y_soko += move1;
+                plateau[x_soko][y_soko] = soko;
+                break;
+            case but:
+                plateau[x_soko][y_soko] = change;
+                y_soko += move1;
+                plateau[x_soko][y_soko] = sokoSurBut;
+                break;
+            case caisse:
+                if (plateau[x_soko][y_soko + move2] == sol) {
+                    plateau[x_soko][y_soko] = change;
+                    y_soko += move1;
+                    plateau[x_soko][y_soko] = soko;
+                    plateau[x_soko][y_soko + move1] = caisse;
+                }
+                else if (plateau[x_soko][y_soko + move2] == but) {
+                    plateau[x_soko][y_soko] = change;
+                    y_soko += move1;
+                    plateau[x_soko][y_soko] = soko;
+                    plateau[x_soko][y_soko + move1] = caisseSurBut;
+                }
+                break;
+            case caisseSurBut:
+                if (plateau[x_soko][y_soko + move2] == sol) {
+                    plateau[x_soko][y_soko] = change;
+                    y_soko += move1;
+                    plateau[x_soko][y_soko] = sokoSurBut;
+                    plateau[x_soko][y_soko + move1] = caisse;
+                }
+                else if (plateau[x_soko][y_soko + move2] == but) {
+                    plateau[x_soko][y_soko] = change;
+                    y_soko += move1;
+                    plateau[x_soko][y_soko] = sokoSurBut;
+                    plateau[x_soko][y_soko + move1] = caisseSurBut;
+                }
+                break;
+        }
+    }
+
 
     @Override
     public void reset() {

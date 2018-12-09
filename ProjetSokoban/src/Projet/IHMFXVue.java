@@ -41,7 +41,7 @@ public class IHMFXVue {
                     case '$': tmp = sokoBut; break;
                     case '€': tmp = caisseBut; break;
                 }
-                gridPane.add(new ImageView(tmp), i, j);
+                gridPane.add(new ImageView(tmp), j, i);
             }
         }
     }

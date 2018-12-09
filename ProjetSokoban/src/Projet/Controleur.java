@@ -31,7 +31,6 @@ public class Controleur implements Sujet {
     }
 
     public void move(String direction) {
-        System.out.println("move");
         facadeModele.move(direction);
         notifie();
     }

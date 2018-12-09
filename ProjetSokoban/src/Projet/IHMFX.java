@@ -35,13 +35,12 @@ public class IHMFX extends Application implements Observateur {
         vueNbCoup= new IHMFXVueNbCoup(controleur);
         vueNbCoup.label.setAlignment(Pos.CENTER);
 
-
         /* montage de la scene */
         MonteurScene monteurScene = new MonteurScene();
 
         Scene scene = monteurScene.
                 setCentre(vue.gridPane).
-                ajoutBas(IHMFXControleur.reset).
+//                ajoutBas(IHMFXControleur.reset).
                 ajoutBas(vueNbCoup.label).
                 setLargeur(800).
                 setHauteur(700).
