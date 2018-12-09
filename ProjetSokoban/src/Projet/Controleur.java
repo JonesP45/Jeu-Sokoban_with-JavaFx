@@ -40,6 +40,11 @@ public class Controleur implements Sujet {
         notifie();
     }
 
+    public void redo() {
+        facadeModele.redo();
+        notifie();
+    }
+
     public void reset() {
         facadeModele.reset();
         notifie();

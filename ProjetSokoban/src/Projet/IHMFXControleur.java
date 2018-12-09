@@ -42,8 +42,10 @@ public class IHMFXControleur {
                 controleur.move("down");
             } else if (input.equals(KeyCode.UP)) {
                 controleur.move("up");
-            } else if (input.equals(KeyCode.Z)) {
+            } else if (input.equals(KeyCode.U)) {
                 controleur.undo();
+            } else if (input.equals(KeyCode.R)) {
+                controleur.redo();
             }
         }
     }

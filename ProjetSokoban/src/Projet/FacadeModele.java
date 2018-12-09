@@ -13,6 +13,10 @@ public class FacadeModele {
         modeleNbCoup.undo();
     }
 
+    public void redo() {
+        modeleNbCoup.redo();
+    }
+
     public void reset() {
         modeleNbCoup.reset();
     }

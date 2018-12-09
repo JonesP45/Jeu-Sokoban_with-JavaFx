@@ -54,40 +54,9 @@ public class ModeleConcret implements Modele {
         }
     }
 
-    private void ajoutUndos(int moveX, int moveXcaisse, int moveY, int moveYcaisse) {
-        if (moveX != 0) {
-            if (moveXcaisse == 0) {
-                if (moveX > 0)
-                    theUndos.add("down");
-                else
-                    theUndos.add("up");
-            }
-            else {
-                if (moveX > 0)
-                    theUndos.add("downCaisse");
-                else
-                    theUndos.add("upCaisse");
-            }
-        }
-        else {
-            if (moveYcaisse == 0) {
-                if (moveY > 0)
-                    theUndos.add("right");
-                else
-                    theUndos.add("left");
-            }
-            else {
-                if (moveY > 0)
-                    theUndos.add("rightCaisse");
-                else
-                    theUndos.add("leftCaisse");
-            }
-        }
-    }
-
-    private void afficherTheMoves() {
-        for (int i = 0; i < theMoves.size(); i++) {
-            System.out.println(theMoves.get(i));
+    private void afficherArrayListString(ArrayList<String> arrayList) {
+        for (int i = 0; i < arrayList.size(); i++) {
+            System.out.println(arrayList.get(i));
         }
         System.out.println();
     }
@@ -134,6 +103,7 @@ public class ModeleConcret implements Modele {
     @Override
     public void move(String direction) {
 //        afficherPlateau(plateau);
+        theUndos.clear();
         switch (direction) {
             case "up":
                 moveUp();
@@ -148,9 +118,6 @@ public class ModeleConcret implements Modele {
                 moveRight();
                 break;
         }
-//        afficherTheMoves();
-//        afficherPlateau(plateau);
-//        System.out.println();
     }
 
 
@@ -249,23 +216,25 @@ public class ModeleConcret implements Modele {
 
     @Override
     public void undo() {
-//        afficherTheMoves();
         if (theMoves.size() > 0) {
-            System.out.println(theMoves.get(theMoves.size() - 1));
             char var1 = caisse;
             char var2 = sol;
             switch (theMoves.get(theMoves.size() - 1)) {
                 case "up":
-                    move("down");
+                    moveDown();
+                    theUndos.add("down");
                     break;
                 case "down":
-                    move("up");
+                    moveUp();
+                    theUndos.add("up");
                     break;
                 case "right":
-                    move("left");
+                    moveLeft();
+                    theUndos.add("left");
                     break;
                 case "left":
-                    move("right");
+                    moveRight();
+                    theUndos.add("right");
                     break;
                 case "upCaisse":
                     if (plateau[x_soko][y_soko] == soko) {
@@ -282,7 +251,8 @@ public class ModeleConcret implements Modele {
                             var2 = but;
                         }
                     }
-                    move("down");
+                    moveDown();
+                    theUndos.add("down");
                     plateau[x_soko - 2][y_soko] = var2;
                     plateau[x_soko - 1][y_soko] = var1;
                     break;
@@ -301,7 +271,8 @@ public class ModeleConcret implements Modele {
                             var2 = but;
                         }
                     }
-                    move("up");
+                    moveUp();
+                    theUndos.add("up");
                     plateau[x_soko + 2][y_soko] = var2;
                     plateau[x_soko + 1][y_soko] = var1;
                     break;
@@ -320,7 +291,8 @@ public class ModeleConcret implements Modele {
                             var2 = but;
                         }
                     }
-                    move("left");
+                    moveLeft();
+                    theUndos.add("left");
                     plateau[x_soko][y_soko + 2] = var2;
                     plateau[x_soko][y_soko + 1] = var1;
                     break;
@@ -339,25 +311,47 @@ public class ModeleConcret implements Modele {
                             var2 = but;
                         }
                     }
-                    move("right");
+                    moveRight();
+                    theUndos.add("right");
                     plateau[x_soko][y_soko - 2] = var2;
                     plateau[x_soko][y_soko - 1] = var1;
                     break;
             }
             theMoves.remove(theMoves.size() - 1); //suppression du move undo
             theMoves.remove(theMoves.size() - 1); //suppression du move contraire au undo
-//            afficherTheMoves();
         }
     }
 
     @Override
     public void redo() {
-
+        if (theUndos.size() > 0) {
+            switch (theUndos.get(theUndos.size() - 1)) {
+                case "up":
+                    moveDown();
+                    theMoves.add("down");
+                    break;
+                case "down":
+                    moveUp();
+                    theMoves.add("up");
+                    break;
+                case "right":
+                    moveLeft();
+                    theMoves.add("left");
+                    break;
+                case "left":
+                    moveRight();
+                    theMoves.add("right");
+                    break;
+            }
+            theUndos.remove(theUndos.size() - 1);
+        }
     }
 
     @Override
     public void reset() {
         plateau = initialisePlateau();
+        theMoves.clear();
+        theUndos.clear();
     }
 
     @Override

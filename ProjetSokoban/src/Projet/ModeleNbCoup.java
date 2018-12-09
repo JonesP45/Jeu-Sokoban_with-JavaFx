@@ -21,13 +21,16 @@ public class ModeleNbCoup implements Modele {
 
     @Override
     public void undo() {
-        nbCoup--;
-        modele.undo();
+        if (nbCoup > 0) {
+            nbCoup--;
+            modele.undo();
+        }
     }
 
     @Override
     public void redo() {
-
+        nbCoup++;
+        modele.redo();
     }
 
     @Override
