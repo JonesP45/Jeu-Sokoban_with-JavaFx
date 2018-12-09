@@ -13,8 +13,8 @@ public class Controleur implements Sujet {
     }
 
 
-    FacadeModele facadeModele;
-    ArrayList<Observateur> observateurs = new ArrayList<Observateur>();
+    private FacadeModele facadeModele;
+    private ArrayList<Observateur> observateurs = new ArrayList<Observateur>();
 
     private Controleur(FacadeModele facadeModele) {
         this.facadeModele = facadeModele;
@@ -35,6 +35,11 @@ public class Controleur implements Sujet {
         notifie();
     }
 
+    public void undo() {
+        facadeModele.undo();
+        notifie();
+    }
+
     public void reset() {
         facadeModele.reset();
         notifie();
@@ -44,7 +49,16 @@ public class Controleur implements Sujet {
         return new CommandeInt() {
             @Override
             public int exec() {
-                return facadeModele.nbCoup();
+                return facadeModele.getNbCoup();
+            }
+        };
+    }
+
+    public CommandeInt commandeNbPoussee() {
+        return new CommandeInt() {
+            @Override
+            public int exec() {
+                return 0;
             }
         };
     }

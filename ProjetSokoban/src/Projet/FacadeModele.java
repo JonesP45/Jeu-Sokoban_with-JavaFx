@@ -2,18 +2,27 @@ package Projet;
 
 public class FacadeModele {
 
-    ModeleNbCoup modeleNbCoup = new ModeleNbCoup(new ModeleConcret());
+    private ModeleNbCoup modeleNbCoup = new ModeleNbCoup(new ModeleConcret());
+
 
     public void move(String direction) {
         modeleNbCoup.move(direction);
+    }
+
+    public void undo() {
+        modeleNbCoup.undo();
     }
 
     public void reset() {
         modeleNbCoup.reset();
     }
 
-    public int nbCoup() {
-        return modeleNbCoup.nbCoup;
+    public int getNbCoup() {
+        return modeleNbCoup.getNbCoup();
+    }
+
+    public int getNbPoussee() {
+        return 0;
     }
 
     public char[][] getPlateau() {

@@ -1,28 +1,27 @@
 package Projet;
 
-public class ModeleNbCoup implements Modele {
+public class ModeleNbPoussee implements Modele {
 
     private Modele modele;
-    private int nbCoup = 0;
+    private int nbPoussee = 0;
 
-    public ModeleNbCoup(Modele modele) {
+    public ModeleNbPoussee(Modele modele) {
         this.modele = modele;
     }
 
-    public int getNbCoup(){
-        return nbCoup;
+    public int getNbPoussee(){
+        return nbPoussee;
     }
 
     @Override
     public void move(String direction) {
-        nbCoup++;
+        nbPoussee++;
         modele.move(direction);
     }
 
     @Override
     public void undo() {
-        nbCoup--;
-        modele.undo();
+
     }
 
     @Override
@@ -32,7 +31,7 @@ public class ModeleNbCoup implements Modele {
 
     @Override
     public void reset(){
-        nbCoup = 0;
+        nbPoussee = 0;
         modele.reset();
     }
 

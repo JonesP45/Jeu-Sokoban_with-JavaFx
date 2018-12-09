@@ -1,5 +1,8 @@
 package Projet;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class ModeleConcret implements Modele {
 
     private final char mur = 'm';
@@ -13,6 +16,81 @@ public class ModeleConcret implements Modele {
     private char[][] plateau = initialisePlateau();
     private int x_soko;
     private int y_soko;
+
+//    boolean coupValide = false;
+//    boolean pousseeValide = false;
+
+    private ArrayList<String> theMoves = new ArrayList<>();
+    private ArrayList<String> theUndos = new ArrayList<>();
+
+    private void ajoutMove(int moveX, int moveXcaisse, int moveY, int moveYcaisse) {
+        if (moveX != 0) {
+            if (moveXcaisse == 0) {
+                if (moveX > 0)
+                    theMoves.add("down");
+                else
+                    theMoves.add("up");
+            }
+            else {
+                if (moveX > 0)
+                    theMoves.add("downCaisse");
+                else
+                    theMoves.add("upCaisse");
+            }
+        }
+        else {
+            if (moveYcaisse == 0) {
+                if (moveY > 0)
+                    theMoves.add("right");
+                else
+                    theMoves.add("left");
+            }
+            else {
+                if (moveY > 0)
+                    theMoves.add("rightCaisse");
+                else
+                    theMoves.add("leftCaisse");
+            }
+        }
+    }
+
+    private void ajoutUndos(int moveX, int moveXcaisse, int moveY, int moveYcaisse) {
+        if (moveX != 0) {
+            if (moveXcaisse == 0) {
+                if (moveX > 0)
+                    theUndos.add("down");
+                else
+                    theUndos.add("up");
+            }
+            else {
+                if (moveX > 0)
+                    theUndos.add("downCaisse");
+                else
+                    theUndos.add("upCaisse");
+            }
+        }
+        else {
+            if (moveYcaisse == 0) {
+                if (moveY > 0)
+                    theUndos.add("right");
+                else
+                    theUndos.add("left");
+            }
+            else {
+                if (moveY > 0)
+                    theUndos.add("rightCaisse");
+                else
+                    theUndos.add("leftCaisse");
+            }
+        }
+    }
+
+    private void afficherTheMoves() {
+        for (int i = 0; i < theMoves.size(); i++) {
+            System.out.println(theMoves.get(i));
+        }
+        System.out.println();
+    }
 
 
     private char[][] initialisePlateau() {
@@ -38,7 +116,7 @@ public class ModeleConcret implements Modele {
         y_soko = 1;
         _plateau[x_soko][y_soko] = soko;
         _plateau[2][4] = caisse;
-        _plateau[4][6] = but;
+        _plateau[3][4] = but;
 
         return _plateau;
     }
@@ -55,7 +133,7 @@ public class ModeleConcret implements Modele {
 
     @Override
     public void move(String direction) {
-        afficherPlateau(plateau);
+//        afficherPlateau(plateau);
         switch (direction) {
             case "up":
                 moveUp();
@@ -70,129 +148,99 @@ public class ModeleConcret implements Modele {
                 moveRight();
                 break;
         }
-        afficherPlateau(plateau);
-        System.out.println();
+//        afficherTheMoves();
+//        afficherPlateau(plateau);
+//        System.out.println();
     }
 
 
     private void moveUp() {
         if (plateau[x_soko][y_soko] == soko) {
-            moveX(-1, -2, sol);
+            moveIt(-1, -2, 0, 0, sol);
         }
         else if (plateau[x_soko][y_soko] == sokoSurBut) {
-            moveX(-1, -2, but);
+            moveIt(-1, -2, 0, 0, but);
         }
     }
 
     private void moveDown() {
         if (plateau[x_soko][y_soko] == soko) {
-            moveX(1, 2, sol);
+            moveIt(1, 2, 0, 0, sol);
         }
         else if (plateau[x_soko][y_soko] == sokoSurBut) {
-            moveX(1, 2, but);
+            moveIt(1, 2, 0, 0, but);
         }
     }
 
     private void moveLeft() {
         if (plateau[x_soko][y_soko] == soko) {
-            moveY(-1, -2, sol);
+            moveIt(0, 0, -1, -2, sol);
         }
         else if (plateau[x_soko][y_soko] == sokoSurBut) {
-            moveY(-1, -2, but);
+            moveIt(0, 0, -1, -2, but);
         }
     }
 
     private void moveRight() {
         if (plateau[x_soko][y_soko] == soko) {
-            moveY(1, 2, sol);
+            moveIt(0, 0, 1, 2, sol);
         }
         else if (plateau[x_soko][y_soko] == sokoSurBut) {
-            moveY(1, 2, but);
+            moveIt(0, 0, 1, 2, but);
         }
     }
 
 
-    private void moveX(int move1, int move2, char change) {
-        switch (plateau[x_soko + move1][y_soko]) {
+    private void moveIt(int moveX1, int moveX2, int moveY1, int moveY2, char change) {
+        switch (plateau[x_soko + moveX1][y_soko + moveY1]) {
             case sol:
                 plateau[x_soko][y_soko] = change;
-                x_soko += move1;
+                x_soko += moveX1;
+                y_soko += moveY1;
                 plateau[x_soko][y_soko] = soko;
+                ajoutMove(moveX1, 0, moveY1, 0);
                 break;
             case but:
                 plateau[x_soko][y_soko] = change;
-                x_soko += move1;
+                x_soko += moveX1;
+                y_soko += moveY1;
                 plateau[x_soko][y_soko] = sokoSurBut;
+                ajoutMove(moveX1, 0, moveY1, 0);
                 break;
             case caisse:
-                if (plateau[x_soko + move2][y_soko] == sol) {
+                if (plateau[x_soko + moveX2][y_soko + moveY2] == sol) {
                     plateau[x_soko][y_soko] = change;
-                    x_soko += move1;
+                    x_soko += moveX1;
+                    y_soko += moveY1;
                     plateau[x_soko][y_soko] = soko;
-                    plateau[x_soko + move1][y_soko] = caisse;
+                    plateau[x_soko + moveX1][y_soko + moveY1] = caisse;
+                    ajoutMove(moveX1, moveX2, moveY1, moveY2);
                 }
-                else if (plateau[x_soko + move2][y_soko] == but) {
+                else if (plateau[x_soko + moveX2][y_soko + moveY2] == but) {
                     plateau[x_soko][y_soko] = change;
-                    x_soko += move1;
+                    x_soko += moveX1;
+                    y_soko += moveY1;
                     plateau[x_soko][y_soko] = soko;
-                    plateau[x_soko + move1][y_soko] = caisseSurBut;
+                    plateau[x_soko + moveX1][y_soko + moveY1] = caisseSurBut;
+                    ajoutMove(moveX1, moveX2, moveY1, moveY2);
                 }
                 break;
             case caisseSurBut:
-                if (plateau[x_soko + move2][y_soko] == sol) {
+                if (plateau[x_soko + moveX2][y_soko + moveY2] == sol) {
                     plateau[x_soko][y_soko] = change;
-                    x_soko += move1;
+                    x_soko += moveX1;
+                    y_soko += moveY1;
                     plateau[x_soko][y_soko] = sokoSurBut;
-                    plateau[x_soko + move1][y_soko] = caisse;
+                    plateau[x_soko + moveX1][y_soko + moveY1] = caisse;
+                    ajoutMove(moveX1, moveX2, moveY1, moveY2);
                 }
-                else if (plateau[x_soko + move2][y_soko] == but) {
+                else if (plateau[x_soko + moveX2][y_soko + moveY2] == but) {
                     plateau[x_soko][y_soko] = change;
-                    x_soko += move1;
+                    x_soko += moveX1;
+                    y_soko += moveY1;
                     plateau[x_soko][y_soko] = sokoSurBut;
-                    plateau[x_soko + move1][y_soko] = caisseSurBut;
-                }
-                break;
-        }
-    }
-
-    private void moveY(int move1, int move2, char change) {
-        switch (plateau[x_soko][y_soko + move1]) {
-            case sol:
-                plateau[x_soko][y_soko] = change;
-                y_soko += move1;
-                plateau[x_soko][y_soko] = soko;
-                break;
-            case but:
-                plateau[x_soko][y_soko] = change;
-                y_soko += move1;
-                plateau[x_soko][y_soko] = sokoSurBut;
-                break;
-            case caisse:
-                if (plateau[x_soko][y_soko + move2] == sol) {
-                    plateau[x_soko][y_soko] = change;
-                    y_soko += move1;
-                    plateau[x_soko][y_soko] = soko;
-                    plateau[x_soko][y_soko + move1] = caisse;
-                }
-                else if (plateau[x_soko][y_soko + move2] == but) {
-                    plateau[x_soko][y_soko] = change;
-                    y_soko += move1;
-                    plateau[x_soko][y_soko] = soko;
-                    plateau[x_soko][y_soko + move1] = caisseSurBut;
-                }
-                break;
-            case caisseSurBut:
-                if (plateau[x_soko][y_soko + move2] == sol) {
-                    plateau[x_soko][y_soko] = change;
-                    y_soko += move1;
-                    plateau[x_soko][y_soko] = sokoSurBut;
-                    plateau[x_soko][y_soko + move1] = caisse;
-                }
-                else if (plateau[x_soko][y_soko + move2] == but) {
-                    plateau[x_soko][y_soko] = change;
-                    y_soko += move1;
-                    plateau[x_soko][y_soko] = sokoSurBut;
-                    plateau[x_soko][y_soko + move1] = caisseSurBut;
+                    plateau[x_soko + moveX1][y_soko + moveY1] = caisseSurBut;
+                    ajoutMove(moveX1, moveX2, moveY1, moveY2);
                 }
                 break;
         }
@@ -200,10 +248,119 @@ public class ModeleConcret implements Modele {
 
 
     @Override
+    public void undo() {
+//        afficherTheMoves();
+        if (theMoves.size() > 0) {
+            System.out.println(theMoves.get(theMoves.size() - 1));
+            char var1 = caisse;
+            char var2 = sol;
+            switch (theMoves.get(theMoves.size() - 1)) {
+                case "up":
+                    move("down");
+                    break;
+                case "down":
+                    move("up");
+                    break;
+                case "right":
+                    move("left");
+                    break;
+                case "left":
+                    move("right");
+                    break;
+                case "upCaisse":
+                    if (plateau[x_soko][y_soko] == soko) {
+                        if (plateau[x_soko - 1][y_soko] == caisseSurBut) {
+                            var2 = but;
+                        }
+                    }
+                    else if (plateau[x_soko][y_soko] == sokoSurBut) {
+                        if (plateau[x_soko - 1][y_soko] == caisse) {
+                            var1 = caisseSurBut;
+                        }
+                        else if (plateau[x_soko - 1][y_soko] == caisseSurBut) {
+                            var1 = caisseSurBut;
+                            var2 = but;
+                        }
+                    }
+                    move("down");
+                    plateau[x_soko - 2][y_soko] = var2;
+                    plateau[x_soko - 1][y_soko] = var1;
+                    break;
+                case "downCaisse":
+                    if (plateau[x_soko][y_soko] == soko) {
+                        if (plateau[x_soko + 1][y_soko] == caisseSurBut) {
+                            var2 = but;
+                        }
+                    }
+                    else if (plateau[x_soko][y_soko] == sokoSurBut) {
+                        if (plateau[x_soko + 1][y_soko] == caisse) {
+                            var1 = caisseSurBut;
+                        }
+                        else if (plateau[x_soko + 1][y_soko] == caisseSurBut) {
+                            var1 = caisseSurBut;
+                            var2 = but;
+                        }
+                    }
+                    move("up");
+                    plateau[x_soko + 2][y_soko] = var2;
+                    plateau[x_soko + 1][y_soko] = var1;
+                    break;
+                case "rightCaisse":
+                    if (plateau[x_soko][y_soko] == soko) {
+                        if (plateau[x_soko][y_soko + 1] == caisseSurBut) {
+                            var2 = but;
+                        }
+                    }
+                    else if (plateau[x_soko][y_soko] == sokoSurBut) {
+                        if (plateau[x_soko][y_soko + 1] == caisse) {
+                            var1 = caisseSurBut;
+                        }
+                        else if (plateau[x_soko][y_soko + 1] == caisseSurBut) {
+                            var1 = caisseSurBut;
+                            var2 = but;
+                        }
+                    }
+                    move("left");
+                    plateau[x_soko][y_soko + 2] = var2;
+                    plateau[x_soko][y_soko + 1] = var1;
+                    break;
+                case "leftCaisse":
+                    if (plateau[x_soko][y_soko] == soko) {
+                        if (plateau[x_soko][y_soko - 1] == caisseSurBut) {
+                            var2 = but;
+                        }
+                    }
+                    else if (plateau[x_soko][y_soko] == sokoSurBut) {
+                        if (plateau[x_soko][y_soko - 1] == caisse) {
+                            var1 = caisseSurBut;
+                        }
+                        else if (plateau[x_soko][y_soko - 1] == caisseSurBut) {
+                            var1 = caisseSurBut;
+                            var2 = but;
+                        }
+                    }
+                    move("right");
+                    plateau[x_soko][y_soko - 2] = var2;
+                    plateau[x_soko][y_soko - 1] = var1;
+                    break;
+            }
+            theMoves.remove(theMoves.size() - 1); //suppression du move undo
+            theMoves.remove(theMoves.size() - 1); //suppression du move contraire au undo
+//            afficherTheMoves();
+        }
+    }
+
+    @Override
+    public void redo() {
+
+    }
+
+    @Override
     public void reset() {
         plateau = initialisePlateau();
     }
 
+    @Override
     public char[][] getPlateau() {
         return plateau;
     }
