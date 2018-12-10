@@ -53,7 +53,10 @@ public class Controleur implements Sujet {
 
     private static int i = 0;
     public void replay() {
-        ArrayList<String> theMoves = facadeModele.getMoves();
+        final ArrayList<String> theMoves = facadeModele.getMoves();
+        for (int j = 0; j < theMoves.size(); j++) {
+            System.out.println(theMoves.get(j));
+        }
         reset();
         Timeline timer = new Timeline(
                 new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {

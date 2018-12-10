@@ -42,11 +42,6 @@ public class ModeleNbCoup implements Modele {
     }
 
     @Override
-    public void replay() {
-        modele.replay();
-    }
-
-    @Override
     public char[][] getPlateau() {
         return modele.getPlateau();
     }

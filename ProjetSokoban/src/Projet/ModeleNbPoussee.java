@@ -32,11 +32,6 @@ public class ModeleNbPoussee implements Modele {
     }
 
     @Override
-    public void replay() {
-
-    }
-
-    @Override
     public void reset(){
         nbPoussee = 0;
         modele.reset();
