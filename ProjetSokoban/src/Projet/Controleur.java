@@ -58,7 +58,7 @@ public class Controleur implements Sujet {
         Timeline timer = new Timeline(
                 new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
                     public void handle(ActionEvent event) {
-                        
+
                         if (theMoves.get(i).equals("right") || theMoves.get(i).equals("rightCaisse")) {
                             move("right");
                         } else if (theMoves.get(i).equals("up") || theMoves.get(i).equals("upCaisse")) {
