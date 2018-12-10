@@ -35,6 +35,10 @@ public class Controleur implements Sujet {
             observateur.actualise();
     }
 
+    public void play() {
+        notifie();
+    }
+
     public void move(String direction) {
         facadeModele.move(direction);
         notifie();

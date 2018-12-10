@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
+import java.util.ArrayList;
+
 public class IHMFXControleur {
 
     private Controleur controleur;
@@ -28,20 +30,52 @@ public class IHMFXControleur {
     public Button replay;
     public Button reset;
 
+    public ArrayList<char[][]> theFiles = new ArrayList<>();
+
     IHMFXControleur(Controleur controleur, IHMFXVue vue) {
         this.controleur = controleur;
         this.vue = vue;
 
         //menu
-
+        load = new Button("Load");
+        load.setOnAction(new ActionLoad());
+        previousLevel = new Button("Previous level");
+        nextlevel = new Button("Next Level");
+        play = new Button("Play");
+        play.setOnAction(new ActionPlay());
 
         //jeu
         this.vue.gridPane.setOnKeyPressed(new ActionKeyboard());
-        this.vue.gridPane.requestFocus();
 
+        up = new Button("Up");
+        down = new Button("Down");
+        left = new Button("Left");
+        right = new Button("Right");
+        undo = new Button("Undo");
+        redo = new Button("Redo");
+        replay = new Button("Replay");
         reset = new Button("Reset");
         reset.setOnAction(new ActionReset());
     }
+
+
+
+    class ActionLoad implements EventHandler<ActionEvent> {
+        @Override
+        public void handle(ActionEvent event) {
+            //methode pour charger les fichiers
+        }
+
+    }
+
+    class ActionPlay implements EventHandler<ActionEvent> {
+        @Override
+        public void handle(ActionEvent event) {
+//            vueMenu.setVueCourante(false);
+            controleur.play();
+        }
+    }
+
 
     class ActionKeyboard implements EventHandler<KeyEvent> {
         @Override
@@ -71,14 +105,6 @@ public class IHMFXControleur {
         @Override
         public void handle(ActionEvent event) {
             controleur.reset();
-        }
-
-    }
-
-    class ActionLoad implements EventHandler<ActionEvent> {
-        @Override
-        public void handle(ActionEvent event) {
-            //methode pour charger les fichiers
         }
 
     }
