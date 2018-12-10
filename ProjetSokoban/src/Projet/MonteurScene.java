@@ -10,10 +10,10 @@ import java.util.ArrayList;
 
 public class MonteurScene {
 
-    ArrayList<Region> bas = new ArrayList<Region>();
-    Region centre;
-    int largeur = 800;
-    int hauteur = 400;
+    private ArrayList<Region> bas = new ArrayList<>();
+    private Region centre;
+    private int largeur = 800;
+    private int hauteur = 400;
 
     public MonteurScene setLargeur(int l){
         largeur=l;

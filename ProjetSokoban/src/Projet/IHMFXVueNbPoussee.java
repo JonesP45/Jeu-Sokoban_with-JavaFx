@@ -4,12 +4,11 @@ import javafx.scene.control.Label;
 
 public class IHMFXVueNbPoussee {
 
-    private Controleur controleur;
     Label label = new Label("nb poussée :\n0");
     private CommandeInt commande;
 
+    @SuppressWarnings("WeakerAccess")
     public IHMFXVueNbPoussee(Controleur controleur) {
-        this.controleur = controleur;
         commande = controleur.commandeNbPoussee();
     }
 
