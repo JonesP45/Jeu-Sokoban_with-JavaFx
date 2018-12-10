@@ -7,14 +7,16 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class IHMFX extends Application implements Observateur {
-    IHMFXVueNbCoup vueNbCoup;
-    IHMFXVue vue;
+
+    private IHMFXVueNbCoup vueNbCoup;
+    private IHMFXVue vue;
 
 
     public void actualise(){
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
+//                vue.gridPane.getChildren().clear();
                 vueNbCoup.dessine();
                 vue.dessine();
             }

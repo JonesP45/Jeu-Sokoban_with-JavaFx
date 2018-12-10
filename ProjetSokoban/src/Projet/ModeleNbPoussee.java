@@ -11,7 +11,7 @@ public class ModeleNbPoussee implements Modele {
         this.modele = modele;
     }
 
-    public int getNbPoussee(){
+    public int getNbPoussee() {
         return nbPoussee;
     }
 
@@ -23,12 +23,12 @@ public class ModeleNbPoussee implements Modele {
 
     @Override
     public void undo() {
-
+        modele.undo();
     }
 
     @Override
     public void redo() {
-
+        modele.redo();
     }
 
     @Override

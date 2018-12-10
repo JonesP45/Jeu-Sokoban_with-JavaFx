@@ -84,6 +84,7 @@ public class ModeleConcret implements Modele {
         y_soko = 1;
         _plateau[x_soko][y_soko] = soko;
         _plateau[2][4] = caisse;
+        _plateau[2][5] = mur;
         _plateau[3][4] = but;
 
         return _plateau;

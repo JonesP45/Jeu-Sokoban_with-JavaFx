@@ -28,6 +28,7 @@ public class IHMFXVue {
     }
 
     public void dessine() {
+        initialiseFond();
         for (int i = 0; i < commandeGetPlateau.exec().length; i++) {
             for (int j = 0; j < commandeGetPlateau.exec()[0].length; j++) {
                 char caze = commandeGetPlateau.exec()[i][j];
@@ -42,6 +43,16 @@ public class IHMFXVue {
                     case '€': tmp = caisseBut; break;
                 }
                 gridPane.add(new ImageView(tmp), j, i);
+            }
+        }
+    }
+
+    public void initialiseFond() {
+        for (int i = 0; i < commandeGetPlateau.exec().length; i++) {
+            for (int j = 0; j < commandeGetPlateau.exec()[0].length; j++) {
+                char caze = commandeGetPlateau.exec()[i][j];
+                if (caze != 'm')
+                    gridPane.add(new ImageView(sol), i, j);
             }
         }
     }
