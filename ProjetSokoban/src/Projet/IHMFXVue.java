@@ -21,7 +21,7 @@ public class IHMFXVue {
     private Image but = new Image(new FileInputStream("EndPoint_Red.png"), taille, taille, false, false);
     private Image sol = new Image(new FileInputStream("Ground_Sand.png"), taille, taille, false, false);
 
-
+    @SuppressWarnings("WeakerAccess")
     public IHMFXVue(Controleur controleur) throws FileNotFoundException {
         commandeGetPlateau = controleur.commandeGetPlateau();
         dessine();

@@ -3,10 +3,10 @@ package Projet;
 import java.util.ArrayList;
 
 public interface Modele {
-    public void move(String direction);
-    public void undo();
-    public void redo();
-    public void reset();
-    public char[][] getPlateau();
-    public ArrayList<String> getMoves();
+    boolean[] move(String direction);
+    void undo();
+    void redo();
+    void reset();
+    char[][] getPlateau();
+    ArrayList<String> getMoves();
 }

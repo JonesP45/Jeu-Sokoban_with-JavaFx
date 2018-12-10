@@ -58,6 +58,7 @@ public class Controleur implements Sujet {
         Timeline timer = new Timeline(
                 new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
                     public void handle(ActionEvent event) {
+                        
                         if (theMoves.get(i).equals("right") || theMoves.get(i).equals("rightCaisse")) {
                             move("right");
                         } else if (theMoves.get(i).equals("up") || theMoves.get(i).equals("upCaisse")) {
@@ -85,31 +86,10 @@ public class Controleur implements Sujet {
         notifie();
     }
 
-    public CommandeInt commandeNbCoup() {
-        return new CommandeInt() {
-            @Override
-            public int exec() {
-                return facadeModele.getNbCoup();
-            }
-        };
-    }
+    public CommandeInt commandeNbCoup() { return () -> facadeModele.getNbCoup(); }
 
-    public CommandeInt commandeNbPoussee() {
-        return new CommandeInt() {
-            @Override
-            public int exec() {
-                return 0;
-            }
-        };
-    }
+    public CommandeInt commandeNbPoussee() { return () -> facadeModele.getNbPoussee(); }
 
-    public CommandeTab2DChar commandeGetPlateau() {
-        return new CommandeTab2DChar() {
-            @Override
-            public char[][] exec() {
-                return facadeModele.getPlateau();
-            }
-        };
-    }
+    public CommandeTab2DChar commandeGetPlateau() { return () -> facadeModele.getPlateau(); }
 
 }

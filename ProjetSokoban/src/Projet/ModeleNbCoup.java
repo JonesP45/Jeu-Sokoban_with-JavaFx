@@ -7,6 +7,7 @@ public class ModeleNbCoup implements Modele {
     private Modele modele;
     private int nbCoup = 0;
 
+    @SuppressWarnings("WeakerAccess")
     public ModeleNbCoup(Modele modele) {
         this.modele = modele;
     }
@@ -16,9 +17,11 @@ public class ModeleNbCoup implements Modele {
     }
 
     @Override
-    public void move(String direction) {
-        nbCoup++;
-        modele.move(direction);
+    public boolean[] move(String direction) {
+        boolean[] coupPoussee = modele.move(direction);
+        if (coupPoussee[0])
+            nbCoup++;
+        return coupPoussee;
     }
 
     @Override

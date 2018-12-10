@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class ModeleConcret implements Modele {
 
+    @SuppressWarnings("FieldCanBeLocal")
     private final char mur = 'm';
     private final char soko = 's';
     private final char caisse = 'c';
@@ -15,9 +16,6 @@ public class ModeleConcret implements Modele {
     private char[][] plateau = initialisePlateau();
     private int x_soko;
     private int y_soko;
-
-//    boolean coupValide = false;
-//    boolean pousseeValide = false;
 
     private ArrayList<String> theMoves = new ArrayList<>();
     private ArrayList<String> theUndos = new ArrayList<>();
@@ -53,12 +51,12 @@ public class ModeleConcret implements Modele {
         }
     }
 
-    private void afficherArrayListString(ArrayList<String> arrayList) {
-        for (int i = 0; i < arrayList.size(); i++) {
-            System.out.println(arrayList.get(i));
-        }
-        System.out.println();
-    }
+//    private void afficherArrayListString(ArrayList<String> arrayList) {
+//        for (int i = 0; i < arrayList.size(); i++) {
+//            System.out.println(arrayList.get(i));
+//        }
+//        System.out.println();
+//    }
 
 
     private char[][] initialisePlateau() {
@@ -90,75 +88,77 @@ public class ModeleConcret implements Modele {
         return _plateau;
     }
 
-    private void afficherPlateau(char[][] _plateau) {
-        for (int i = 0; i < _plateau.length; i++) {
-            for (int j = 0; j < _plateau[0].length; j++) {
-                System.out.print(_plateau[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
+//    private void afficherPlateau(char[][] _plateau) {
+//        for (int i = 0; i < _plateau.length; i++) {
+//            for (int j = 0; j < _plateau[0].length; j++) {
+//                System.out.print(_plateau[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
+//    }
 
 
     @Override
-    public void move(String direction) {
-//        afficherPlateau(plateau);
+    public boolean[] move(String direction) {
         theUndos.clear();
         switch (direction) {
             case "up":
-                moveUp();
-                break;
+                return moveUp();
             case "down" :
-                moveDown();
-                break;
+                return moveDown();
             case "left" :
-                moveLeft();
-                break;
+                return moveLeft();
             case "right" :
-                moveRight();
-                break;
+                return moveRight();
+            default:
+                return null;
         }
     }
 
 
-    private void moveUp() {
+    private boolean[] moveUp() {
         if (plateau[x_soko][y_soko] == soko) {
-            moveIt(-1, -2, 0, 0, sol);
+            return moveIt(-1, -2, 0, 0, sol);
         }
         else if (plateau[x_soko][y_soko] == sokoSurBut) {
-            moveIt(-1, -2, 0, 0, but);
+            return moveIt(-1, -2, 0, 0, but);
         }
+        return null;
     }
 
-    private void moveDown() {
+    private boolean[] moveDown() {
         if (plateau[x_soko][y_soko] == soko) {
-            moveIt(1, 2, 0, 0, sol);
+            return moveIt(1, 2, 0, 0, sol);
         }
         else if (plateau[x_soko][y_soko] == sokoSurBut) {
-            moveIt(1, 2, 0, 0, but);
+            return moveIt(1, 2, 0, 0, but);
         }
+        return null;
     }
 
-    private void moveLeft() {
+    private boolean[] moveLeft() {
         if (plateau[x_soko][y_soko] == soko) {
-            moveIt(0, 0, -1, -2, sol);
+            return moveIt(0, 0, -1, -2, sol);
         }
         else if (plateau[x_soko][y_soko] == sokoSurBut) {
-            moveIt(0, 0, -1, -2, but);
+            return moveIt(0, 0, -1, -2, but);
         }
+        return null;
     }
 
-    private void moveRight() {
+    private boolean[] moveRight() {
         if (plateau[x_soko][y_soko] == soko) {
-            moveIt(0, 0, 1, 2, sol);
+            return moveIt(0, 0, 1, 2, sol);
         }
         else if (plateau[x_soko][y_soko] == sokoSurBut) {
-            moveIt(0, 0, 1, 2, but);
+            return moveIt(0, 0, 1, 2, but);
         }
+        return null;
     }
 
-
-    private void moveIt(int moveX1, int moveX2, int moveY1, int moveY2, char change) {
+    @SuppressWarnings("Duplicates")
+    private boolean[] moveIt(int moveX1, int moveX2, int moveY1, int moveY2, char change) {
+        boolean coupPoussee[] = {true, false};
         switch (plateau[x_soko + moveX1][y_soko + moveY1]) {
             case sol:
                 plateau[x_soko][y_soko] = change;
@@ -182,6 +182,7 @@ public class ModeleConcret implements Modele {
                     plateau[x_soko][y_soko] = soko;
                     plateau[x_soko + moveX1][y_soko + moveY1] = caisse;
                     ajoutMove(moveX1, moveX2, moveY1, moveY2);
+                    coupPoussee[1] = true;
                 }
                 else if (plateau[x_soko + moveX2][y_soko + moveY2] == but) {
                     plateau[x_soko][y_soko] = change;
@@ -190,6 +191,9 @@ public class ModeleConcret implements Modele {
                     plateau[x_soko][y_soko] = soko;
                     plateau[x_soko + moveX1][y_soko + moveY1] = caisseSurBut;
                     ajoutMove(moveX1, moveX2, moveY1, moveY2);
+                    coupPoussee[1] = true;
+                } else {
+                    coupPoussee[0] = false;
                 }
                 break;
             case caisseSurBut:
@@ -200,6 +204,7 @@ public class ModeleConcret implements Modele {
                     plateau[x_soko][y_soko] = sokoSurBut;
                     plateau[x_soko + moveX1][y_soko + moveY1] = caisse;
                     ajoutMove(moveX1, moveX2, moveY1, moveY2);
+                    coupPoussee[1] = true;
                 }
                 else if (plateau[x_soko + moveX2][y_soko + moveY2] == but) {
                     plateau[x_soko][y_soko] = change;
@@ -208,9 +213,15 @@ public class ModeleConcret implements Modele {
                     plateau[x_soko][y_soko] = sokoSurBut;
                     plateau[x_soko + moveX1][y_soko + moveY1] = caisseSurBut;
                     ajoutMove(moveX1, moveX2, moveY1, moveY2);
+                    coupPoussee[1] = true;
+                } else {
+                    coupPoussee[0] = false;
                 }
                 break;
+            default:
+                coupPoussee[0] = false;
         }
+        return coupPoussee;
     }
 
 

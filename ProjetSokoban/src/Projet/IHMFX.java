@@ -13,15 +13,12 @@ public class IHMFX extends Application implements Observateur {
     private IHMFXVue vue;
 
 
-    public void actualise(){
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
+    public void actualise() {
+        Platform.runLater(() -> {
 //                vue.gridPane.getChildren().clear();
                 vueNbPoussee.dessine();
                 vueNbCoup.dessine();
                 vue.dessine();
-            }
         });
     }
 
@@ -38,10 +35,10 @@ public class IHMFX extends Application implements Observateur {
         vueNbPoussee = new IHMFXVueNbPoussee(controleur);
         vueNbPoussee.label.setAlignment(Pos.CENTER);
 
-        /* montage de la scene */
-        MonteurScene monteurSceneMenu = new MonteurScene();
-        Scene sceneMenu = monteurSceneMenu.
-                retourneScene();
+//        /* montage de la scene */
+//        MonteurScene monteurSceneMenu = new MonteurScene();
+//        Scene sceneMenu = monteurSceneMenu.
+//                retourneScene();
 
         /* montage de la scene */
         MonteurScene monteurScene = new MonteurScene();
@@ -63,7 +60,7 @@ public class IHMFX extends Application implements Observateur {
     }
 
     public void lance() {
-        launch(new String[]{});
+        launch();
     }
 
 }

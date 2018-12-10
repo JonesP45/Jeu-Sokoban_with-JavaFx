@@ -9,6 +9,7 @@ import javafx.scene.input.KeyEvent;
 public class IHMFXControleur {
 
     private Controleur controleur;
+    @SuppressWarnings("FieldCanBeLocal")
     private IHMFXVue vue;
 
     //menu
