@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 public class IHMFXVue {
 
     private CommandeTab2DChar commandeGetPlateau;
-    GridPane gridPane = new GridPane();
+    public GridPane gridPane = new GridPane();
     private int taille = 40;
 
     private Image mur = new Image(new FileInputStream("WallRound_Brown.png"), taille, taille, false, false);
@@ -47,12 +47,12 @@ public class IHMFXVue {
         }
     }
 
-    public void initialiseFond() {
+    private void initialiseFond() {
         for (int i = 0; i < commandeGetPlateau.exec().length; i++) {
             for (int j = 0; j < commandeGetPlateau.exec()[0].length; j++) {
                 char caze = commandeGetPlateau.exec()[i][j];
-                if (caze != 'm')
-                    gridPane.add(new ImageView(sol), i, j);
+                if (caze != 'm'/* && caze != 'x'*/)
+                    gridPane.add(new ImageView(sol), j, i);
             }
         }
     }

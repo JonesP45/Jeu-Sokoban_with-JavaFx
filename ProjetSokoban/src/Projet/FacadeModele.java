@@ -45,7 +45,7 @@ public class FacadeModele {
         return modeleNbPoussee.getPlateau();
     }
 
-    public Object getMoves() {
+    public ArrayList<String> getMoves() {
         return modeleNbPoussee.getMoves();
     }
 

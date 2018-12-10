@@ -8,5 +8,5 @@ public interface Modele {
     public void redo();
     public void reset();
     public char[][] getPlateau();
-    public Object getMoves();
+    public ArrayList<String> getMoves();
 }

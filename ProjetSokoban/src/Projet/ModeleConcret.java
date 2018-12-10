@@ -19,7 +19,7 @@ public class ModeleConcret implements Modele {
 //    boolean coupValide = false;
 //    boolean pousseeValide = false;
 
-    public ArrayList<String> theMoves = new ArrayList<>();
+    private ArrayList<String> theMoves = new ArrayList<>();
     private ArrayList<String> theUndos = new ArrayList<>();
 
     private void ajoutMove(int moveX, int moveXcaisse, int moveY, int moveYcaisse) {
@@ -359,8 +359,9 @@ public class ModeleConcret implements Modele {
         return plateau;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public Object getMoves() {
+    public ArrayList<String> getMoves() {
         return (ArrayList<String>) theMoves.clone();
     }
 

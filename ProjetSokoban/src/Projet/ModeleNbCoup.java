@@ -11,7 +11,7 @@ public class ModeleNbCoup implements Modele {
         this.modele = modele;
     }
 
-    public int getNbCoup(){
+    public int getNbCoup() {
         return nbCoup;
     }
 
@@ -47,7 +47,7 @@ public class ModeleNbCoup implements Modele {
     }
 
     @Override
-    public Object getMoves() {
+    public ArrayList<String> getMoves() {
         return modele.getMoves();
     }
 

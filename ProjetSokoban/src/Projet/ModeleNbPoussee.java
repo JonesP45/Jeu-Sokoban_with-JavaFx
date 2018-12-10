@@ -43,7 +43,7 @@ public class ModeleNbPoussee implements Modele {
     }
 
     @Override
-    public Object getMoves() {
+    public ArrayList<String> getMoves() {
         return modele.getMoves();
     }
 
