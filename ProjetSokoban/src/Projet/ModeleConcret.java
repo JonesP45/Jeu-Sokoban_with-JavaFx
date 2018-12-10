@@ -350,8 +350,8 @@ public class ModeleConcret implements Modele {
     @Override
     public void reset() {
         plateau = initialisePlateau();
-//        theMoves.clear();
-//        theUndos.clear();
+        theMoves.clear();
+        theUndos.clear();
     }
 
     @Override
@@ -360,8 +360,8 @@ public class ModeleConcret implements Modele {
     }
 
     @Override
-    public ArrayList<String> getMoves() {
-        return theMoves;
+    public Object getMoves() {
+        return (ArrayList<String>) theMoves.clone();
     }
 
 }

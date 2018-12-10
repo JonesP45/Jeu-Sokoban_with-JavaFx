@@ -47,7 +47,7 @@ public class ModeleNbCoup implements Modele {
     }
 
     @Override
-    public ArrayList<String> getMoves() {
+    public Object getMoves() {
         return modele.getMoves();
     }
 
