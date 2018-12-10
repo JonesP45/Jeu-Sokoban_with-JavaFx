@@ -1,5 +1,11 @@
 package Projet;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.util.Duration;
+
 import java.util.ArrayList;
 
 public class Controleur implements Sujet {
@@ -42,6 +48,34 @@ public class Controleur implements Sujet {
 
     public void redo() {
         facadeModele.redo();
+        notifie();
+    }
+
+    private static int i = 0;
+    public void replay() {
+        ArrayList<String> theMoves = facadeModele.getMoves();
+        reset();
+        Timeline timer = new Timeline(
+                new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+                    public void handle(ActionEvent event) {
+                        if (theMoves.get(i).equals("right") || theMoves.get(i).equals("rightCaisse")) {
+                            move("right");
+                        } else if (theMoves.get(i).equals("up") || theMoves.get(i).equals("upCaisse")) {
+                            move("up");
+                        } else if (theMoves.get(i).equals("down") || theMoves.get(i).equals("downCaisse")) {
+                            move("down");
+                        } else if (theMoves.get(i).equals("left") || theMoves.get(i).equals("leftCaisse")) {
+                            move("left");
+                        }
+                        i++;
+                    }
+                })
+        );
+        timer.setCycleCount(theMoves.size());
+        if (theMoves.size() > 0) {
+            timer.play();
+//            timer.stop();
+        }
         notifie();
     }
 

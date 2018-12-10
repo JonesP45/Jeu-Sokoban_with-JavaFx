@@ -1,5 +1,7 @@
 package Projet;
 
+import java.util.ArrayList;
+
 public class ModeleNbCoup implements Modele {
 
     private Modele modele;
@@ -40,8 +42,18 @@ public class ModeleNbCoup implements Modele {
     }
 
     @Override
+    public void replay() {
+        modele.replay();
+    }
+
+    @Override
     public char[][] getPlateau() {
         return modele.getPlateau();
+    }
+
+    @Override
+    public ArrayList<String> getMoves() {
+        return modele.getMoves();
     }
 
 }

@@ -1,5 +1,12 @@
 package Projet;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.util.Duration;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -20,7 +27,7 @@ public class ModeleConcret implements Modele {
 //    boolean coupValide = false;
 //    boolean pousseeValide = false;
 
-    private ArrayList<String> theMoves = new ArrayList<>();
+    public ArrayList<String> theMoves = new ArrayList<>();
     private ArrayList<String> theUndos = new ArrayList<>();
 
     private void ajoutMove(int moveX, int moveXcaisse, int moveY, int moveYcaisse) {
@@ -347,6 +354,38 @@ public class ModeleConcret implements Modele {
         }
     }
 
+
+    private static int i = 0;
+    @Override
+    public void replay() {
+        Timeline timer = new Timeline(
+                new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+                    public void handle(ActionEvent event) {
+                        if (theMoves.get(i).equals("right") || theMoves.get(i).equals("rightCaisse")) {
+                            moveRight();
+                        } else if (theMoves.get(i).equals("up") || theMoves.get(i).equals("upCaisse")) {
+                            moveUp();
+                        } else if (theMoves.get(i).equals("down") || theMoves.get(i).equals("downCaisse")) {
+                            moveDown();
+                        } else if (theMoves.get(i).equals("left") || theMoves.get(i).equals("leftCaisse")) {
+                            moveLeft();
+                        }
+                        i++;
+                    }
+                })
+        );
+        timer.setCycleCount(theMoves.size());
+        if (theMoves.size() > 0) {
+            timer.play();
+            timer.stop();
+        }
+    }
+
+    @Override
+    public void init() {
+
+    }
+
     @Override
     public void reset() {
         plateau = initialisePlateau();
@@ -357,6 +396,11 @@ public class ModeleConcret implements Modele {
     @Override
     public char[][] getPlateau() {
         return plateau;
+    }
+
+    @Override
+    public ArrayList<String> getMoves() {
+        return theMoves;
     }
 
 }

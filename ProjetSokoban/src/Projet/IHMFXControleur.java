@@ -46,6 +46,11 @@ public class IHMFXControleur {
                 controleur.undo();
             } else if (input.equals(KeyCode.R)) {
                 controleur.redo();
+            } else if (input.equals(KeyCode.Z)) {
+                controleur.reset();
+            } else if (input.equals(KeyCode.P)) {
+                System.out.println("replay");
+                controleur.replay();
             }
         }
     }

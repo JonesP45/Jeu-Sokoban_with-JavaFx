@@ -40,7 +40,7 @@ public class IHMFX extends Application implements Observateur {
 
         Scene scene = monteurScene.
                 setCentre(vue.gridPane).
-//                ajoutBas(IHMFXControleur.reset).
+                ajoutBas(IHMFXControleur.reset).
                 ajoutBas(vueNbCoup.label).
                 setLargeur(800).
                 setHauteur(700).
@@ -49,7 +49,9 @@ public class IHMFX extends Application implements Observateur {
         primaryStage.setScene(scene);
         primaryStage.setTitle("Chameaux");
         primaryStage.show();
+
         vue.gridPane.requestFocus();
+        IHMFXControleur.reset.setFocusTraversable(false);
     }
 
     public void lance() {
