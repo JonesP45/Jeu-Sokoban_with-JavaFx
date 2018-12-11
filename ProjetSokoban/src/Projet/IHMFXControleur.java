@@ -11,13 +11,13 @@ import java.util.ArrayList;
 
 public class IHMFXControleur {
 
-    class ArraylistToArray {
+    private class ArraylistToArray {
 
-        public int ligne;
-        public int colonne;
-        public char valeur;
+        private int ligne;
+        private int colonne;
+        private char valeur;
 
-        public ArraylistToArray(int l, int c, char v) {
+        private ArraylistToArray(int l, int c, char v) {
             ligne = l;
             colonne = c;
             valeur = v;
@@ -29,8 +29,6 @@ public class IHMFXControleur {
     private Controleur controleur;
     @SuppressWarnings("FieldCanBeLocal")
     private IHMFXVue vue;
-    @SuppressWarnings("FieldCanBeLocal")
-    private IHMFXVueMenu vueMenu;
 
     //menu
     public Button load;
@@ -48,14 +46,13 @@ public class IHMFXControleur {
     public Button replay;
     public Button reset;
 
-    public int level = 0;
-    public ArrayList<char[][]> theFiles = new ArrayList<>();
+    private int level = 0;
+    private ArrayList<char[][]> theFiles = new ArrayList<>();
 
     IHMFXControleur(Controleur controleur, IHMFX ihmfx) {
         this.ihmfx = ihmfx;
         this.controleur = controleur;
         this.vue = ihmfx.vue;
-        this.vueMenu = ihmfx.vueMenu;
 
         //menu
         load = new Button("Load");
@@ -71,12 +68,19 @@ public class IHMFXControleur {
         this.vue.gridPane.setOnKeyPressed(new ActionKeyboard());
 
         up = new Button("Up");
+        up.setOnAction(null);
         down = new Button("Down");
+        down.setOnAction(null);
         left = new Button("Left");
+        left.setOnAction(null);
         right = new Button("Right");
+        right.setOnAction(null);
         undo = new Button("Undo");
+        undo.setOnAction(null);
         redo = new Button("Redo");
+        redo.setOnAction(null);
         replay = new Button("Replay");
+        replay.setOnAction(null);
         reset = new Button("Reset");
         reset.setOnAction(new ActionReset());
     }
@@ -177,8 +181,7 @@ public class IHMFXControleur {
     class ActionPlay implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            System.out.println(level);
-            controleur.play(theFiles.get(level));
+            controleur.play(cloneChar2DTab(theFiles.get(level)));
             ihmfx.menuStage.close();
             ihmfx.jeuStage.show();
             vue.gridPane.requestFocus();
@@ -212,9 +215,10 @@ public class IHMFXControleur {
             } else if (input.equals(KeyCode.R)) {
                 controleur.redo();
             } else if (input.equals(KeyCode.Z)) {
-                System.out.println("reset");
+                controleur.play(cloneChar2DTab(theFiles.get(level)));
                 controleur.reset();
             } else if (input.equals(KeyCode.P)) {
+                controleur.play(cloneChar2DTab(theFiles.get(level)));
                 controleur.replay();
             }
         }
@@ -223,11 +227,20 @@ public class IHMFXControleur {
     class ActionReset implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            System.out.println("reset");
-            controleur.play(theFiles.get(level));
+            controleur.play(cloneChar2DTab(theFiles.get(level)));
             controleur.reset();
         }
 
+    }
+
+    private char[][] cloneChar2DTab(char[][] tab) {
+        char[][] res = new char[tab.length][tab[0].length];
+        for (int i = 0; i < tab.length; i++) {
+            for (int j = 0; j < tab[0].length; j++) {
+                res[i][j] = tab[i][j];
+            }
+        }
+        return res;
     }
 
 }

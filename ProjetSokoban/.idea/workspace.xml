@@ -15,8 +15,8 @@
       <file leaf-file-name="IHMFX.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Projet/IHMFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="69" column="33" lean-forward="true" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+            <state relative-caret-position="0">
+              <caret line="69" column="33" lean-forward="false" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -27,7 +27,7 @@
       <file leaf-file-name="IHMFXVue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXVue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
+            <state relative-caret-position="237">
               <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding />
             </state>
@@ -48,24 +48,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IHMFXControleur.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IHMFXControleur.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXControleur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="213" column="49" lean-forward="true" selection-start-line="213" selection-start-column="49" selection-end-line="213" selection-end-column="49" />
+            <state relative-caret-position="322">
+              <caret line="220" column="69" lean-forward="false" selection-start-line="220" selection-start-column="69" selection-end-line="220" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="class#ArraylistToArray#0;class#IHMFXControleur#0" expanded="false" />
+                <element signature="class#ActionLoad#0;class#IHMFXControleur#0" expanded="false" />
                 <element signature="method#load#0;class#IHMFXControleur#0" expanded="false" />
+                <element signature="class#ActionPreviousLevel#0;class#IHMFXControleur#0" expanded="false" />
+                <element signature="class#ActionNextLevel#0;class#IHMFXControleur#0" expanded="false" />
+                <element signature="class#ActionPlay#0;class#IHMFXControleur#0" expanded="false" />
+                <element signature="class#ActionReset#0;class#IHMFXControleur#0" expanded="false" />
+                <element signature="method#cloneChar2DTab#0;class#IHMFXControleur#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controleur.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Controleur.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Projet/Controleur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="39" column="16" lean-forward="true" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
+            <state relative-caret-position="-477">
+              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,8 +83,8 @@
       <file leaf-file-name="FacadeModele.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Projet/FacadeModele.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            <state relative-caret-position="170">
+              <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#344#345#0" expanded="true" />
@@ -92,7 +99,7 @@
         <entry file="file://$PROJECT_DIR$/src/Projet/ModeleNbPoussee.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+              <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
               <folding>
                 <element signature="e#434#435#0" expanded="true" />
               </folding>
@@ -103,7 +110,7 @@
       <file leaf-file-name="ModeleNbCoup.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Projet/ModeleNbCoup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="255">
               <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
               <folding>
                 <element signature="e#380#381#0" expanded="true" />
@@ -116,12 +123,12 @@
       <file leaf-file-name="ModeleConcret.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Projet/ModeleConcret.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="19" column="59" lean-forward="true" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+            <state relative-caret-position="305">
+              <caret line="383" column="5" lean-forward="true" selection-start-line="383" selection-start-column="5" selection-end-line="383" selection-end-column="5" />
               <folding>
                 <element signature="method#ajoutMove#0;class#ModeleConcret#0" expanded="false" />
-                <element signature="e#1514#1587#0" expanded="false" />
-                <element signature="e#1514#1587#0" expanded="false" />
+                <element signature="e#1515#1588#0" expanded="false" />
+                <element signature="method#charger#0;class#ModeleConcret#0" expanded="false" />
                 <element signature="method#move#0;class#ModeleConcret#0" expanded="false" />
                 <element signature="method#moveUp#0;class#ModeleConcret#0" expanded="false" />
                 <element signature="method#moveDown#0;class#ModeleConcret#0" expanded="false" />
@@ -130,7 +137,6 @@
                 <element signature="method#moveIt#0;class#ModeleConcret#0" expanded="false" />
                 <element signature="method#undo#0;class#ModeleConcret#0" expanded="false" />
                 <element signature="method#redo#0;class#ModeleConcret#0" expanded="false" />
-                <element signature="e#13422#13464#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -171,10 +177,10 @@
         <option value="$PROJECT_DIR$/src/Projet/ModeleNbCoup.java" />
         <option value="$PROJECT_DIR$/src/Projet/ModeleNbPoussee.java" />
         <option value="$PROJECT_DIR$/src/Projet/IHMFX.java" />
-        <option value="$PROJECT_DIR$/src/Projet/ModeleConcret.java" />
-        <option value="$PROJECT_DIR$/src/Projet/Controleur.java" />
         <option value="$PROJECT_DIR$/src/Projet/FacadeModele.java" />
+        <option value="$PROJECT_DIR$/src/Projet/ModeleConcret.java" />
         <option value="$PROJECT_DIR$/src/Projet/IHMFXControleur.java" />
+        <option value="$PROJECT_DIR$/src/Projet/Controleur.java" />
       </list>
     </option>
   </component>
@@ -347,11 +353,12 @@
       <workItem from="1544470158982" duration="5234000" />
       <workItem from="1544512237656" duration="13473000" />
       <workItem from="1544530152116" duration="10398000" />
+      <workItem from="1544550072267" duration="5975000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99439000" />
+    <option name="totallyTimeSpent" value="105414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -365,7 +372,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986626" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32986626" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -428,45 +435,20 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Projet/ModeleNbCoup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-          <folding>
-            <element signature="e#380#381#0" expanded="true" />
-            <element signature="e#419#420#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Projet/ModeleConcret.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-          <folding>
-            <element signature="method#ajoutMove#0;class#ModeleConcret#0" expanded="false" />
-            <element signature="e#1514#1587#0" expanded="false" />
-            <element signature="e#1514#1587#0" expanded="false" />
-            <element signature="method#move#0;class#ModeleConcret#0" expanded="false" />
-            <element signature="method#moveUp#0;class#ModeleConcret#0" expanded="false" />
-            <element signature="method#moveDown#0;class#ModeleConcret#0" expanded="false" />
-            <element signature="method#moveLeft#0;class#ModeleConcret#0" expanded="false" />
-            <element signature="method#moveRight#0;class#ModeleConcret#0" expanded="false" />
-            <element signature="method#moveIt#0;class#ModeleConcret#0" expanded="false" />
-            <element signature="method#undo#0;class#ModeleConcret#0" expanded="false" />
-            <element signature="method#redo#0;class#ModeleConcret#0" expanded="false" />
-            <element signature="e#13422#13464#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXControleur.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="class#ArraylistToArray#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionLoad#0;class#IHMFXControleur#0" expanded="false" />
             <element signature="method#load#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionPreviousLevel#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionNextLevel#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionPlay#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionReset#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="method#cloneChar2DTab#0;class#IHMFXControleur#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -487,7 +469,14 @@
           <caret line="42" column="35" lean-forward="false" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="class#ArraylistToArray#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionLoad#0;class#IHMFXControleur#0" expanded="false" />
             <element signature="method#load#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionPreviousLevel#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionNextLevel#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionPlay#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionReset#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="method#cloneChar2DTab#0;class#IHMFXControleur#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -540,8 +529,8 @@
           <caret line="199" column="23" lean-forward="true" selection-start-line="199" selection-start-column="23" selection-end-line="199" selection-end-column="23" />
           <folding>
             <element signature="method#ajoutMove#0;class#ModeleConcret#0" expanded="false" />
-            <element signature="e#1514#1587#0" expanded="false" />
-            <element signature="e#1514#1587#0" expanded="false" />
+            <element signature="e#1515#1588#0" expanded="false" />
+            <element signature="method#charger#0;class#ModeleConcret#0" expanded="false" />
             <element signature="method#move#0;class#ModeleConcret#0" expanded="false" />
             <element signature="method#moveUp#0;class#ModeleConcret#0" expanded="false" />
             <element signature="method#moveDown#0;class#ModeleConcret#0" expanded="false" />
@@ -550,7 +539,6 @@
             <element signature="method#moveIt#0;class#ModeleConcret#0" expanded="false" />
             <element signature="method#undo#0;class#ModeleConcret#0" expanded="false" />
             <element signature="method#redo#0;class#ModeleConcret#0" expanded="false" />
-            <element signature="e#13422#13464#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -578,7 +566,14 @@
           <caret line="35" column="44" lean-forward="true" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="class#ArraylistToArray#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionLoad#0;class#IHMFXControleur#0" expanded="false" />
             <element signature="method#load#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionPreviousLevel#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionNextLevel#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionPlay#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionReset#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="method#cloneChar2DTab#0;class#IHMFXControleur#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -589,8 +584,8 @@
           <caret line="90" column="57" lean-forward="true" selection-start-line="90" selection-start-column="57" selection-end-line="90" selection-end-column="57" />
           <folding>
             <element signature="method#ajoutMove#0;class#ModeleConcret#0" expanded="false" />
-            <element signature="e#1514#1587#0" expanded="false" />
-            <element signature="e#1514#1587#0" expanded="false" />
+            <element signature="e#1515#1588#0" expanded="false" />
+            <element signature="method#charger#0;class#ModeleConcret#0" expanded="false" />
             <element signature="method#move#0;class#ModeleConcret#0" expanded="false" />
             <element signature="method#moveUp#0;class#ModeleConcret#0" expanded="false" />
             <element signature="method#moveDown#0;class#ModeleConcret#0" expanded="false" />
@@ -599,7 +594,6 @@
             <element signature="method#moveIt#0;class#ModeleConcret#0" expanded="false" />
             <element signature="method#undo#0;class#ModeleConcret#0" expanded="false" />
             <element signature="method#redo#0;class#ModeleConcret#0" expanded="false" />
-            <element signature="e#13422#13464#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -653,7 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -950,7 +943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -964,7 +956,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Projet/ModeleNbCoup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="255">
           <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
           <folding>
             <element signature="e#380#381#0" expanded="true" />
@@ -976,7 +968,7 @@
     <entry file="file://$PROJECT_DIR$/src/Projet/ModeleNbPoussee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
           <folding>
             <element signature="e#434#435#0" expanded="true" />
           </folding>
@@ -985,8 +977,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Projet/IHMFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="69" column="33" lean-forward="true" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+        <state relative-caret-position="0">
+          <caret line="69" column="33" lean-forward="false" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -995,22 +987,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Projet/FacadeModele.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        <state relative-caret-position="170">
+          <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#344#345#0" expanded="true" />
             <element signature="e#392#393#0" expanded="true" />
             <element signature="e#1176#1256#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXVue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1026,14 +1010,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="438" column="13" lean-forward="false" selection-start-line="438" selection-start-column="13" selection-end-line="438" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXVue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXControleur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="220" column="69" lean-forward="false" selection-start-line="220" selection-start-column="69" selection-end-line="220" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#ArraylistToArray#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionLoad#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="method#load#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionPreviousLevel#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionNextLevel#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionPlay#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionReset#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="method#cloneChar2DTab#0;class#IHMFXControleur#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Projet/ModeleConcret.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" column="59" lean-forward="true" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+        <state relative-caret-position="305">
+          <caret line="383" column="5" lean-forward="true" selection-start-line="383" selection-start-column="5" selection-end-line="383" selection-end-column="5" />
           <folding>
             <element signature="method#ajoutMove#0;class#ModeleConcret#0" expanded="false" />
-            <element signature="e#1514#1587#0" expanded="false" />
-            <element signature="e#1514#1587#0" expanded="false" />
+            <element signature="e#1515#1588#0" expanded="false" />
+            <element signature="method#charger#0;class#ModeleConcret#0" expanded="false" />
             <element signature="method#move#0;class#ModeleConcret#0" expanded="false" />
             <element signature="method#moveUp#0;class#ModeleConcret#0" expanded="false" />
             <element signature="method#moveDown#0;class#ModeleConcret#0" expanded="false" />
@@ -1042,28 +1060,24 @@
             <element signature="method#moveIt#0;class#ModeleConcret#0" expanded="false" />
             <element signature="method#undo#0;class#ModeleConcret#0" expanded="false" />
             <element signature="method#redo#0;class#ModeleConcret#0" expanded="false" />
-            <element signature="e#13422#13464#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/javafx.graphics/com/sun/javafx/tk/quantum/QuantumToolkit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="490" column="0" lean-forward="false" selection-start-line="490" selection-start-column="0" selection-end-line="490" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Projet/Controleur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="39" column="16" lean-forward="true" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
+        <state relative-caret-position="-477">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXControleur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="213" column="49" lean-forward="true" selection-start-line="213" selection-start-column="49" selection-end-line="213" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#load#0;class#IHMFXControleur#0" expanded="false" />
           </folding>
         </state>
       </provider>
