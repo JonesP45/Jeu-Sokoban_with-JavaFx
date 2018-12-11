@@ -69,62 +69,33 @@ public class Controleur implements Sujet {
             System.out.println(theMoves.get(j));
         }
         System.out.println();
-        timer.getKeyFrames().removeAll();
-        timer.getKeyFrames().add(
+        timer = new Timeline(
                 new KeyFrame(Duration.seconds(1),
-                (ActionEvent event) -> {
-                    switch (theMoves.get(i)) {
-                        case "right":
-                            move("right"); break;
-                        case "rightCaisse":
-                            move("right"); break;
-                        case "up":
-                            move("up"); break;
-                        case "upCaisse":
-                            move("up"); break;
-                        case "down":
-                            move("down"); break;
-                        case "downCaisse":
-                            move("down"); break;
-                        case "left":
-                            move("left"); break;
-                        case "leftCaisse":
-                            move("left"); break;
-                    }
-                    i++;
-                })
+                        (ActionEvent event) -> {
+                            switch (theMoves.get(i)) {
+                                case "right":
+                                    move("right"); break;
+                                case "rightCaisse":
+                                    move("right"); break;
+                                case "up":
+                                    move("up"); break;
+                                case "upCaisse":
+                                    move("up"); break;
+                                case "down":
+                                    move("down"); break;
+                                case "downCaisse":
+                                    move("down"); break;
+                                case "left":
+                                    move("left"); break;
+                                case "leftCaisse":
+                                    move("left"); break;
+                            }
+                            i++;
+                        })
         );
-//        Timeline timer = new Timeline(
-//                new KeyFrame(Duration.seconds(1),
-//                        (ActionEvent event) -> {
-//                            switch (theMoves.get(i)) {
-//                                case "right":
-//                                    move("right"); break;
-//                                case "rightCaisse":
-//                                    move("right"); break;
-//                                case "up":
-//                                    move("up"); break;
-//                                case "upCaisse":
-//                                    move("up"); break;
-//                                case "down":
-//                                    move("down"); break;
-//                                case "downCaisse":
-//                                    move("down"); break;
-//                                case "left":
-//                                    move("left"); break;
-//                                case "leftCaisse":
-//                                    move("left"); break;
-//                            }
-//                            i++;
-//                        })
-//        );
         timer.setCycleCount(theMoves.size());
         if (theMoves.size() > 0) {
             timer.play();
-//            while (timer.getCycleCount() <= theMoves.size()) {
-//                System.out.println(timer.getCycleCount());
-//            }
-//            timer.stop();
         }
         i = 0;
         notifie();
