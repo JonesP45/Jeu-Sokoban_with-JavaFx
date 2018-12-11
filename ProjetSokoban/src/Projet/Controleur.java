@@ -9,17 +9,18 @@ import java.util.ArrayList;
 
 public class Controleur implements Sujet {
 
-    private static Controleur singleton;
+    private static Controleur singletonControleur;
 
     public static Controleur getControleur() {
-        if (singleton == null)
-            singleton = new Controleur(new FacadeModele());
-        return singleton;
+        if (singletonControleur == null)
+            singletonControleur = new Controleur(new FacadeModele());
+        return singletonControleur;
     }
 
 
     private FacadeModele facadeModele;
     private ArrayList<Observateur> observateurs = new ArrayList<>();
+    private char[][] plateau;
 
     private Controleur(FacadeModele facadeModele) {
         this.facadeModele = facadeModele;
@@ -35,7 +36,9 @@ public class Controleur implements Sujet {
             observateur.actualise();
     }
 
-    public void play() {
+    public void play(char[][] plateau) {
+        this.plateau = plateau;
+        facadeModele.play(plateau);
         notifie();
     }
 
@@ -57,18 +60,28 @@ public class Controleur implements Sujet {
     private static int i = 0;
     public void replay() {
         ArrayList<String> theMoves = facadeModele.getMoves();
+        play(plateau);
         reset();
         Timeline timer = new Timeline(
                 new KeyFrame(Duration.seconds(1),
                         (ActionEvent event) -> {
-                            if (theMoves.get(i).equals("right") || theMoves.get(i).equals("rightCaisse")) {
-                                move("right");
-                            } else if (theMoves.get(i).equals("up") || theMoves.get(i).equals("upCaisse")) {
-                                move("up");
-                            } else if (theMoves.get(i).equals("down") || theMoves.get(i).equals("downCaisse")) {
-                                move("down");
-                            } else if (theMoves.get(i).equals("left") || theMoves.get(i).equals("leftCaisse")) {
-                                move("left");
+                            switch (theMoves.get(i)) {
+                                case "right":
+                                    move("right"); break;
+                                case "rightCaisse":
+                                    move("right"); break;
+                                case "up":
+                                    move("up"); break;
+                                case "upCaisse":
+                                    move("up"); break;
+                                case "down":
+                                    move("down"); break;
+                                case "downCaisse":
+                                    move("down"); break;
+                                case "left":
+                                    move("left"); break;
+                                case "leftCaisse":
+                                    move("left"); break;
                             }
                             i++;
                         })
@@ -76,7 +89,6 @@ public class Controleur implements Sujet {
         timer.setCycleCount(theMoves.size());
         if (theMoves.size() > 0) {
             timer.play();
-//            timer.stop();
         }
         i = 0;
         notifie();

@@ -8,10 +8,19 @@ import javafx.stage.Stage;
 
 public class IHMFX extends Application implements Observateur {
 
+    private static IHMFX singletonIHMFX;
+
+    public static IHMFX getIHMFX() {
+        if (singletonIHMFX == null)
+            singletonIHMFX = new IHMFX();
+        return singletonIHMFX;
+    }
+
+
     private IHMFXVueNbPoussee vueNbPoussee;
     private IHMFXVueNbCoup vueNbCoup;
-    private IHMFXVue vue;
-    private IHMFXVueMenu vueMenu;
+    public IHMFXVue vue;
+    public IHMFXVueMenu vueMenu;
 
 
     public void actualise() {
@@ -22,8 +31,15 @@ public class IHMFX extends Application implements Observateur {
         });
     }
 
+
+    public Stage menuStage;
+    public Stage jeuStage;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
+        menuStage = primaryStage;
+        jeuStage = new Stage();
+
         Controleur controleur = Controleur.getControleur();
         controleur.abonne(this);
 
@@ -36,7 +52,7 @@ public class IHMFX extends Application implements Observateur {
         vueNbPoussee = new IHMFXVueNbPoussee(controleur);
         vueNbPoussee.label.setAlignment(Pos.CENTER);
 
-        IHMFXControleur IHMFXControleur = new IHMFXControleur(controleur,vue);
+        IHMFXControleur IHMFXControleur = new IHMFXControleur(controleur, this);
 
         /* montage du menu */
         MonteurScene monteurSceneMenu = new MonteurScene();
@@ -44,14 +60,12 @@ public class IHMFX extends Application implements Observateur {
                 setCentre(vueMenu.gridPane).
                 ajoutBas(IHMFXControleur.load).
                 ajoutBas(IHMFXControleur.previousLevel).
-                ajoutBas(IHMFXControleur.nextlevel).
+                ajoutBas(IHMFXControleur.nextLevel).
                 ajoutBas(IHMFXControleur.play).
                 setLargeur(500).
                 setHauteur(500).
                 retourneScene();
 
-
-        Stage secondaryStage = new Stage();
 
         /* montage de la scene */
         MonteurScene monteurScene = new MonteurScene();
@@ -65,24 +79,12 @@ public class IHMFX extends Application implements Observateur {
                 retourneScene();
 
 
-        secondaryStage.setScene(scene);
-        secondaryStage.setTitle("Sokoban\nJeu");
-        secondaryStage.show();
+        jeuStage.setScene(scene);
+        jeuStage.setTitle("Sokoban\nJeu");
 
-        primaryStage.setScene(sceneMenu);
-        primaryStage.setTitle("Sokoban\nMenu");
-        primaryStage.show();
-
-
-        vue.gridPane.requestFocus();
-        IHMFXControleur.up.setFocusTraversable(false);
-        IHMFXControleur.down.setFocusTraversable(false);
-        IHMFXControleur.left.setFocusTraversable(false);
-        IHMFXControleur.right.setFocusTraversable(false);
-        IHMFXControleur.undo.setFocusTraversable(false);
-        IHMFXControleur.redo.setFocusTraversable(false);
-        IHMFXControleur.replay.setFocusTraversable(false);
-        IHMFXControleur.reset.setFocusTraversable(false);
+        menuStage.setScene(sceneMenu);
+        menuStage.setTitle("Sokoban\nMenu");
+        menuStage.show();
     }
 
     public void lance() {

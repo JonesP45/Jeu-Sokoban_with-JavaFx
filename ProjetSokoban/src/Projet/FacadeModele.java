@@ -11,6 +11,10 @@ public class FacadeModele {
     private ModeleNbPoussee modeleNbPoussee = new ModeleNbPoussee(modeleNbCoup);
 
 
+    public void play(char[][] plateau) {
+        modeleNbPoussee.charger(plateau);
+    }
+
     public void move(String direction) {
         modeleNbPoussee.move(direction);
     }

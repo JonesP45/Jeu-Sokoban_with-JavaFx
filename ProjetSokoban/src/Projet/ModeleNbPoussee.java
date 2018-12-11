@@ -17,6 +17,11 @@ public class ModeleNbPoussee implements Modele {
     }
 
     @Override
+    public void charger(char[][] plateau) {
+        modele.charger(plateau);
+    }
+
+    @Override
     public boolean[] move(String direction) {
         boolean[] coupPoussee = modele.move(direction);
         if (coupPoussee[0] && coupPoussee[1])

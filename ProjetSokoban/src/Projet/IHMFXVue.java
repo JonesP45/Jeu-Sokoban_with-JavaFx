@@ -34,13 +34,13 @@ public class IHMFXVue {
                 char caze = commandeGetPlateau.exec()[i][j];
                 Image tmp = null;
                 switch (caze) {
-                    case 'm': tmp = mur; break;
-                    case 's': tmp = soko; break;
-                    case 'c': tmp = caisse; break;
-                    case 'b': tmp = but; break;
+                    case '#': tmp = mur; break;
+                    case '@': tmp = soko; break;
+                    case '$': tmp = caisse; break;
+                    case '.': tmp = but; break;
                     case ' ': tmp = sol; break;
-                    case '$': tmp = sokoBut; break;
-                    case '€': tmp = caisseBut; break;
+                    case '+': tmp = sokoBut; break;
+                    case '*': tmp = caisseBut; break;
                 }
                 gridPane.add(new ImageView(tmp), j, i);
             }
