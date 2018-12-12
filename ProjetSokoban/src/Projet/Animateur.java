@@ -12,6 +12,8 @@ public class Animateur {
     private Controleur controleur;
     private double interval = 1;
     private Timeline timer;
+    private int valeur = 0;
+    private int nbCycle;
 
     public Animateur(Controleur controleur) {
         this.controleur = controleur;
@@ -21,9 +23,7 @@ public class Animateur {
     private void actualiseTimer() {
         timer = new Timeline(
                 new KeyFrame(Duration.seconds(interval),
-                        (ActionEvent event) -> {
-
-                        }
+                        (ActionEvent event) -> valeur++
                 )
         );
     }
@@ -39,8 +39,8 @@ public class Animateur {
     }
 
 
-    public void demarer(int time) {
-        timer.setCycleCount(time);
+    public void demarer(int _nbCycle) {
+        timer.setCycleCount(_nbCycle);
         timer.play();
     }
 
@@ -50,6 +50,10 @@ public class Animateur {
 
     public void remettreAZero() {
 
+    }
+
+    public void setInterval(double interval) {
+        this.interval = interval;
     }
 
     public Timeline getTimer() {

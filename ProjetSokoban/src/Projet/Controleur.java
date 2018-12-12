@@ -1,5 +1,6 @@
 package Projet;
 
+import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -60,14 +61,7 @@ public class Controleur implements Sujet {
     public void replay() {
         timer.stop();
         ArrayList<String> theMoves = facadeModele.getMoves();
-        for (int j = 0; j < theMoves.size(); j++) {
-            System.out.println(theMoves.get(j));
-        }
-        System.out.println();
         reset();
-        for (int j = 0; j < theMoves.size(); j++) {
-            System.out.println(theMoves.get(j));
-        }
         System.out.println();
         timer = new Timeline(
                 new KeyFrame(Duration.seconds(1),
@@ -99,7 +93,6 @@ public class Controleur implements Sujet {
         }
         i = 0;
         notifie();
-        System.out.println("fin");
     }
 
     public void reset() {
