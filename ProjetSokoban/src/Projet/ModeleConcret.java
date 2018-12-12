@@ -13,9 +13,12 @@ public class ModeleConcret implements Modele {
     private final char sokoSurBut = '+';
     private final char caisseSurBut = '*';
 
-    private char[][] plateau = {{' '}}; // = initialisePlateau();
+    private char[][] plateau = {{' '}};
+    private int[][] coordonneesButs = {};
     private int x_soko;
     private int y_soko;
+
+    private boolean[] etat;
 
     private ArrayList<String> theMoves = new ArrayList<>();
     private ArrayList<String> theUndos = new ArrayList<>();
@@ -51,55 +54,9 @@ public class ModeleConcret implements Modele {
         }
     }
 
-//    private void afficherArrayListString(ArrayList<String> arrayList) {
-//        for (int i = 0; i < arrayList.size(); i++) {
-//            System.out.println(arrayList.get(i));
-//        }
-//        System.out.println();
-//    }
-
-
-//    private char[][] initialisePlateau() {
-//        int hauteur = 7; //ligne
-//        int largeur = 9; //colonne
-//        char[][] _plateau = new char[hauteur][largeur];
-//
-//        for (int j = 0; j < _plateau[0].length; j++) {
-//            _plateau[0][j] = mur;
-//            _plateau[hauteur - 1][j] = mur;
-//        }
-//        for (int i = 0; i < _plateau.length; i++) {
-//            _plateau[i][0] = mur;
-//            _plateau[i][largeur - 1] = mur;
-//        }
-//        for (int i = 1; i < _plateau.length - 1; i++) {
-//            for (int j = 1; j < _plateau[0].length - 1; j++) {
-//                _plateau[i][j] = sol;
-//            }
-//        }
-//
-//        x_soko = 1;
-//        y_soko = 1;
-//        _plateau[x_soko][y_soko] = soko;
-//        _plateau[2][4] = caisse;
-//        _plateau[2][5] = mur;
-//        _plateau[3][4] = but;
-//
-//        return _plateau;
-//    }
-
-//    private void afficherPlateau(char[][] _plateau) {
-//        for (int i = 0; i < _plateau.length; i++) {
-//            for (int j = 0; j < _plateau[0].length; j++) {
-//                System.out.print(_plateau[i][j] + " ");
-//            }
-//            System.out.println();
-//        }
-//    }
-
 
     @Override
-    public void charger(char[][] plateau) {
+    public void charger(char[][] plateau, int[][] coordonneesButs) {
         this.plateau = plateau;
         for (int i = 0; i < plateau.length; i++) {
             for (int j = 0; j < plateau[0].length; j++) {
@@ -108,6 +65,11 @@ public class ModeleConcret implements Modele {
                     y_soko = j;
                 }
             }
+        }
+        this.coordonneesButs = coordonneesButs;
+        etat = new boolean[coordonneesButs[0].length];
+        for (int i = 0; i < coordonneesButs[0].length; i++) {
+            etat[i] = false;
         }
     }
 
@@ -205,6 +167,7 @@ public class ModeleConcret implements Modele {
                     plateau[x_soko + moveX1][y_soko + moveY1] = caisseSurBut;
                     ajoutMove(moveX1, moveX2, moveY1, moveY2);
                     coupPoussee[1] = true;
+                    setEtat(x_soko + moveX1, y_soko + moveY1, true);
                 } else {
                     coupPoussee[0] = false;
                 }
@@ -227,12 +190,16 @@ public class ModeleConcret implements Modele {
                     plateau[x_soko + moveX1][y_soko + moveY1] = caisseSurBut;
                     ajoutMove(moveX1, moveX2, moveY1, moveY2);
                     coupPoussee[1] = true;
+                    setEtat(x_soko + moveX1, y_soko + moveY1, true);
                 } else {
                     coupPoussee[0] = false;
                 }
                 break;
             default:
                 coupPoussee[0] = false;
+        }
+        for (int i = 0; i < etat.length; i++) {
+            System.out.println(i + ", " + etat[i]);
         }
         return coupPoussee;
     }
@@ -279,6 +246,8 @@ public class ModeleConcret implements Modele {
                     theUndos.add("down");
                     plateau[x_soko - 2][y_soko] = var2;
                     plateau[x_soko - 1][y_soko] = var1;
+                    if (var1 == caisseSurBut)/////////////////////////////////////////////////////////PB retroline
+                        setEtat(x_soko - 1, y_soko, false);
                     break;
                 case "downCaisse":
                     if (plateau[x_soko][y_soko] == soko) {
@@ -299,6 +268,8 @@ public class ModeleConcret implements Modele {
                     theUndos.add("up");
                     plateau[x_soko + 2][y_soko] = var2;
                     plateau[x_soko + 1][y_soko] = var1;
+                    if (var1 == caisseSurBut)
+                        setEtat(x_soko + 1, y_soko, false);
                     break;
                 case "rightCaisse":
                     if (plateau[x_soko][y_soko] == soko) {
@@ -319,6 +290,8 @@ public class ModeleConcret implements Modele {
                     theUndos.add("left");
                     plateau[x_soko][y_soko + 2] = var2;
                     plateau[x_soko][y_soko + 1] = var1;
+                    if (var1 == caisseSurBut)
+                        setEtat(x_soko, y_soko + 1, false);
                     break;
                 case "leftCaisse":
                     if (plateau[x_soko][y_soko] == soko) {
@@ -339,6 +312,8 @@ public class ModeleConcret implements Modele {
                     theUndos.add("right");
                     plateau[x_soko][y_soko - 2] = var2;
                     plateau[x_soko][y_soko - 1] = var1;
+                    if (var1 == caisseSurBut)
+                        setEtat(x_soko, y_soko - 1, false);
                     break;
             }
             theMoves.remove(theMoves.size() - 1); //suppression du move undo
@@ -373,7 +348,6 @@ public class ModeleConcret implements Modele {
 
     @Override
     public void reset() {
-//        plateau = initialisePlateau();
         theMoves.clear();
         theUndos.clear();
     }
@@ -387,6 +361,18 @@ public class ModeleConcret implements Modele {
     @Override
     public ArrayList<String> getMoves() {
         return (ArrayList<String>) theMoves.clone();
+    }
+
+    public void setEtat(int x, int y, boolean b) {
+        for (int i = 0; i < coordonneesButs.length; i++) {
+            if (x == coordonneesButs[0][i] && y == coordonneesButs[1][i]) {
+                etat[i] = b;
+            }
+        }
+    }
+
+    public boolean[] getEtat() {
+        return etat;
     }
 
 }

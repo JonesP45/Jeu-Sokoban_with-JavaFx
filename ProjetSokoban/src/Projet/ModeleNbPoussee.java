@@ -17,8 +17,8 @@ public class ModeleNbPoussee implements Modele {
     }
 
     @Override
-    public void charger(char[][] plateau) {
-        modele.charger(plateau);
+    public void charger(char[][] plateau, int[][] coordonneesButs) {
+        modele.charger(plateau, coordonneesButs);
     }
 
     @Override
@@ -53,6 +53,11 @@ public class ModeleNbPoussee implements Modele {
     @Override
     public ArrayList<String> getMoves() {
         return modele.getMoves();
+    }
+
+    @Override
+    public boolean[] getEtat() {
+        return modele.getEtat();
     }
 
 }

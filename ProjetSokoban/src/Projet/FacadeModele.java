@@ -11,8 +11,8 @@ public class FacadeModele {
     private ModeleNbPoussee modeleNbPoussee = new ModeleNbPoussee(modeleNbCoup);
 
 
-    public void play(char[][] plateau) {
-        modeleNbPoussee.charger(plateau);
+    public void play(char[][] plateau, int[][] coordonneesButs) {
+        modeleNbPoussee.charger(plateau, coordonneesButs);
     }
 
     public void move(String direction) {
@@ -53,45 +53,8 @@ public class FacadeModele {
         return modeleNbPoussee.getMoves();
     }
 
-//    private ModeleNbCoup modeleNbCoup = new ModeleNbCoup(new ModeleConcret());
-//
-//
-//    public void move(String direction) {
-//        modeleNbCoup.move(direction);
-//    }
-//
-//    public void undo() {
-//        modeleNbCoup.undo();
-//    }
-//
-//    public void redo() {
-//        modeleNbCoup.redo();
-//    }
-//
-//    public void reset() {
-//        modeleNbCoup.reset();
-//    }
-//
-//    class Anime implements EventHandler<ActionEvent> {
-//        public void handle(ActionEvent event) {
-//            modeleNbCoup.redo();
-//        }
-//    }
-//
-//    public int getNbCoup() {
-//        return modeleNbCoup.getNbCoup();
-//    }
-//
-//    public int getNbPoussee() {
-//        return 0;
-//    }
-//
-//    public char[][] getPlateau() {
-//        return modeleNbCoup.getPlateau();
-//    }
-//
-//    public ArrayList<String> getMoves() {
-//        return modeleNbCoup.getMoves();
-//    }
+    public boolean[] getEtat() {
+        return modeleNbPoussee.getEtat();
+    }
 
 }

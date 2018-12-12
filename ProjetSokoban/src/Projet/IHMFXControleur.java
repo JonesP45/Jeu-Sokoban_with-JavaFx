@@ -7,23 +7,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
 import java.io.*;
-import java.util.ArrayList;
 
 public class IHMFXControleur {
-
-    private class ArraylistToArray {
-
-        private int ligne;
-        private int colonne;
-        private char valeur;
-
-        private ArraylistToArray(int l, int c, char v) {
-            ligne = l;
-            colonne = c;
-            valeur = v;
-        }
-
-    }
 
     private IHMFX ihmfx;
     private Controleur controleur;
@@ -46,8 +31,6 @@ public class IHMFXControleur {
     public Button replay;
     public Button reset;
 
-    private int level = 0;
-    private ArrayList<char[][]> theFiles = new ArrayList<>();
 
     IHMFXControleur(Controleur controleur, IHMFX ihmfx) {
         this.ihmfx = ihmfx;
@@ -90,7 +73,7 @@ public class IHMFXControleur {
         @Override
         public void handle(ActionEvent event) {
             try {
-                load("MicroCosmos.txt");
+                controleur.load("MicroCosmos.txt");
             } catch (FileNotFoundException e) {
                 System.out.println("FileNotFoundException");
             } catch (Exception e) {
@@ -99,89 +82,24 @@ public class IHMFXControleur {
         }
     }
 
-    private void load(String fileName) throws Exception {
-        ArrayList<ArraylistToArray> list = new ArrayList<>();
-        int largeur = 0;
-        int hauteur = 0;
-        FileInputStream fis = new FileInputStream(fileName);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(fis));
-        String line = reader.readLine();
-        while (line != null) {
-            if (line.charAt(0) != ';') {
-                if (line.length() > largeur) {
-                    largeur = line.length();
-                }
-                for (int i = 0; i < line.length(); i++) {
-                    list.add(new ArraylistToArray(hauteur, i, line.charAt(i)));
-                }
-                hauteur++;
-                line = reader.readLine();
-            } else {
-                char[][] plateau = new char[hauteur][largeur];
-                int i = 0;
-                int j = 0;
-                for (int k = 0; k < list.size(); k++) {
-                    ArraylistToArray tmp = list.get(k);
-                    if (tmp.ligne == i && tmp.colonne == j) {
-                        plateau[tmp.ligne][tmp.colonne] = tmp.valeur;
-                        j++;
-                        if (j % largeur == 0) {
-                            i++;
-                            j = 0;
-                        }
-                    } else {
-                        while (j < largeur) {
-                            plateau[i][j] = ' ';
-                            j++;
-                        }
-                        i++;
-                        j = 0;
-                        plateau[tmp.ligne][tmp.colonne] = tmp.valeur;
-                        j++;
-                    }
-                } // fin for
-                while (i < hauteur && j < largeur) {
-                    plateau[i][j] = ' ';
-                    j++;
-                }
-                theFiles.add(plateau);
-                list.clear();
-                largeur = 0;
-                hauteur = 0;
-                line = reader.readLine();
-                line = reader.readLine();
-            } //finElse
-            level++;
-        }
-        level = 0;
-    }
-
     class ActionPreviousLevel implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            if (level == 0) {
-                level = theFiles.size() - 1;
-            } else {
-                level--;
-            }
+            controleur.previousLevel();
         }
     }
 
     class ActionNextLevel implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            if (level == theFiles.size() - 1) {
-                level = 0;
-            } else {
-                level++;
-            }
+            controleur.nextLevel();
         }
     }
 
     class ActionPlay implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            controleur.play(cloneChar2DTab(theFiles.get(level)));
+            controleur.play();
             ihmfx.menuStage.close();
             ihmfx.jeuStage.show();
             vue.gridPane.requestFocus();
@@ -215,10 +133,10 @@ public class IHMFXControleur {
             } else if (input.equals(KeyCode.R)) {
                 controleur.redo();
             } else if (input.equals(KeyCode.Z)) {
-                controleur.play(cloneChar2DTab(theFiles.get(level)));
+                controleur.play();
                 controleur.reset();
             } else if (input.equals(KeyCode.P)) {
-                controleur.play(cloneChar2DTab(theFiles.get(level)));
+                controleur.play();
                 controleur.replay();
             }
         }
@@ -227,20 +145,20 @@ public class IHMFXControleur {
     class ActionReset implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            controleur.play(cloneChar2DTab(theFiles.get(level)));
+            controleur.play();
             controleur.reset();
         }
 
     }
 
-    private char[][] cloneChar2DTab(char[][] tab) {
-        char[][] res = new char[tab.length][tab[0].length];
-        for (int i = 0; i < tab.length; i++) {
-            for (int j = 0; j < tab[0].length; j++) {
-                res[i][j] = tab[i][j];
-            }
-        }
-        return res;
-    }
+//    private char[][] cloneChar2DTab(char[][] tab) {
+//        char[][] res = new char[tab.length][tab[0].length];
+//        for (int i = 0; i < tab.length; i++) {
+//            for (int j = 0; j < tab[0].length; j++) {
+//                res[i][j] = tab[i][j];
+//            }
+//        }
+//        return res;
+//    }
 
 }
