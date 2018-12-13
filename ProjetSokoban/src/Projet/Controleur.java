@@ -41,7 +41,6 @@ public class Controleur implements Sujet {
 
     private int level = 0;
     private ArrayList<char[][]> theFiles = new ArrayList<>();
-    private ArrayList<int[][]> theCoordonneesButs = new ArrayList<>();
 
 
     private Controleur(FacadeModele facadeModele) {
@@ -61,7 +60,6 @@ public class Controleur implements Sujet {
 
     public void load(String fileName) throws Exception {
         ArrayList<ArraylistToArray> list = new ArrayList<>();
-        ArrayList<int[]> coordonnees = new ArrayList<>();
         int largeur = 0;
         int hauteur = 0;
         FileInputStream fis = new FileInputStream(fileName);
@@ -75,28 +73,15 @@ public class Controleur implements Sujet {
                 for (int i = 0; i < line.length(); i++) {
                     char tmp = line.charAt(i);
                     list.add(new ArraylistToArray(hauteur, i, tmp));
-                    if (tmp == '$' || tmp == '*') {
-                        int[] tmpTab = new int[2]; tmpTab[0] = hauteur; tmpTab[1] = i;
-                        coordonnees.add(tmpTab);
-                    }
                 }
                 hauteur++;
                 line = reader.readLine();
             } else {
-                int[][] coordonneesButs = new int[2][coordonnees.size()];
-                for (int k = 0; k < coordonnees.size(); k++) {
-                    coordonneesButs[0][k] = coordonnees.get(k)[0];
-                    coordonneesButs[1][k] = coordonnees.get(k)[1];
-                }
-                theCoordonneesButs.add(coordonneesButs);
                 char[][] plateau = new char[hauteur][largeur];
                 int i = 0;
                 int j = 0;
                 for (int k = 0; k < list.size(); k++) {
                     ArraylistToArray tmp = list.get(k);
-                    if (tmp.valeur == '$' || tmp.valeur == '*') {
-
-                    }
                     if (tmp.ligne == i && tmp.colonne == j) {
                         plateau[tmp.ligne][tmp.colonne] = tmp.valeur;
                         j++;
@@ -141,16 +126,6 @@ public class Controleur implements Sujet {
         return res;
     }
 
-    private int[][] cloneInt2DTab(int[][] tab) {
-        int[][] res = new int[tab.length][tab[0].length];
-        for (int i = 0; i < tab.length; i++) {
-            for (int j = 0; j < tab[0].length; j++) {
-                res[i][j] = tab[i][j];
-            }
-        }
-        return res;
-    }
-
 
     public void previousLevel() {
         if (level == 0) {
@@ -169,23 +144,16 @@ public class Controleur implements Sujet {
     }
 
     public void play() {
-        facadeModele.play(cloneChar2DTab(theFiles.get(level)), cloneInt2DTab(theCoordonneesButs.get(level)));
+        facadeModele.play(cloneChar2DTab(theFiles.get(level)));
         notifie();
     }
 
     public void move(String direction) {
         facadeModele.move(direction);
         notifie();
-        boolean[] etat = facadeModele.getEtat();
-        boolean nextLvl = false;
-        for (int i = 0; i < etat.length; i++) {
-//            System.out.println(i + ", " + etat[i]);
-            if (etat[i])
-                nextLvl = true;
-            else
-                break;
-        }
-        if (nextLvl) {
+        if (facadeModele.getEtat()) {
+            facadeModele.clear();
+            notifie();
             level++;
             play();
         }

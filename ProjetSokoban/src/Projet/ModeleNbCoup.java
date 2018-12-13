@@ -17,8 +17,8 @@ public class ModeleNbCoup implements Modele {
     }
 
     @Override
-    public void charger(char[][] plateau, int[][] coordonneesButs) {
-        modele.charger(plateau, coordonneesButs);
+    public void charger(char[][] plateau) {
+        modele.charger(plateau);
     }
 
     @Override
@@ -50,6 +50,11 @@ public class ModeleNbCoup implements Modele {
     }
 
     @Override
+    public void clear() {
+        modele.clear();
+    }
+
+    @Override
     public char[][] getPlateau() {
         return modele.getPlateau();
     }
@@ -60,7 +65,7 @@ public class ModeleNbCoup implements Modele {
     }
 
     @Override
-    public boolean[] getEtat() {
+    public boolean getEtat() {
         return modele.getEtat();
     }
 

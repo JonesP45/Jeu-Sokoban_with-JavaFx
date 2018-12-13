@@ -28,6 +28,7 @@ public class IHMFXVue {
     }
 
     public void dessine() {
+        gridPane.getChildren().remove(0, gridPane.getChildren().size());
         initialiseFond();
         for (int i = 0; i < commandeGetPlateau.exec().length; i++) {
             for (int j = 0; j < commandeGetPlateau.exec()[0].length; j++) {
@@ -51,7 +52,7 @@ public class IHMFXVue {
         for (int i = 0; i < commandeGetPlateau.exec().length; i++) {
             for (int j = 0; j < commandeGetPlateau.exec()[0].length; j++) {
                 char caze = commandeGetPlateau.exec()[i][j];
-                if (caze != 'm'/* && caze != 'x'*/)
+                if (caze != 'm')
                     gridPane.add(new ImageView(sol), j, i);
             }
         }

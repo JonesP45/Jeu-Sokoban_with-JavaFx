@@ -14,11 +14,10 @@ public class ModeleConcret implements Modele {
     private final char caisseSurBut = '*';
 
     private char[][] plateau = {{' '}};
-    private int[][] coordonneesButs = {};
     private int x_soko;
     private int y_soko;
 
-    private boolean[] etat;
+    private boolean etat = false;
 
     private ArrayList<String> theMoves = new ArrayList<>();
     private ArrayList<String> theUndos = new ArrayList<>();
@@ -56,7 +55,7 @@ public class ModeleConcret implements Modele {
 
 
     @Override
-    public void charger(char[][] plateau, int[][] coordonneesButs) {
+    public void charger(char[][] plateau) {
         this.plateau = plateau;
         for (int i = 0; i < plateau.length; i++) {
             for (int j = 0; j < plateau[0].length; j++) {
@@ -65,11 +64,6 @@ public class ModeleConcret implements Modele {
                     y_soko = j;
                 }
             }
-        }
-        this.coordonneesButs = coordonneesButs;
-        etat = new boolean[coordonneesButs[0].length];
-        for (int i = 0; i < coordonneesButs[0].length; i++) {
-            etat[i] = false;
         }
     }
 
@@ -167,7 +161,7 @@ public class ModeleConcret implements Modele {
                     plateau[x_soko + moveX1][y_soko + moveY1] = caisseSurBut;
                     ajoutMove(moveX1, moveX2, moveY1, moveY2);
                     coupPoussee[1] = true;
-                    setEtat(x_soko + moveX1, y_soko + moveY1, true);
+                    etat = setEtat();
                 } else {
                     coupPoussee[0] = false;
                 }
@@ -190,16 +184,13 @@ public class ModeleConcret implements Modele {
                     plateau[x_soko + moveX1][y_soko + moveY1] = caisseSurBut;
                     ajoutMove(moveX1, moveX2, moveY1, moveY2);
                     coupPoussee[1] = true;
-                    setEtat(x_soko + moveX1, y_soko + moveY1, true);
+                    etat = setEtat();
                 } else {
                     coupPoussee[0] = false;
                 }
                 break;
             default:
                 coupPoussee[0] = false;
-        }
-        for (int i = 0; i < etat.length; i++) {
-            System.out.println(i + ", " + etat[i]);
         }
         return coupPoussee;
     }
@@ -246,8 +237,7 @@ public class ModeleConcret implements Modele {
                     theUndos.add("down");
                     plateau[x_soko - 2][y_soko] = var2;
                     plateau[x_soko - 1][y_soko] = var1;
-                    if (var1 == caisseSurBut)/////////////////////////////////////////////////////////PB retroline
-                        setEtat(x_soko - 1, y_soko, false);
+                    etat = setEtat();
                     break;
                 case "downCaisse":
                     if (plateau[x_soko][y_soko] == soko) {
@@ -268,8 +258,7 @@ public class ModeleConcret implements Modele {
                     theUndos.add("up");
                     plateau[x_soko + 2][y_soko] = var2;
                     plateau[x_soko + 1][y_soko] = var1;
-                    if (var1 == caisseSurBut)
-                        setEtat(x_soko + 1, y_soko, false);
+                    etat = setEtat();
                     break;
                 case "rightCaisse":
                     if (plateau[x_soko][y_soko] == soko) {
@@ -290,8 +279,7 @@ public class ModeleConcret implements Modele {
                     theUndos.add("left");
                     plateau[x_soko][y_soko + 2] = var2;
                     plateau[x_soko][y_soko + 1] = var1;
-                    if (var1 == caisseSurBut)
-                        setEtat(x_soko, y_soko + 1, false);
+                    etat = setEtat();
                     break;
                 case "leftCaisse":
                     if (plateau[x_soko][y_soko] == soko) {
@@ -312,8 +300,7 @@ public class ModeleConcret implements Modele {
                     theUndos.add("right");
                     plateau[x_soko][y_soko - 2] = var2;
                     plateau[x_soko][y_soko - 1] = var1;
-                    if (var1 == caisseSurBut)
-                        setEtat(x_soko, y_soko - 1, false);
+                    etat = setEtat();
                     break;
             }
             theMoves.remove(theMoves.size() - 1); //suppression du move undo
@@ -353,6 +340,13 @@ public class ModeleConcret implements Modele {
     }
 
     @Override
+    public void clear() {
+        plateau = null;
+        reset();
+        etat = false;
+    }
+
+    @Override
     public char[][] getPlateau() {
         return plateau;
     }
@@ -363,15 +357,18 @@ public class ModeleConcret implements Modele {
         return (ArrayList<String>) theMoves.clone();
     }
 
-    public void setEtat(int x, int y, boolean b) {
-        for (int i = 0; i < coordonneesButs.length; i++) {
-            if (x == coordonneesButs[0][i] && y == coordonneesButs[1][i]) {
-                etat[i] = b;
+    private boolean setEtat() {
+        for (int i = 0; i < plateau.length; i++) {
+            for (int j = 0; j < plateau[0].length; j++) {
+                if (plateau[i][j] == caisse) {
+                    return false;
+                }
             }
         }
+        return true;
     }
 
-    public boolean[] getEtat() {
+    public boolean getEtat() {
         return etat;
     }
 
