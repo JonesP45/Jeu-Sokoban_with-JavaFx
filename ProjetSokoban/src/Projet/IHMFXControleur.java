@@ -17,6 +17,7 @@ public class IHMFXControleur {
 
     //menu
     public Button load;
+    private boolean loadOnAction = false;
     public Button nextLevel;
     public Button previousLevel;
     public Button play;
@@ -51,19 +52,19 @@ public class IHMFXControleur {
         this.vue.gridPane.setOnKeyPressed(new ActionKeyboard());
 
         up = new Button("Up");
-        up.setOnAction(null);
+        up.setOnAction(new ActionUp());
         down = new Button("Down");
-        down.setOnAction(null);
+        down.setOnAction(new ActionDown());
         left = new Button("Left");
-        left.setOnAction(null);
+        left.setOnAction(new ActionLeft());
         right = new Button("Right");
-        right.setOnAction(null);
+        right.setOnAction(new ActionRight());
         undo = new Button("Undo");
-        undo.setOnAction(null);
+        undo.setOnAction(new ActionUndo());
         redo = new Button("Redo");
-        redo.setOnAction(null);
+        redo.setOnAction(new ActionRedo());
         replay = new Button("Replay");
-        replay.setOnAction(null);
+        replay.setOnAction(new ActionReplay());
         reset = new Button("Reset");
         reset.setOnAction(new ActionReset());
     }
@@ -74,6 +75,7 @@ public class IHMFXControleur {
         public void handle(ActionEvent event) {
             try {
                 controleur.load("MicroCosmos.txt");
+                loadOnAction = true;
             } catch (FileNotFoundException e) {
                 System.out.println("FileNotFoundException");
             } catch (Exception e) {
@@ -85,32 +87,36 @@ public class IHMFXControleur {
     class ActionPreviousLevel implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            controleur.previousLevel();
+            if (loadOnAction)
+                controleur.previousLevel();
         }
     }
 
     class ActionNextLevel implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            controleur.nextLevel();
+            if (loadOnAction)
+                controleur.nextLevel();
         }
     }
 
     class ActionPlay implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            controleur.play();
-            ihmfx.menuStage.close();
-            ihmfx.jeuStage.show();
-            vue.gridPane.requestFocus();
-            up.setFocusTraversable(false);
-            down.setFocusTraversable(false);
-            left.setFocusTraversable(false);
-            right.setFocusTraversable(false);
-            undo.setFocusTraversable(false);
-            redo.setFocusTraversable(false);
-            replay.setFocusTraversable(false);
-            reset.setFocusTraversable(false);
+            if (loadOnAction) {
+                controleur.play();
+                ihmfx.menuStage.close();
+                ihmfx.jeuStage.show();
+                vue.gridPane.requestFocus();
+                up.setFocusTraversable(false);
+                down.setFocusTraversable(false);
+                left.setFocusTraversable(false);
+                right.setFocusTraversable(false);
+                undo.setFocusTraversable(false);
+                redo.setFocusTraversable(false);
+                replay.setFocusTraversable(false);
+                reset.setFocusTraversable(false);
+            }
         }
     }
 
@@ -142,6 +148,64 @@ public class IHMFXControleur {
         }
     }
 
+
+    class ActionUp implements EventHandler<ActionEvent> {
+        @Override
+        public void handle(ActionEvent event) {
+            controleur.move("up");
+        }
+
+    }
+
+    class ActionDown implements EventHandler<ActionEvent> {
+        @Override
+        public void handle(ActionEvent event) {
+            controleur.move("down");
+        }
+
+    }
+
+    class ActionLeft implements EventHandler<ActionEvent> {
+        @Override
+        public void handle(ActionEvent event) {
+            controleur.move("left");
+        }
+
+    }
+
+    class ActionRight implements EventHandler<ActionEvent> {
+        @Override
+        public void handle(ActionEvent event) {
+            controleur.move("right");
+        }
+
+    }
+
+    class ActionUndo implements EventHandler<ActionEvent> {
+        @Override
+        public void handle(ActionEvent event) {
+            controleur.undo();
+        }
+
+    }
+
+    class ActionRedo implements EventHandler<ActionEvent> {
+        @Override
+        public void handle(ActionEvent event) {
+            controleur.redo();
+        }
+
+    }
+
+    class ActionReplay implements EventHandler<ActionEvent> {
+        @Override
+        public void handle(ActionEvent event) {
+            controleur.play();
+            controleur.replay();
+        }
+
+    }
+
     class ActionReset implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
@@ -150,15 +214,5 @@ public class IHMFXControleur {
         }
 
     }
-
-//    private char[][] cloneChar2DTab(char[][] tab) {
-//        char[][] res = new char[tab.length][tab[0].length];
-//        for (int i = 0; i < tab.length; i++) {
-//            for (int j = 0; j < tab[0].length; j++) {
-//                res[i][j] = tab[i][j];
-//            }
-//        }
-//        return res;
-//    }
 
 }

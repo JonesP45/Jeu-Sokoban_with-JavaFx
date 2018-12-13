@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ModeleConcret implements Modele {
 
-    @SuppressWarnings("FieldCanBeLocal")
+    @SuppressWarnings({"FieldCanBeLocal", "unused"})
     private final char mur = '#';
     private final char soko = '@';
     private final char caisse = '$';
@@ -13,7 +13,7 @@ public class ModeleConcret implements Modele {
     private final char sokoSurBut = '+';
     private final char caisseSurBut = '*';
 
-    private char[][] plateau = {{' '}};
+    private char[][] plateau = {};
     private int x_soko;
     private int y_soko;
 
@@ -358,9 +358,9 @@ public class ModeleConcret implements Modele {
     }
 
     private boolean setEtat() {
-        for (int i = 0; i < plateau.length; i++) {
-            for (int j = 0; j < plateau[0].length; j++) {
-                if (plateau[i][j] == caisse) {
+        for (char[] tmpTab:plateau) {
+            for (char tmp:tmpTab) {
+                if (tmp == caisse) {
                     return false;
                 }
             }

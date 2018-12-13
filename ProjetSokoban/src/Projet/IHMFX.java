@@ -19,14 +19,17 @@ public class IHMFX extends Application implements Observateur {
 
     private IHMFXVueNbPoussee vueNbPoussee;
     private IHMFXVueNbCoup vueNbCoup;
+    private IHMFXVueChrono vueChrono;
     public IHMFXVue vue;
-    public IHMFXVueMenu vueMenu;
+    @SuppressWarnings("FieldCanBeLocal")
+    private IHMFXVueMenu vueMenu;
 
 
     public void actualise() {
         Platform.runLater(() -> {
                 vueNbPoussee.dessine();
                 vueNbCoup.dessine();
+                vueChrono.dessine();
                 vue.dessine();
         });
     }
@@ -47,6 +50,8 @@ public class IHMFX extends Application implements Observateur {
         vueMenu.gridPane.setAlignment(Pos.CENTER);
         vue = new IHMFXVue(controleur);
         vue.gridPane.setAlignment(Pos.CENTER);
+        vueChrono = new IHMFXVueChrono(controleur);
+        vueChrono.label.setAlignment(Pos.CENTER);
         vueNbCoup= new IHMFXVueNbCoup(controleur);
         vueNbCoup.label.setAlignment(Pos.CENTER);
         vueNbPoussee = new IHMFXVueNbPoussee(controleur);
@@ -71,19 +76,27 @@ public class IHMFX extends Application implements Observateur {
         MonteurScene monteurScene = new MonteurScene();
         Scene scene = monteurScene.
                 setCentre(vue.gridPane).
+                ajoutBas(IHMFXControleur.up).
+                ajoutBas(IHMFXControleur.down).
+                ajoutBas(IHMFXControleur.left).
+                ajoutBas(IHMFXControleur.right).
+                ajoutBas(IHMFXControleur.undo).
+                ajoutBas(IHMFXControleur.redo).
+                ajoutBas(IHMFXControleur.replay).
                 ajoutBas(IHMFXControleur.reset).
                 ajoutBas(vueNbCoup.label).
                 ajoutBas(vueNbPoussee.label).
+                ajoutBas(vueChrono.label).
                 setLargeur(800).
                 setHauteur(700).
                 retourneScene();
 
 
         jeuStage.setScene(scene);
-        jeuStage.setTitle("Sokoban\nJeu");
+        jeuStage.setTitle("Jeu");
 
         menuStage.setScene(sceneMenu);
-        menuStage.setTitle("Sokoban\nMenu");
+        menuStage.setTitle("Menu");
         menuStage.show();
     }
 

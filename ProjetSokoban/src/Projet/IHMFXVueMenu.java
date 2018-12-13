@@ -11,6 +11,7 @@ public class IHMFXVueMenu {
         dessine();
     }
 
+    @SuppressWarnings("WeakerAccess")
     public void dessine() {
 
     }

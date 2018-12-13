@@ -1,5 +1,6 @@
 package Projet;
 
+import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -37,10 +38,13 @@ public class Controleur implements Sujet {
 
 
     private FacadeModele facadeModele;
+    private Animateur animateur = new Animateur(this);
     private ArrayList<Observateur> observateurs = new ArrayList<>();
 
     private int level = 0;
     private ArrayList<char[][]> theFiles = new ArrayList<>();
+
+    private boolean firstMoveLevel = false;
 
 
     private Controleur(FacadeModele facadeModele) {
@@ -58,6 +62,12 @@ public class Controleur implements Sujet {
     }
 
 
+    public void incrementer() {
+        animateur.incrementer();
+        notifie();
+    }
+
+
     public void load(String fileName) throws Exception {
         ArrayList<ArraylistToArray> list = new ArrayList<>();
         int largeur = 0;
@@ -66,7 +76,10 @@ public class Controleur implements Sujet {
         BufferedReader reader = new BufferedReader(new InputStreamReader(fis));
         String line = reader.readLine();
         while (line != null) {
-            if (line.charAt(0) != ';') {
+            if (line.equals("")) {
+                line = reader.readLine();
+            }
+            else if (line.charAt(0) != ';') {
                 if (line.length() > largeur) {
                     largeur = line.length();
                 }
@@ -76,12 +89,12 @@ public class Controleur implements Sujet {
                 }
                 hauteur++;
                 line = reader.readLine();
-            } else {
+            }
+            else {
                 char[][] plateau = new char[hauteur][largeur];
                 int i = 0;
                 int j = 0;
-                for (int k = 0; k < list.size(); k++) {
-                    ArraylistToArray tmp = list.get(k);
+                for (ArraylistToArray tmp:list) {
                     if (tmp.ligne == i && tmp.colonne == j) {
                         plateau[tmp.ligne][tmp.colonne] = tmp.valeur;
                         j++;
@@ -109,13 +122,13 @@ public class Controleur implements Sujet {
                 largeur = 0;
                 hauteur = 0;
                 line = reader.readLine();
-                line = reader.readLine();
             } //finElse
             level++;
         }
         level = 0;
     }
 
+    @SuppressWarnings("ManualArrayCopy")
     private char[][] cloneChar2DTab(char[][] tab) {
         char[][] res = new char[tab.length][tab[0].length];
         for (int i = 0; i < tab.length; i++) {
@@ -148,12 +161,19 @@ public class Controleur implements Sujet {
         notifie();
     }
 
+
     public void move(String direction) {
+        if (!firstMoveLevel) {
+            firstMoveLevel = true;
+            animateur.demarer();
+        }
         facadeModele.move(direction);
         notifie();
         if (facadeModele.getEtat()) {
+            animateur.areter();
             facadeModele.clear();
             notifie();
+            firstMoveLevel = false;
             level++;
             play();
         }
@@ -174,34 +194,37 @@ public class Controleur implements Sujet {
     public void replay() {
         timer.stop();
         ArrayList<String> theMoves = facadeModele.getMoves();
-        reset();
         System.out.println();
         timer = new Timeline(
                 new KeyFrame(Duration.seconds(1),
                         (ActionEvent event) -> {
                             switch (theMoves.get(indice)) {
                                 case "right":
-                                    move("right"); break;
+                                    facadeModele.move("right"); break;
                                 case "rightCaisse":
-                                    move("right"); break;
+                                    facadeModele.move("right"); break;
                                 case "up":
-                                    move("up"); break;
+                                    facadeModele.move("up"); break;
                                 case "upCaisse":
-                                    move("up"); break;
+                                    facadeModele.move("up"); break;
                                 case "down":
-                                    move("down"); break;
+                                    facadeModele.move("down"); break;
                                 case "downCaisse":
-                                    move("down"); break;
+                                    facadeModele.move("down"); break;
                                 case "left":
-                                    move("left"); break;
+                                    facadeModele.move("left"); break;
                                 case "leftCaisse":
-                                    move("left"); break;
+                                    facadeModele.move("left"); break;
                             }
+                            notifie();
                             indice++;
                         })
         );
         timer.setCycleCount(theMoves.size());
         if (theMoves.size() > 0) {
+            animateur.pause();
+            firstMoveLevel = false;
+            reset();
             timer.play();
         }
         indice = 0;
@@ -209,8 +232,16 @@ public class Controleur implements Sujet {
     }
 
     public void reset() {
+        if (animateur.getTimer().getStatus() != Animation.Status.PAUSED) {
+            animateur.areter();
+            firstMoveLevel = false;
+        }
         facadeModele.reset();
         notifie();
+    }
+
+    public CommandeInt commandeChrono() {
+        return () -> animateur.getTime();
     }
 
     public CommandeInt commandeNbCoup() { return () -> facadeModele.getNbCoup(); }

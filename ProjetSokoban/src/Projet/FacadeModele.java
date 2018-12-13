@@ -1,8 +1,5 @@
 package Projet;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-
 import java.util.ArrayList;
 
 public class FacadeModele {
