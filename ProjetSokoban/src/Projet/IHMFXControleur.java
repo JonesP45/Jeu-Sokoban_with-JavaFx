@@ -32,6 +32,9 @@ public class IHMFXControleur {
     public Button replay;
     public Button reset;
 
+    //win
+    public Button close;
+
 
     IHMFXControleur(Controleur controleur, IHMFX ihmfx) {
         this.ihmfx = ihmfx;
@@ -67,6 +70,10 @@ public class IHMFXControleur {
         replay.setOnAction(new ActionReplay());
         reset = new Button("Reset");
         reset.setOnAction(new ActionReset());
+
+        //win
+        close = new Button("Close");
+        close.setOnAction(new ActionClose());
     }
 
 
@@ -127,13 +134,21 @@ public class IHMFXControleur {
         public void handle(KeyEvent event) {
             KeyCode input = event.getCode();
             if (input.equals(KeyCode.LEFT)) {
-                controleur.move("left");
+                if (controleur.move("left")) {
+                    ihmfx.winStage.show();
+                }
             } else if (input.equals(KeyCode.RIGHT)) {
-                controleur.move("right");
+                if (controleur.move("right")) {
+                    ihmfx.winStage.show();
+                }
             } else if (input.equals(KeyCode.DOWN)) {
-                controleur.move("down");
+                if (controleur.move("down")) {
+                    ihmfx.winStage.show();
+                }
             } else if (input.equals(KeyCode.UP)) {
-                controleur.move("up");
+                if (controleur.move("up")) {
+                    ihmfx.winStage.show();
+                }
             } else if (input.equals(KeyCode.U)) {
                 controleur.undo();
             } else if (input.equals(KeyCode.R)) {
@@ -212,7 +227,16 @@ public class IHMFXControleur {
             controleur.play();
             controleur.reset();
         }
+    }
 
+
+    class ActionClose implements EventHandler<ActionEvent> {
+        @Override
+        public void handle(ActionEvent event) {
+            ihmfx.winStage.close();
+            controleur.clear();
+            controleur.play();
+        }
     }
 
 }

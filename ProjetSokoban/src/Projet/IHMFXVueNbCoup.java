@@ -4,7 +4,7 @@ import javafx.scene.control.Label;
 
 public class IHMFXVueNbCoup {
 
-    Label label = new Label("nb coup :\n0");
+    public Label label = new Label("nb coup :\n0");
     private CommandeInt commande;
 
     @SuppressWarnings("WeakerAccess")

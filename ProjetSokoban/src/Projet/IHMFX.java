@@ -20,9 +20,11 @@ public class IHMFX extends Application implements Observateur {
     private IHMFXVueNbPoussee vueNbPoussee;
     private IHMFXVueNbCoup vueNbCoup;
     private IHMFXVueChrono vueChrono;
+    private IHMFXVueLevel vueLevel;
     public IHMFXVue vue;
     @SuppressWarnings("FieldCanBeLocal")
     private IHMFXVueMenu vueMenu;
+    private IHMFXVueWin vueWin;
 
 
     public void actualise() {
@@ -30,6 +32,7 @@ public class IHMFX extends Application implements Observateur {
                 vueNbPoussee.dessine();
                 vueNbCoup.dessine();
                 vueChrono.dessine();
+                vueLevel.dessine();
                 vue.dessine();
         });
     }
@@ -37,11 +40,13 @@ public class IHMFX extends Application implements Observateur {
 
     public Stage menuStage;
     public Stage jeuStage;
+    public Stage winStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         menuStage = primaryStage;
         jeuStage = new Stage();
+        winStage = new Stage();
 
         Controleur controleur = Controleur.getControleur();
         controleur.abonne(this);
@@ -50,6 +55,10 @@ public class IHMFX extends Application implements Observateur {
         vueMenu.gridPane.setAlignment(Pos.CENTER);
         vue = new IHMFXVue(controleur);
         vue.gridPane.setAlignment(Pos.CENTER);
+        vueWin = new IHMFXVueWin(controleur);
+        vueWin.gridPane.setAlignment(Pos.CENTER);
+        vueLevel = new IHMFXVueLevel(controleur);
+        vueLevel.label.setAlignment(Pos.CENTER);
         vueChrono = new IHMFXVueChrono(controleur);
         vueChrono.label.setAlignment(Pos.CENTER);
         vueNbCoup= new IHMFXVueNbCoup(controleur);
@@ -65,6 +74,7 @@ public class IHMFX extends Application implements Observateur {
                 setCentre(vueMenu.gridPane).
                 ajoutBas(IHMFXControleur.load).
                 ajoutBas(IHMFXControleur.previousLevel).
+                ajoutBas(vueLevel.label).
                 ajoutBas(IHMFXControleur.nextLevel).
                 ajoutBas(IHMFXControleur.play).
                 setLargeur(500).
@@ -91,6 +101,20 @@ public class IHMFX extends Application implements Observateur {
                 setHauteur(700).
                 retourneScene();
 
+
+        MonteurScene monteurSceneWin = new MonteurScene();
+        Scene sceneWin = monteurSceneWin.
+                setCentre(vueWin.gridPane).
+                ajoutBas(vueWin.labelLevel).
+                ajoutBas(vueWin.labelChrono).
+                ajoutBas(IHMFXControleur.close).
+                setHauteur(200).
+                setLargeur(400).
+                retourneScene();
+
+
+        winStage.setScene(sceneWin);
+        winStage.setTitle("Winner");
 
         jeuStage.setScene(scene);
         jeuStage.setTitle("Jeu");

@@ -47,6 +47,7 @@ public class ModeleNbPoussee implements Modele {
 
     @Override
     public void clear() {
+        nbPoussee = 0;
         modele.clear();
     }
 

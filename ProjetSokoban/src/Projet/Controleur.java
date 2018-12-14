@@ -126,6 +126,7 @@ public class Controleur implements Sujet {
             level++;
         }
         level = 0;
+        notifie();
     }
 
     @SuppressWarnings("ManualArrayCopy")
@@ -146,6 +147,7 @@ public class Controleur implements Sujet {
         } else {
             level--;
         }
+        notifie();
     }
 
     public void nextLevel() {
@@ -154,6 +156,7 @@ public class Controleur implements Sujet {
         } else {
             level++;
         }
+        notifie();
     }
 
     public void play() {
@@ -162,7 +165,8 @@ public class Controleur implements Sujet {
     }
 
 
-    public void move(String direction) {
+    public boolean move(String direction) {
+        boolean nextLevel = false;
         if (!firstMoveLevel) {
             firstMoveLevel = true;
             animateur.demarer();
@@ -170,13 +174,23 @@ public class Controleur implements Sujet {
         facadeModele.move(direction);
         notifie();
         if (facadeModele.getEtat()) {
+            nextLevel = true;
             animateur.areter();
-            facadeModele.clear();
             notifie();
+//            facadeModele.clear();
             firstMoveLevel = false;
-            level++;
-            play();
+            if (level < theFiles.size())
+                level++;
+            else
+                level = 0;
+//            play();
         }
+        return nextLevel;
+    }
+
+    public void clear() {
+        facadeModele.clear();
+        notifie();
     }
 
     public void undo() {
@@ -242,6 +256,10 @@ public class Controleur implements Sujet {
 
     public CommandeInt commandeChrono() {
         return () -> animateur.getTime();
+    }
+
+    public CommandeInt commandeLevel() {
+        return () -> level;
     }
 
     public CommandeInt commandeNbCoup() { return () -> facadeModele.getNbCoup(); }

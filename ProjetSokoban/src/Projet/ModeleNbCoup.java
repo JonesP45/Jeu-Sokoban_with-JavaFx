@@ -51,6 +51,7 @@ public class ModeleNbCoup implements Modele {
 
     @Override
     public void clear() {
+        nbCoup = 0;
         modele.clear();
     }
 
