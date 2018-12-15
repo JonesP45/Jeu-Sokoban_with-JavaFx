@@ -12,27 +12,332 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="JAVA/Projet" pinned="false" current-in-tab="true">
+        <entry file="uml://JAVA/Projet">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>Projet</OriginalElement>
+              <nodes>
+                <node x="714.4607896825396" y="198.0">Projet.CommandeInt</node>
+                <node x="610.8541666666666" y="724.0">Projet.IHMFX</node>
+                <node x="482.68235281385256" y="0.0">Projet.Modele</node>
+                <node x="462.2918766233765" y="198.0">Projet.FacadeModele</node>
+                <node x="95.99187662337641" y="89.0">Projet.Observateur</node>
+                <node x="898.0857896825396" y="466.0">Projet.IHMFXVueNbPoussee</node>
+                <node x="615.3541666666666" y="803.0">Projet.Main</node>
+                <node x="1073.0857896825396" y="466.0">Projet.IHMFXVueNbCoup</node>
+                <node x="417.81270995670985" y="466.0">Projet.IHMFXVueWin</node>
+                <node x="343.2918766233765" y="198.0">Projet.Animateur</node>
+                <node x="565.2499999999999" y="89.0">Projet.ModeleNbCoup</node>
+                <node x="24.999999999999943" y="466.0">Projet.IHMFXVue</node>
+                <node x="1148.6045191197688" y="545.0">Projet.MonteurScene</node>
+                <node x="189.49999999999994" y="198.0">Projet.Sujet</node>
+                <node x="405.24999999999994" y="89.0">Projet.ModeleNbPoussee</node>
+                <node x="597.0857896825396" y="466.0">Projet.IHMFXVueChrono</node>
+                <node x="752.0857896825396" y="466.0">Projet.IHMFXVueLevel</node>
+                <node x="980.3541666666667" y="545.0">Projet.IHMFXVueMenu</node>
+                <node x="252.27777777777771" y="545.0">Projet.IHMFXControleur</node>
+                <node x="223.9918766233764" y="89.0">Projet.ModeleConcret</node>
+                <node x="330.24999999999994" y="347.0">Projet.Controleur</node>
+                <node x="10.5" y="198.0">Projet.CommandeTab2DChar</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="Projet.IHMFX" target="Projet.MonteurScene">
+                  <point x="35.40909090909088" y="-14.5" />
+                  <point x="687.2632575757575" y="694.0" />
+                  <point x="1178.8545191197688" y="694.0" />
+                  <point x="-30.25" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFX" target="Projet.IHMFXVueWin">
+                  <point x="-5.590909090909122" y="-14.5" />
+                  <point x="646.2632575757575" y="614.0" />
+                  <point x="506.217803030303" y="614.0" />
+                  <point x="506.217803030303" y="520.0" />
+                  <point x="507.81270995670985" y="520.0" />
+                  <point x="30.0" y="14.5" />
+                </edge>
+                <edge source="Projet.FacadeModele" target="Projet.ModeleNbCoup">
+                  <point x="48.39999999999998" y="-14.5" />
+                  <point x="571.1918766233764" y="178.0" />
+                  <point x="658.2499999999999" y="178.0" />
+                  <point x="31.0" y="14.5" />
+                </edge>
+                <edge source="Projet.Controleur" target="Projet.FacadeModele">
+                  <point x="37.5" y="-14.5" />
+                  <point x="417.74999999999994" y="297.0" />
+                  <point x="563.1252099567098" y="297.0" />
+                  <point x="40.33333333333337" y="14.5" />
+                </edge>
+                <edge source="Projet.Sujet" target="Projet.Observateur">
+                  <point x="0.0" y="-14.5" />
+                  <point x="226.49999999999994" y="168.0" />
+                  <point x="163.4918766233764" y="168.0" />
+                  <point x="13.5" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFXVueChrono" target="Projet.CommandeInt">
+                  <point x="33.75" y="-14.5" />
+                  <point x="698.3357896825396" y="327.0" />
+                  <point x="762.7941230158731" y="327.0" />
+                  <point x="-9.666666666666629" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFXVue" target="Projet.Controleur">
+                  <point x="25.0" y="-14.5" />
+                  <point x="99.99999999999994" y="436.0" />
+                  <point x="335.8055555555555" y="436.0" />
+                  <point x="-44.44444444444446" y="14.5" />
+                </edge>
+                <edge source="Projet.ModeleConcret" target="Projet.Modele">
+                  <point x="0.0" y="-14.5" />
+                  <point x="285.9918766233764" y="49.0" />
+                  <point x="488.7537813852811" y="49.0" />
+                  <point x="-36.428571428571445" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFXVue" target="Projet.CommandeTab2DChar">
+                  <point x="-25.0" y="-14.5" />
+                  <point x="-39.5" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFX" target="Projet.IHMFXVueLevel">
+                  <point x="5.590909090909122" y="-14.5" />
+                  <point x="657.4450757575758" y="614.0" />
+                  <point x="810.1272463924965" y="614.0" />
+                  <point x="810.1272463924965" y="520.0" />
+                  <point x="783.5857896825396" y="520.0" />
+                  <point x="-31.5" y="14.5" />
+                </edge>
+                <edge source="Projet.FacadeModele" target="Projet.ModeleConcret">
+                  <point x="-48.400000000000034" y="-14.5" />
+                  <point x="474.39187662337645" y="148.0" />
+                  <point x="285.9918766233764" y="148.0" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFX" target="Projet.Observateur">
+                  <point x="-39.136363636363626" y="-14.5" />
+                  <point x="612.717803030303" y="704.0" />
+                  <point x="0.0" y="704.0" />
+                  <point x="0.0" y="178.0" />
+                  <point x="109.49187662337641" y="178.0" />
+                  <point x="-40.5" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFX" target="Projet.IHMFXVueNbCoup">
+                  <point x="27.95454545454551" y="-14.5" />
+                  <point x="679.8087121212122" y="674.0" />
+                  <point x="1134.3772463924963" y="674.0" />
+                  <point x="1134.3772463924963" y="520.0" />
+                  <point x="1107.8357896825396" y="520.0" />
+                  <point x="-34.75" y="14.5" />
+                </edge>
+                <edge source="Projet.Controleur" target="Projet.CommandeTab2DChar">
+                  <point x="-45.83333333333337" y="-14.5" />
+                  <point x="334.4166666666666" y="327.0" />
+                  <point x="129.0" y="327.0" />
+                  <point x="39.5" y="14.5" />
+                </edge>
+                <edge source="Projet.ModeleNbPoussee" target="Projet.Modele">
+                  <point x="46.66666666666663" y="-14.5" />
+                  <point x="521.9166666666665" y="69.0" />
+                  <point x="525.1823528138525" y="69.0" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFXControleur" target="Projet.Controleur">
+                  <point x="0.0" y="-14.5" />
+                  <point x="319.2777777777777" y="446.0" />
+                  <point x="346.91666666666663" y="446.0" />
+                  <point x="-33.333333333333314" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFX" target="Projet.IHMFXVue">
+                  <point x="-31.68181818181813" y="-14.5" />
+                  <point x="620.1723484848485" y="684.0" />
+                  <point x="60.19696969696963" y="684.0" />
+                  <point x="60.19696969696963" y="520.0" />
+                  <point x="74.99999999999994" y="520.0" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFXVueNbPoussee" target="Projet.Controleur">
+                  <point x="-38.75" y="-14.5" />
+                  <point x="936.8357896825396" y="406.0" />
+                  <point x="413.58333333333326" y="406.0" />
+                  <point x="33.333333333333314" y="14.5" />
+                </edge>
+                <edge source="Projet.Controleur" target="Projet.Sujet">
+                  <point x="-29.166666666666686" y="-14.5" />
+                  <point x="351.08333333333326" y="307.0" />
+                  <point x="226.49999999999994" y="307.0" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFX" target="Projet.IHMFXVueNbPoussee">
+                  <point x="16.772727272727266" y="-14.5" />
+                  <point x="668.626893939394" y="644.0" />
+                  <point x="967.1045191197693" y="644.0" />
+                  <point x="967.1045191197693" y="520.0" />
+                  <point x="1014.3357896825396" y="520.0" />
+                  <point x="38.75" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFXVueWin" target="Projet.CommandeInt">
+                  <point x="29.999999999999886" y="-14.5" />
+                  <point x="507.81270995670974" y="317.0" />
+                  <point x="743.4607896825396" y="317.0" />
+                  <point x="-29.0" y="14.5" />
+                </edge>
+                <edge source="Projet.Controleur" target="Projet.Animateur">
+                  <point x="-4.166666666666686" y="-14.5" />
+                  <point x="376.08333333333326" y="247.0" />
+                  <point x="380.4168766233765" y="247.0" />
+                  <point x="-12.375" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFXVueLevel" target="Projet.Controleur">
+                  <point x="-31.5" y="-14.5" />
+                  <point x="783.5857896825396" y="416.0" />
+                  <point x="402.4722222222222" y="416.0" />
+                  <point x="22.22222222222223" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFX" target="Projet.Controleur">
+                  <point x="-13.045454545454504" y="-14.5" />
+                  <point x="638.8087121212121" y="634.0" />
+                  <point x="396.7777777777777" y="634.0" />
+                  <point x="396.7777777777777" y="446.0" />
+                  <point x="369.1388888888888" y="446.0" />
+                  <point x="-11.111111111111143" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFXControleur" target="Projet.IHMFX">
+                  <point x="16.75" y="14.5" />
+                  <point x="336.0277777777777" y="654.0" />
+                  <point x="631.3541666666666" y="654.0" />
+                  <point x="-20.5" y="-14.5" />
+                </edge>
+                <edge source="Projet.IHMFX" target="Projet.IHMFXControleur">
+                  <point x="-24.227272727272748" y="-14.5" />
+                  <point x="627.6268939393939" y="664.0" />
+                  <point x="302.5277777777777" y="664.0" />
+                  <point x="-16.75" y="14.5" />
+                </edge>
+                <edge source="Projet.Controleur" target="Projet.Observateur">
+                  <point x="-37.50000000000006" y="-14.5" />
+                  <point x="342.7499999999999" y="317.0" />
+                  <point x="178.99999999999994" y="317.0" />
+                  <point x="178.99999999999994" y="178.0" />
+                  <point x="136.4918766233764" y="178.0" />
+                  <point x="-13.5" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFXVueNbCoup" target="Projet.Controleur">
+                  <point x="-34.75" y="-14.5" />
+                  <point x="1107.8357896825396" y="396.0" />
+                  <point x="424.6944444444444" y="396.0" />
+                  <point x="44.44444444444446" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFXVueNbPoussee" target="Projet.CommandeInt">
+                  <point x="38.75" y="-14.5" />
+                  <point x="1014.3357896825396" y="317.0" />
+                  <point x="801.4607896825396" y="317.0" />
+                  <point x="29.0" y="14.5" />
+                </edge>
+                <edge source="Projet.Main" target="Projet.IHMFX">
+                  <point x="0.0" y="-14.5" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFX" target="Projet.IHMFXVueMenu">
+                  <point x="24.227272727272748" y="-14.5" />
+                  <point x="676.0814393939395" y="664.0" />
+                  <point x="1076.3541666666667" y="664.0" />
+                  <point x="32.0" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFXControleur" target="Projet.IHMFXVue">
+                  <point x="-44.66666666666663" y="-14.5" />
+                  <point x="274.6111111111111" y="520.0" />
+                  <point x="108.33333333333326" y="520.0" />
+                  <point x="33.33333333333334" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFX" target="Projet.IHMFXVueChrono">
+                  <point x="-1.863636363636374" y="-14.5" />
+                  <point x="649.9905303030303" y="594.0" />
+                  <point x="657.3772463924965" y="594.0" />
+                  <point x="657.3772463924965" y="520.0" />
+                  <point x="630.8357896825396" y="520.0" />
+                  <point x="-33.75" y="14.5" />
+                </edge>
+                <edge source="Projet.Controleur" target="Projet.CommandeInt">
+                  <point x="45.833333333333314" y="-14.5" />
+                  <point x="426.08333333333326" y="307.0" />
+                  <point x="724.1274563492063" y="307.0" />
+                  <point x="-48.33333333333337" y="14.5" />
+                </edge>
+                <edge source="Projet.Animateur" target="Projet.Controleur">
+                  <point x="12.375" y="14.5" />
+                  <point x="405.1668766233765" y="257.0" />
+                  <point x="384.41666666666663" y="257.0" />
+                  <point x="4.166666666666686" y="-14.5" />
+                </edge>
+                <edge source="Projet.ModeleNbCoup" target="Projet.Modele">
+                  <point x="0.0" y="-14.5" />
+                  <point x="627.2499999999999" y="59.0" />
+                  <point x="549.4680670995668" y="59.0" />
+                  <point x="24.285714285714334" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFXVueWin" target="Projet.Controleur">
+                  <point x="-30.000000000000114" y="-14.5" />
+                  <point x="447.81270995670974" y="436.0" />
+                  <point x="380.24999999999994" y="436.0" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="Projet.FacadeModele" target="Projet.ModeleNbPoussee">
+                  <point x="-24.200000000000045" y="-14.5" />
+                  <point x="498.59187662337644" y="138.0" />
+                  <point x="440.24999999999994" y="138.0" />
+                  <point x="-35.0" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFXVueLevel" target="Projet.CommandeInt">
+                  <point x="31.5" y="-14.5" />
+                  <point x="846.5857896825396" y="327.0" />
+                  <point x="782.1274563492063" y="327.0" />
+                  <point x="9.666666666666629" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFXVueChrono" target="Projet.Controleur">
+                  <point x="-33.75" y="-14.5" />
+                  <point x="630.8357896825396" y="426.0" />
+                  <point x="391.3611111111111" y="426.0" />
+                  <point x="11.111111111111143" y="14.5" />
+                </edge>
+                <edge source="Projet.IHMFXVueNbCoup" target="Projet.CommandeInt">
+                  <point x="34.75" y="-14.5" />
+                  <point x="1177.3357896825396" y="307.0" />
+                  <point x="820.7941230158731" y="307.0" />
+                  <point x="48.33333333333337" y="14.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="955.7142857142857" y="285.4285714285714" />
+              <SelectedNodes>
+                <node>Projet.IHMFXVueWin</node>
+              </SelectedNodes>
+              <Categories />
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="IHMFX.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Projet/IHMFX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="162">
+              <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getIHMFX#0;class#IHMFX#0" expanded="false" />
+                <element signature="method#actualise#0;class#IHMFX#0" expanded="false" />
+                <element signature="method#start#0;class#IHMFX#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IHMFXVueWin.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXVueWin.java">
+      <file leaf-file-name="IHMFXVue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXVue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="15" column="54" lean-forward="true" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+            <state relative-caret-position="133">
+              <caret line="51" column="68" lean-forward="true" selection-start-line="51" selection-start-column="68" selection-end-line="51" selection-end-column="68" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#342#375#0" expanded="true" />
+                <element signature="method#IHMFXVue#0;class#IHMFXVue#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -41,8 +346,8 @@
       <file leaf-file-name="IHMFXControleur.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXControleur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="232" column="59" lean-forward="false" selection-start-line="232" selection-start-column="59" selection-end-line="232" selection-end-column="59" />
+            <state relative-caret-position="1207">
+              <caret line="252" column="62" lean-forward="false" selection-start-line="252" selection-start-column="62" selection-end-line="252" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#IHMFXControleur#0;class#IHMFXControleur#0" expanded="false" />
@@ -52,25 +357,18 @@
                 <element signature="class#ActionPlay#0;class#IHMFXControleur#0" expanded="false" />
                 <element signature="class#ActionKeyboard#0;class#IHMFXControleur#0" expanded="false" />
                 <element signature="class#ActionUp#0;class#IHMFXControleur#0" expanded="false" />
-                <element signature="e#5166#5167#0" expanded="true" />
-                <element signature="e#5211#5212#0" expanded="true" />
                 <element signature="class#ActionDown#0;class#IHMFXControleur#0" expanded="false" />
-                <element signature="e#5345#5346#0" expanded="true" />
-                <element signature="e#5392#5393#0" expanded="true" />
                 <element signature="class#ActionLeft#0;class#IHMFXControleur#0" expanded="false" />
-                <element signature="e#5526#5527#0" expanded="true" />
-                <element signature="e#5573#5574#0" expanded="true" />
                 <element signature="class#ActionRight#0;class#IHMFXControleur#0" expanded="false" />
-                <element signature="e#5708#5709#0" expanded="true" />
-                <element signature="e#5756#5757#0" expanded="true" />
                 <element signature="class#ActionUndo#0;class#IHMFXControleur#0" expanded="false" />
-                <element signature="e#5890#5891#0" expanded="true" />
-                <element signature="e#5931#5932#0" expanded="true" />
+                <element signature="e#6671#6672#0" expanded="true" />
+                <element signature="e#6712#6713#0" expanded="true" />
                 <element signature="class#ActionRedo#0;class#IHMFXControleur#0" expanded="false" />
-                <element signature="e#6065#6066#0" expanded="true" />
-                <element signature="e#6106#6107#0" expanded="true" />
+                <element signature="e#6846#6847#0" expanded="true" />
+                <element signature="e#6887#6888#0" expanded="true" />
                 <element signature="class#ActionReplay#0;class#IHMFXControleur#0" expanded="false" />
                 <element signature="class#ActionReset#0;class#IHMFXControleur#0" expanded="false" />
+                <element signature="class#ActionCloseJeu#0;class#IHMFXControleur#0" expanded="false" />
                 <element signature="class#ActionClose#0;class#IHMFXControleur#0" expanded="false" />
               </folding>
             </state>
@@ -80,23 +378,26 @@
       <file leaf-file-name="Controleur.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Projet/Controleur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="179" column="35" lean-forward="true" selection-start-line="179" selection-start-column="35" selection-end-line="179" selection-end-column="35" />
+            <state relative-caret-position="255">
+              <caret line="46" column="10" lean-forward="false" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getControleur#0;class#Controleur#0" expanded="false" />
                 <element signature="class#ArraylistToArray#0;class#Controleur#0" expanded="false" />
                 <element signature="method#notifie#0;class#Controleur#0" expanded="false" />
-                <element signature="method#incrementer#0;class#Controleur#0" expanded="false" />
+                <element signature="method#incrementerAnimateur#0;class#Controleur#0" expanded="false" />
+                <element signature="method#areterAnimateur#0;class#Controleur#0" expanded="false" />
+                <element signature="method#reinitialiserAnimateur#0;class#Controleur#0" expanded="false" />
                 <element signature="method#load#0;class#Controleur#0" expanded="false" />
                 <element signature="method#cloneChar2DTab#0;class#Controleur#0" expanded="false" />
                 <element signature="method#previousLevel#0;class#Controleur#0" expanded="false" />
                 <element signature="method#nextLevel#0;class#Controleur#0" expanded="false" />
-                <element signature="method#play#0;class#Controleur#0" expanded="false" />
+                <element signature="method#move#0;class#Controleur#0" expanded="false" />
+                <element signature="method#clear#0;class#Controleur#0" expanded="false" />
                 <element signature="method#undo#0;class#Controleur#0" expanded="false" />
                 <element signature="method#redo#0;class#Controleur#0" expanded="false" />
                 <element signature="method#replay#0;class#Controleur#0" expanded="false" />
-                <element signature="e#5787#6944#0" expanded="false" />
+                <element signature="e#5908#7065#0" expanded="false" />
                 <element signature="method#reset#0;class#Controleur#0" expanded="false" />
               </folding>
             </state>
@@ -106,13 +407,12 @@
       <file leaf-file-name="Animateur.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Projet/Animateur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="282">
+              <caret line="44" column="21" lean-forward="false" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#895#896#0" expanded="true" />
-                <element signature="e#923#924#0" expanded="true" />
-                <element signature="method#areter#0;class#Animateur#0" expanded="false" />
+                <element signature="method#Animateur#0;class#Animateur#0" expanded="false" />
+                <element signature="method#actualiseTimer#0;class#Animateur#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -128,40 +428,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModeleNbPoussee.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Projet/ModeleNbPoussee.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="49" column="22" lean-forward="false" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-              <folding>
-                <element signature="method#move#0;class#ModeleNbPoussee#0" expanded="false" />
-                <element signature="method#reset#0;class#ModeleNbPoussee#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModeleNbCoup.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Projet/ModeleNbCoup.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="52" column="24" lean-forward="false" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
-              <folding>
-                <element signature="method#move#0;class#ModeleNbCoup#0" expanded="false" />
-                <element signature="method#undo#0;class#ModeleNbCoup#0" expanded="false" />
-                <element signature="method#redo#0;class#ModeleNbCoup#0" expanded="false" />
-                <element signature="method#reset#0;class#ModeleNbCoup#0" expanded="false" />
-                <element signature="method#clear#0;class#ModeleNbCoup#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ModeleConcret.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Projet/ModeleConcret.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="342" column="24" lean-forward="false" selection-start-line="342" selection-start-column="24" selection-end-line="342" selection-end-column="24" />
+            <state relative-caret-position="-667">
+              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
               <folding>
                 <element signature="method#ajoutMove#0;class#ModeleConcret#0" expanded="false" />
                 <element signature="method#charger#0;class#ModeleConcret#0" expanded="false" />
@@ -206,24 +477,24 @@
         <option value="$PROJECT_DIR$/src/Projet/CommandeTab2DChar.java" />
         <option value="$PROJECT_DIR$/src/Projet/CommandeString.java" />
         <option value="$PROJECT_DIR$/src/Projet/IHMFXVueNbPoussee.java" />
-        <option value="$PROJECT_DIR$/src/Projet/MonteurScene.java" />
         <option value="$PROJECT_DIR$/src/Projet/IHMVueMenu.java" />
         <option value="$PROJECT_DIR$/src/Projet/Main.java" />
         <option value="$PROJECT_DIR$/src/Projet/Modele.java" />
-        <option value="$PROJECT_DIR$/src/Projet/IHMFXVueMenu.java" />
-        <option value="$PROJECT_DIR$/src/Projet/Animateur.java" />
         <option value="$PROJECT_DIR$/src/Projet/IHMFXVueChrono.java" />
         <option value="$PROJECT_DIR$/src/Projet/IHMFXVueNbCoup.java" />
         <option value="$PROJECT_DIR$/src/Projet/IHMFXVueLevel.java" />
-        <option value="$PROJECT_DIR$/src/Projet/IHMFXVue.java" />
-        <option value="$PROJECT_DIR$/src/Projet/IHMFXVueWin.java" />
-        <option value="$PROJECT_DIR$/src/Projet/IHMFX.java" />
         <option value="$PROJECT_DIR$/src/Projet/ModeleConcret.java" />
-        <option value="$PROJECT_DIR$/src/Projet/Controleur.java" />
-        <option value="$PROJECT_DIR$/src/Projet/IHMFXControleur.java" />
         <option value="$PROJECT_DIR$/src/Projet/FacadeModele.java" />
         <option value="$PROJECT_DIR$/src/Projet/ModeleNbPoussee.java" />
         <option value="$PROJECT_DIR$/src/Projet/ModeleNbCoup.java" />
+        <option value="$PROJECT_DIR$/src/Projet/Animateur.java" />
+        <option value="$PROJECT_DIR$/src/Projet/IHMFXVueWin.java" />
+        <option value="$PROJECT_DIR$/src/Projet/IHMFXVueMenu.java" />
+        <option value="$PROJECT_DIR$/src/Projet/MonteurScene.java" />
+        <option value="$PROJECT_DIR$/src/Projet/IHMFXVue.java" />
+        <option value="$PROJECT_DIR$/src/Projet/IHMFX.java" />
+        <option value="$PROJECT_DIR$/src/Projet/Controleur.java" />
+        <option value="$PROJECT_DIR$/src/Projet/IHMFXControleur.java" />
       </list>
     </option>
   </component>
@@ -261,7 +532,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../COO" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -401,12 +672,13 @@
       <workItem from="1544606505661" duration="29000" />
       <workItem from="1544644261682" duration="6183000" />
       <workItem from="1544725078534" duration="11268000" />
-      <workItem from="1544784951555" duration="6057000" />
+      <workItem from="1544784951555" duration="6656000" />
+      <workItem from="1544875564841" duration="5965000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130896000" />
+    <option name="totallyTimeSpent" value="137460000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -478,7 +750,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="26" />
+      <option name="time" value="34" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -492,16 +764,19 @@
             <element signature="method#getControleur#0;class#Controleur#0" expanded="false" />
             <element signature="class#ArraylistToArray#0;class#Controleur#0" expanded="false" />
             <element signature="method#notifie#0;class#Controleur#0" expanded="false" />
-            <element signature="method#incrementer#0;class#Controleur#0" expanded="false" />
+            <element signature="method#incrementerAnimateur#0;class#Controleur#0" expanded="false" />
+            <element signature="method#areterAnimateur#0;class#Controleur#0" expanded="false" />
+            <element signature="method#reinitialiserAnimateur#0;class#Controleur#0" expanded="false" />
             <element signature="method#load#0;class#Controleur#0" expanded="false" />
             <element signature="method#cloneChar2DTab#0;class#Controleur#0" expanded="false" />
             <element signature="method#previousLevel#0;class#Controleur#0" expanded="false" />
             <element signature="method#nextLevel#0;class#Controleur#0" expanded="false" />
-            <element signature="method#play#0;class#Controleur#0" expanded="false" />
+            <element signature="method#move#0;class#Controleur#0" expanded="false" />
+            <element signature="method#clear#0;class#Controleur#0" expanded="false" />
             <element signature="method#undo#0;class#Controleur#0" expanded="false" />
             <element signature="method#redo#0;class#Controleur#0" expanded="false" />
             <element signature="method#replay#0;class#Controleur#0" expanded="false" />
-            <element signature="e#5787#6944#0" expanded="false" />
+            <element signature="e#5908#7065#0" expanded="false" />
             <element signature="method#reset#0;class#Controleur#0" expanded="false" />
           </folding>
         </state>
@@ -567,16 +842,19 @@
             <element signature="method#getControleur#0;class#Controleur#0" expanded="false" />
             <element signature="class#ArraylistToArray#0;class#Controleur#0" expanded="false" />
             <element signature="method#notifie#0;class#Controleur#0" expanded="false" />
-            <element signature="method#incrementer#0;class#Controleur#0" expanded="false" />
+            <element signature="method#incrementerAnimateur#0;class#Controleur#0" expanded="false" />
+            <element signature="method#areterAnimateur#0;class#Controleur#0" expanded="false" />
+            <element signature="method#reinitialiserAnimateur#0;class#Controleur#0" expanded="false" />
             <element signature="method#load#0;class#Controleur#0" expanded="false" />
             <element signature="method#cloneChar2DTab#0;class#Controleur#0" expanded="false" />
             <element signature="method#previousLevel#0;class#Controleur#0" expanded="false" />
             <element signature="method#nextLevel#0;class#Controleur#0" expanded="false" />
-            <element signature="method#play#0;class#Controleur#0" expanded="false" />
+            <element signature="method#move#0;class#Controleur#0" expanded="false" />
+            <element signature="method#clear#0;class#Controleur#0" expanded="false" />
             <element signature="method#undo#0;class#Controleur#0" expanded="false" />
             <element signature="method#redo#0;class#Controleur#0" expanded="false" />
             <element signature="method#replay#0;class#Controleur#0" expanded="false" />
-            <element signature="e#5787#6944#0" expanded="false" />
+            <element signature="e#5908#7065#0" expanded="false" />
             <element signature="method#reset#0;class#Controleur#0" expanded="false" />
           </folding>
         </state>
@@ -595,25 +873,18 @@
             <element signature="class#ActionPlay#0;class#IHMFXControleur#0" expanded="false" />
             <element signature="class#ActionKeyboard#0;class#IHMFXControleur#0" expanded="false" />
             <element signature="class#ActionUp#0;class#IHMFXControleur#0" expanded="false" />
-            <element signature="e#5166#5167#0" expanded="true" />
-            <element signature="e#5211#5212#0" expanded="true" />
             <element signature="class#ActionDown#0;class#IHMFXControleur#0" expanded="false" />
-            <element signature="e#5345#5346#0" expanded="true" />
-            <element signature="e#5392#5393#0" expanded="true" />
             <element signature="class#ActionLeft#0;class#IHMFXControleur#0" expanded="false" />
-            <element signature="e#5526#5527#0" expanded="true" />
-            <element signature="e#5573#5574#0" expanded="true" />
             <element signature="class#ActionRight#0;class#IHMFXControleur#0" expanded="false" />
-            <element signature="e#5708#5709#0" expanded="true" />
-            <element signature="e#5756#5757#0" expanded="true" />
             <element signature="class#ActionUndo#0;class#IHMFXControleur#0" expanded="false" />
-            <element signature="e#5890#5891#0" expanded="true" />
-            <element signature="e#5931#5932#0" expanded="true" />
+            <element signature="e#6671#6672#0" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
             <element signature="class#ActionRedo#0;class#IHMFXControleur#0" expanded="false" />
-            <element signature="e#6065#6066#0" expanded="true" />
-            <element signature="e#6106#6107#0" expanded="true" />
+            <element signature="e#6846#6847#0" expanded="true" />
+            <element signature="e#6887#6888#0" expanded="true" />
             <element signature="class#ActionReplay#0;class#IHMFXControleur#0" expanded="false" />
             <element signature="class#ActionReset#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionCloseJeu#0;class#IHMFXControleur#0" expanded="false" />
             <element signature="class#ActionClose#0;class#IHMFXControleur#0" expanded="false" />
           </folding>
         </state>
@@ -737,242 +1008,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/Projet">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>Projet</OriginalElement>
-          <nodes>
-            <node x="917.516917293233" y="1126.0">Projet.CommandeInt</node>
-            <node x="562.5653195488721" y="2880.0">Projet.IHMFX</node>
-            <node x="542.284931077694" y="0.0">Projet.Modele</node>
-            <node x="563.125" y="993.0">Projet.FacadeModele</node>
-            <node x="164.64144736842104" y="886.25">Projet.Observateur</node>
-            <node x="744.0629699248119" y="2098.0">Projet.IHMFXVueNbPoussee</node>
-            <node x="607.0653195488721" y="3202.0">Projet.Main</node>
-            <node x="1003.0629699248119" y="2098.0">Projet.IHMFXVueNbCoup</node>
-            <node x="329.64144736842104" y="452.5">Projet.ModeleNbCoup</node>
-            <node x="541.0629699248119" y="2020.5">Projet.Animateur</node>
-            <node x="10.5" y="1999.0">Projet.IHMFXVue</node>
-            <node x="1097.1903195488721" y="2453.5">Projet.MonteurScene</node>
-            <node x="223.2528195488722" y="1115.0">Projet.Sujet</node>
-            <node x="609.1903195488721" y="452.5">Projet.ModeleNbPoussee</node>
-            <node x="872.6903195488721" y="2519.5">Projet.IHMFXVueMenu</node>
-            <node x="262.06296992481185" y="2366.0">Projet.IHMFXControleur</node>
-            <node x="838.1903195488721" y="288.0">Projet.ModeleConcret</node>
-            <node x="405.1875" y="1380.0">Projet.Controleur</node>
-            <node x="44.0" y="1126.0">Projet.CommandeTab2DChar</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="Projet.Controleur" target="Projet.Sujet">
-              <point x="-93.75" y="-279.5" />
-              <point x="461.4375" y="1350.0" />
-              <point x="321.2528195488722" y="1350.0" />
-              <point x="0.0" y="36.5" />
-            </edge>
-            <edge source="Projet.IHMFX" target="Projet.IHMFXVueNbPoussee">
-              <point x="23.53125" y="-136.0" />
-              <point x="711.5965695488721" y="2800.0" />
-              <point x="835.6903195488721" y="2800.0" />
-              <point x="835.6903195488721" y="2341.0" />
-              <point x="923.3129699248119" y="2341.0" />
-              <point x="59.75" y="59.5" />
-            </edge>
-            <edge source="Projet.IHMFX" target="Projet.MonteurScene">
-              <point x="101.96875" y="-136.0" />
-              <point x="790.0340695488721" y="2850.0" />
-              <point x="1154.9403195488721" y="2850.0" />
-              <point x="-57.75" y="114.5" />
-            </edge>
-            <edge source="Projet.IHMFX" target="Projet.Controleur">
-              <point x="-7.84375" y="-136.0" />
-              <point x="680.2215695488721" y="2790.0" />
-              <point x="530.5629699248118" y="2790.0" />
-              <point x="530.5629699248118" y="1979.0" />
-              <point x="536.4375" y="1979.0" />
-              <point x="-18.75" y="279.5" />
-            </edge>
-            <edge source="Projet.FacadeModele" target="Projet.ModeleNbCoup">
-              <point x="-51.0" y="-158.5" />
-              <point x="639.625" y="933.0" />
-              <point x="474.39144736842104" y="933.0" />
-              <point x="48.25" y="148.0" />
-            </edge>
-            <edge source="Projet.IHMFXControleur" target="Projet.IHMFX">
-              <point x="96.75" y="202.0" />
-              <point x="487.81296992481185" y="2800.0" />
-              <point x="664.5340695488721" y="2800.0" />
-              <point x="-23.53125" y="-136.0" />
-            </edge>
-            <edge source="Projet.Controleur" target="Projet.FacadeModele">
-              <point x="18.75" y="-279.5" />
-              <point x="573.9375" y="1360.0" />
-              <point x="605.625" y="1360.0" />
-              <point x="-85.0" y="158.5" />
-            </edge>
-            <edge source="Projet.IHMFX" target="Projet.IHMFXControleur">
-              <point x="-54.90625" y="-136.0" />
-              <point x="633.1590695488721" y="2820.0" />
-              <point x="358.81296992481185" y="2820.0" />
-              <point x="-32.25" y="202.0" />
-            </edge>
-            <edge source="Projet.Sujet" target="Projet.Observateur">
-              <point x="0.0" y="-36.5" />
-              <point x="321.2528195488722" y="973.0" />
-              <point x="219.01644736842104" y="973.0" />
-              <point x="-18.125" y="25.5" />
-            </edge>
-            <edge source="Projet.Controleur" target="Projet.Observateur">
-              <point x="-18.75" y="-279.5" />
-              <point x="536.4375" y="1360.0" />
-              <point x="520.5629699248119" y="1360.0" />
-              <point x="520.5629699248119" y="953.0" />
-              <point x="291.51644736842104" y="953.0" />
-              <point x="54.375" y="25.5" />
-            </edge>
-            <edge source="Projet.IHMFXVueNbCoup" target="Projet.Controleur">
-              <point x="-55.75" y="-59.5" />
-              <point x="1058.812969924812" y="1959.0" />
-              <point x="686.4375" y="1959.0" />
-              <point x="131.25" y="279.5" />
-            </edge>
-            <edge source="Projet.IHMFXVueNbPoussee" target="Projet.CommandeInt">
-              <point x="59.75" y="-59.5" />
-              <point x="923.3129699248119" y="1360.0" />
-              <point x="975.516917293233" y="1360.0" />
-              <point x="0.0" y="25.5" />
-            </edge>
-            <edge source="Projet.Main" target="Projet.IHMFX">
-              <point x="0.0" y="-25.5" />
-              <point x="0.0" y="136.0" />
-            </edge>
-            <edge source="Projet.IHMFXVue" target="Projet.Controleur">
-              <point x="73.0" y="-158.5" />
-              <point x="229.5" y="1959.0" />
-              <point x="423.9375" y="1959.0" />
-              <point x="-131.25" y="279.5" />
-            </edge>
-            <edge source="Projet.IHMFX" target="Projet.IHMFXVueMenu">
-              <point x="54.90625" y="-136.0" />
-              <point x="742.9715695488721" y="2820.0" />
-              <point x="994.1903195488721" y="2820.0" />
-              <point x="40.5" y="48.5" />
-            </edge>
-            <edge source="Projet.ModeleConcret" target="Projet.Modele">
-              <point x="0.0" y="-312.5" />
-              <point x="967.1903195488721" y="248.0" />
-              <point x="712.2135025062654" y="248.0" />
-              <point x="78.42857142857144" y="114.0" />
-            </edge>
-            <edge source="Projet.IHMFXControleur" target="Projet.IHMFXVue">
-              <point x="-85.99999999999994" y="-202.0" />
-              <point x="305.0629699248119" y="2341.0" />
-              <point x="253.83333333333331" y="2341.0" />
-              <point x="97.33333333333331" y="158.5" />
-            </edge>
-            <edge source="Projet.IHMFXVue" target="Projet.CommandeTab2DChar">
-              <point x="-73.0" y="-158.5" />
-              <point x="-39.5" y="25.5" />
-            </edge>
-            <edge source="Projet.FacadeModele" target="Projet.ModeleConcret">
-              <point x="102.0" y="-158.5" />
-              <point x="792.625" y="973.0" />
-              <point x="967.1903195488721" y="973.0" />
-              <point x="0.0" y="312.5" />
-            </edge>
-            <edge source="Projet.Controleur" target="Projet.CommandeInt">
-              <point x="131.25" y="-279.5" />
-              <point x="686.4375" y="1350.0" />
-              <point x="936.8502506265663" y="1350.0" />
-              <point x="-38.66666666666663" y="25.5" />
-            </edge>
-            <edge source="Projet.IHMFX" target="Projet.Observateur">
-              <point x="-117.65625" y="-136.0" />
-              <point x="570.4090695488721" y="2860.0" />
-              <point x="0.0" y="2860.0" />
-              <point x="0.0" y="973.0" />
-              <point x="182.76644736842104" y="973.0" />
-              <point x="-54.375" y="25.5" />
-            </edge>
-            <edge source="Projet.Animateur" target="Projet.Controleur">
-              <point x="-45.75" y="-137.0" />
-              <point x="586.8129699248119" y="1979.0" />
-              <point x="573.9375" y="1979.0" />
-              <point x="18.75" y="279.5" />
-            </edge>
-            <edge source="Projet.IHMFX" target="Projet.IHMFXVueNbCoup">
-              <point x="70.59375" y="-136.0" />
-              <point x="758.6590695488721" y="2830.0" />
-              <point x="1075.6903195488721" y="2830.0" />
-              <point x="1075.6903195488721" y="2341.0" />
-              <point x="1058.812969924812" y="2341.0" />
-              <point x="-55.75" y="59.5" />
-            </edge>
-            <edge source="Projet.ModeleNbCoup" target="Projet.Modele">
-              <point x="64.33333333333337" y="-148.0" />
-              <point x="490.4747807017544" y="268.0" />
-              <point x="607.6420739348368" y="268.0" />
-              <point x="-26.14285714285711" y="114.0" />
-            </edge>
-            <edge source="Projet.Controleur" target="Projet.CommandeTab2DChar">
-              <point x="-131.25" y="-279.5" />
-              <point x="423.9375" y="1360.0" />
-              <point x="162.5" y="1360.0" />
-              <point x="39.5" y="25.5" />
-            </edge>
-            <edge source="Projet.FacadeModele" target="Projet.ModeleNbPoussee">
-              <point x="51.0" y="-158.5" />
-              <point x="741.625" y="973.0" />
-              <point x="765.9403195488721" y="973.0" />
-              <point x="52.25" y="148.0" />
-            </edge>
-            <edge source="Projet.ModeleNbPoussee" target="Projet.Modele">
-              <point x="-69.66666666666669" y="-148.0" />
-              <point x="644.0236528822055" y="268.0" />
-              <point x="633.784931077694" y="268.0" />
-              <point x="0.0" y="114.0" />
-            </edge>
-            <edge source="Projet.IHMFXControleur" target="Projet.Controleur">
-              <point x="5.6843418860808015E-14" y="-202.0" />
-              <point x="391.0629699248119" y="1969.0" />
-              <point x="461.4375" y="1969.0" />
-              <point x="-93.75" y="279.5" />
-            </edge>
-            <edge source="Projet.IHMFX" target="Projet.IHMFXVue">
-              <point x="-101.96875" y="-136.0" />
-              <point x="586.0965695488721" y="2850.0" />
-              <point x="78.25" y="2850.0" />
-              <point x="78.25" y="2341.0" />
-              <point x="59.166666666666686" y="2341.0" />
-              <point x="-97.33333333333331" y="158.5" />
-            </edge>
-            <edge source="Projet.IHMFXVueNbPoussee" target="Projet.Controleur">
-              <point x="-59.75" y="-59.5" />
-              <point x="803.8129699248119" y="1969.0" />
-              <point x="648.9375" y="1969.0" />
-              <point x="93.75" y="279.5" />
-            </edge>
-            <edge source="Projet.IHMFXVueNbCoup" target="Projet.CommandeInt">
-              <point x="55.75" y="-59.5" />
-              <point x="1170.312969924812" y="1360.0" />
-              <point x="1014.1835839598996" y="1360.0" />
-              <point x="38.66666666666663" y="25.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.8" x="280.0" y="1210.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constructors</Category>
-            <Category>Properties</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXVueNbPoussee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -985,22 +1020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Projet/MonteurScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXVueMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1018,7 +1037,7 @@
         <state relative-caret-position="119">
           <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding>
-            <element signature="e#176#209#0" expanded="true" />
+            <element signature="e#176#209#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1028,40 +1047,79 @@
         <state relative-caret-position="102">
           <caret line="6" column="49" lean-forward="true" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
           <folding>
-            <element signature="e#221#222#0" expanded="true" />
-            <element signature="e#278#279#0" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#375#376#0" expanded="true" />
+            <element signature="e#221#222#0" expanded="false" />
+            <element signature="e#278#279#0" expanded="false" />
+            <element signature="e#307#308#0" expanded="false" />
+            <element signature="e#375#376#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Projet/IHMFX.java">
+    <entry file="file://$PROJECT_DIR$/src/Projet/ModeleNbCoup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="510">
+          <caret line="52" column="24" lean-forward="false" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getIHMFX#0;class#IHMFX#0" expanded="false" />
+            <element signature="method#move#0;class#ModeleNbCoup#0" expanded="false" />
+            <element signature="method#undo#0;class#ModeleNbCoup#0" expanded="false" />
+            <element signature="method#redo#0;class#ModeleNbCoup#0" expanded="false" />
+            <element signature="method#reset#0;class#ModeleNbCoup#0" expanded="false" />
+            <element signature="method#clear#0;class#ModeleNbCoup#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXVue.java">
+    <entry file="file://$PROJECT_DIR$/src/Projet/ModeleNbPoussee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="51" column="39" lean-forward="false" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
+        <state relative-caret-position="527">
+          <caret line="49" column="22" lean-forward="false" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+          <folding>
+            <element signature="method#move#0;class#ModeleNbPoussee#0" expanded="false" />
+            <element signature="method#reset#0;class#ModeleNbPoussee#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXVueWin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="32" column="85" lean-forward="true" selection-start-line="32" selection-start-column="85" selection-end-line="32" selection-end-column="85" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#IHMFXVue#0;class#IHMFXVue#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXVueMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Projet/MonteurScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="59" column="39" lean-forward="true" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Projet/FacadeModele.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="30" column="23" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Projet/ModeleConcret.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="342" column="24" lean-forward="false" selection-start-line="342" selection-start-column="24" selection-end-line="342" selection-end-column="24" />
+        <state relative-caret-position="-667">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
             <element signature="method#ajoutMove#0;class#ModeleConcret#0" expanded="false" />
             <element signature="method#charger#0;class#ModeleConcret#0" expanded="false" />
@@ -1080,71 +1138,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Projet/ModeleNbCoup.java">
+    <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXVue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="52" column="24" lean-forward="false" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
+        <state relative-caret-position="133">
+          <caret line="51" column="68" lean-forward="true" selection-start-line="51" selection-start-column="68" selection-end-line="51" selection-end-column="68" />
           <folding>
-            <element signature="method#move#0;class#ModeleNbCoup#0" expanded="false" />
-            <element signature="method#undo#0;class#ModeleNbCoup#0" expanded="false" />
-            <element signature="method#redo#0;class#ModeleNbCoup#0" expanded="false" />
-            <element signature="method#reset#0;class#ModeleNbCoup#0" expanded="false" />
-            <element signature="method#clear#0;class#ModeleNbCoup#0" expanded="false" />
+            <element signature="method#IHMFXVue#0;class#IHMFXVue#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Projet/ModeleNbPoussee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="49" column="22" lean-forward="false" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-          <folding>
-            <element signature="method#move#0;class#ModeleNbPoussee#0" expanded="false" />
-            <element signature="method#reset#0;class#ModeleNbPoussee#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Projet/FacadeModele.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="30" column="23" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Projet/Animateur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state relative-caret-position="282">
+          <caret line="44" column="21" lean-forward="false" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#895#896#0" expanded="true" />
-            <element signature="e#923#924#0" expanded="true" />
-            <element signature="method#areter#0;class#Animateur#0" expanded="false" />
+            <element signature="method#Animateur#0;class#Animateur#0" expanded="false" />
+            <element signature="method#actualiseTimer#0;class#Animateur#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Projet/Controleur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="179" column="35" lean-forward="true" selection-start-line="179" selection-start-column="35" selection-end-line="179" selection-end-column="35" />
+        <state relative-caret-position="255">
+          <caret line="46" column="10" lean-forward="false" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getControleur#0;class#Controleur#0" expanded="false" />
             <element signature="class#ArraylistToArray#0;class#Controleur#0" expanded="false" />
             <element signature="method#notifie#0;class#Controleur#0" expanded="false" />
-            <element signature="method#incrementer#0;class#Controleur#0" expanded="false" />
+            <element signature="method#incrementerAnimateur#0;class#Controleur#0" expanded="false" />
+            <element signature="method#areterAnimateur#0;class#Controleur#0" expanded="false" />
+            <element signature="method#reinitialiserAnimateur#0;class#Controleur#0" expanded="false" />
             <element signature="method#load#0;class#Controleur#0" expanded="false" />
             <element signature="method#cloneChar2DTab#0;class#Controleur#0" expanded="false" />
             <element signature="method#previousLevel#0;class#Controleur#0" expanded="false" />
             <element signature="method#nextLevel#0;class#Controleur#0" expanded="false" />
-            <element signature="method#play#0;class#Controleur#0" expanded="false" />
+            <element signature="method#move#0;class#Controleur#0" expanded="false" />
+            <element signature="method#clear#0;class#Controleur#0" expanded="false" />
             <element signature="method#undo#0;class#Controleur#0" expanded="false" />
             <element signature="method#redo#0;class#Controleur#0" expanded="false" />
             <element signature="method#replay#0;class#Controleur#0" expanded="false" />
-            <element signature="e#5787#6944#0" expanded="false" />
+            <element signature="e#5908#7065#0" expanded="false" />
             <element signature="method#reset#0;class#Controleur#0" expanded="false" />
           </folding>
         </state>
@@ -1152,8 +1189,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXControleur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="232" column="59" lean-forward="false" selection-start-line="232" selection-start-column="59" selection-end-line="232" selection-end-column="59" />
+        <state relative-caret-position="1207">
+          <caret line="252" column="62" lean-forward="false" selection-start-line="252" selection-start-column="62" selection-end-line="252" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#IHMFXControleur#0;class#IHMFXControleur#0" expanded="false" />
@@ -1163,38 +1200,335 @@
             <element signature="class#ActionPlay#0;class#IHMFXControleur#0" expanded="false" />
             <element signature="class#ActionKeyboard#0;class#IHMFXControleur#0" expanded="false" />
             <element signature="class#ActionUp#0;class#IHMFXControleur#0" expanded="false" />
-            <element signature="e#5166#5167#0" expanded="true" />
-            <element signature="e#5211#5212#0" expanded="true" />
             <element signature="class#ActionDown#0;class#IHMFXControleur#0" expanded="false" />
-            <element signature="e#5345#5346#0" expanded="true" />
-            <element signature="e#5392#5393#0" expanded="true" />
             <element signature="class#ActionLeft#0;class#IHMFXControleur#0" expanded="false" />
-            <element signature="e#5526#5527#0" expanded="true" />
-            <element signature="e#5573#5574#0" expanded="true" />
             <element signature="class#ActionRight#0;class#IHMFXControleur#0" expanded="false" />
-            <element signature="e#5708#5709#0" expanded="true" />
-            <element signature="e#5756#5757#0" expanded="true" />
             <element signature="class#ActionUndo#0;class#IHMFXControleur#0" expanded="false" />
-            <element signature="e#5890#5891#0" expanded="true" />
-            <element signature="e#5931#5932#0" expanded="true" />
+            <element signature="e#6671#6672#0" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
             <element signature="class#ActionRedo#0;class#IHMFXControleur#0" expanded="false" />
-            <element signature="e#6065#6066#0" expanded="true" />
-            <element signature="e#6106#6107#0" expanded="true" />
+            <element signature="e#6846#6847#0" expanded="true" />
+            <element signature="e#6887#6888#0" expanded="true" />
             <element signature="class#ActionReplay#0;class#IHMFXControleur#0" expanded="false" />
             <element signature="class#ActionReset#0;class#IHMFXControleur#0" expanded="false" />
+            <element signature="class#ActionCloseJeu#0;class#IHMFXControleur#0" expanded="false" />
             <element signature="class#ActionClose#0;class#IHMFXControleur#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Projet/IHMFXVueWin.java">
+    <entry file="file://$PROJECT_DIR$/src/Projet/IHMFX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="15" column="54" lean-forward="true" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+        <state relative-caret-position="162">
+          <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#342#375#0" expanded="true" />
+            <element signature="method#getIHMFX#0;class#IHMFX#0" expanded="false" />
+            <element signature="method#actualise#0;class#IHMFX#0" expanded="false" />
+            <element signature="method#start#0;class#IHMFX#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/Projet">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>Projet</OriginalElement>
+          <nodes>
+            <node x="714.4607896825396" y="198.0">Projet.CommandeInt</node>
+            <node x="610.8541666666666" y="724.0">Projet.IHMFX</node>
+            <node x="482.68235281385256" y="0.0">Projet.Modele</node>
+            <node x="462.2918766233765" y="198.0">Projet.FacadeModele</node>
+            <node x="95.99187662337641" y="89.0">Projet.Observateur</node>
+            <node x="898.0857896825396" y="466.0">Projet.IHMFXVueNbPoussee</node>
+            <node x="615.3541666666666" y="803.0">Projet.Main</node>
+            <node x="1073.0857896825396" y="466.0">Projet.IHMFXVueNbCoup</node>
+            <node x="417.81270995670985" y="466.0">Projet.IHMFXVueWin</node>
+            <node x="343.2918766233765" y="198.0">Projet.Animateur</node>
+            <node x="565.2499999999999" y="89.0">Projet.ModeleNbCoup</node>
+            <node x="24.999999999999943" y="466.0">Projet.IHMFXVue</node>
+            <node x="1148.6045191197688" y="545.0">Projet.MonteurScene</node>
+            <node x="189.49999999999994" y="198.0">Projet.Sujet</node>
+            <node x="405.24999999999994" y="89.0">Projet.ModeleNbPoussee</node>
+            <node x="597.0857896825396" y="466.0">Projet.IHMFXVueChrono</node>
+            <node x="752.0857896825396" y="466.0">Projet.IHMFXVueLevel</node>
+            <node x="980.3541666666667" y="545.0">Projet.IHMFXVueMenu</node>
+            <node x="252.27777777777771" y="545.0">Projet.IHMFXControleur</node>
+            <node x="223.9918766233764" y="89.0">Projet.ModeleConcret</node>
+            <node x="330.24999999999994" y="347.0">Projet.Controleur</node>
+            <node x="10.5" y="198.0">Projet.CommandeTab2DChar</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="Projet.IHMFX" target="Projet.MonteurScene">
+              <point x="35.40909090909088" y="-14.5" />
+              <point x="687.2632575757575" y="694.0" />
+              <point x="1178.8545191197688" y="694.0" />
+              <point x="-30.25" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFX" target="Projet.IHMFXVueWin">
+              <point x="-5.590909090909122" y="-14.5" />
+              <point x="646.2632575757575" y="614.0" />
+              <point x="506.217803030303" y="614.0" />
+              <point x="506.217803030303" y="520.0" />
+              <point x="507.81270995670985" y="520.0" />
+              <point x="30.0" y="14.5" />
+            </edge>
+            <edge source="Projet.FacadeModele" target="Projet.ModeleNbCoup">
+              <point x="48.39999999999998" y="-14.5" />
+              <point x="571.1918766233764" y="178.0" />
+              <point x="658.2499999999999" y="178.0" />
+              <point x="31.0" y="14.5" />
+            </edge>
+            <edge source="Projet.Controleur" target="Projet.FacadeModele">
+              <point x="37.5" y="-14.5" />
+              <point x="417.74999999999994" y="297.0" />
+              <point x="563.1252099567098" y="297.0" />
+              <point x="40.33333333333337" y="14.5" />
+            </edge>
+            <edge source="Projet.Sujet" target="Projet.Observateur">
+              <point x="0.0" y="-14.5" />
+              <point x="226.49999999999994" y="168.0" />
+              <point x="163.4918766233764" y="168.0" />
+              <point x="13.5" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFXVueChrono" target="Projet.CommandeInt">
+              <point x="33.75" y="-14.5" />
+              <point x="698.3357896825396" y="327.0" />
+              <point x="762.7941230158731" y="327.0" />
+              <point x="-9.666666666666629" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFXVue" target="Projet.Controleur">
+              <point x="25.0" y="-14.5" />
+              <point x="99.99999999999994" y="436.0" />
+              <point x="335.8055555555555" y="436.0" />
+              <point x="-44.44444444444446" y="14.5" />
+            </edge>
+            <edge source="Projet.ModeleConcret" target="Projet.Modele">
+              <point x="0.0" y="-14.5" />
+              <point x="285.9918766233764" y="49.0" />
+              <point x="488.7537813852811" y="49.0" />
+              <point x="-36.428571428571445" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFXVue" target="Projet.CommandeTab2DChar">
+              <point x="-25.0" y="-14.5" />
+              <point x="-39.5" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFX" target="Projet.IHMFXVueLevel">
+              <point x="5.590909090909122" y="-14.5" />
+              <point x="657.4450757575758" y="614.0" />
+              <point x="810.1272463924965" y="614.0" />
+              <point x="810.1272463924965" y="520.0" />
+              <point x="783.5857896825396" y="520.0" />
+              <point x="-31.5" y="14.5" />
+            </edge>
+            <edge source="Projet.FacadeModele" target="Projet.ModeleConcret">
+              <point x="-48.400000000000034" y="-14.5" />
+              <point x="474.39187662337645" y="148.0" />
+              <point x="285.9918766233764" y="148.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFX" target="Projet.Observateur">
+              <point x="-39.136363636363626" y="-14.5" />
+              <point x="612.717803030303" y="704.0" />
+              <point x="0.0" y="704.0" />
+              <point x="0.0" y="178.0" />
+              <point x="109.49187662337641" y="178.0" />
+              <point x="-40.5" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFX" target="Projet.IHMFXVueNbCoup">
+              <point x="27.95454545454551" y="-14.5" />
+              <point x="679.8087121212122" y="674.0" />
+              <point x="1134.3772463924963" y="674.0" />
+              <point x="1134.3772463924963" y="520.0" />
+              <point x="1107.8357896825396" y="520.0" />
+              <point x="-34.75" y="14.5" />
+            </edge>
+            <edge source="Projet.Controleur" target="Projet.CommandeTab2DChar">
+              <point x="-45.83333333333337" y="-14.5" />
+              <point x="334.4166666666666" y="327.0" />
+              <point x="129.0" y="327.0" />
+              <point x="39.5" y="14.5" />
+            </edge>
+            <edge source="Projet.ModeleNbPoussee" target="Projet.Modele">
+              <point x="46.66666666666663" y="-14.5" />
+              <point x="521.9166666666665" y="69.0" />
+              <point x="525.1823528138525" y="69.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFXControleur" target="Projet.Controleur">
+              <point x="0.0" y="-14.5" />
+              <point x="319.2777777777777" y="446.0" />
+              <point x="346.91666666666663" y="446.0" />
+              <point x="-33.333333333333314" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFX" target="Projet.IHMFXVue">
+              <point x="-31.68181818181813" y="-14.5" />
+              <point x="620.1723484848485" y="684.0" />
+              <point x="60.19696969696963" y="684.0" />
+              <point x="60.19696969696963" y="520.0" />
+              <point x="74.99999999999994" y="520.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFXVueNbPoussee" target="Projet.Controleur">
+              <point x="-38.75" y="-14.5" />
+              <point x="936.8357896825396" y="406.0" />
+              <point x="413.58333333333326" y="406.0" />
+              <point x="33.333333333333314" y="14.5" />
+            </edge>
+            <edge source="Projet.Controleur" target="Projet.Sujet">
+              <point x="-29.166666666666686" y="-14.5" />
+              <point x="351.08333333333326" y="307.0" />
+              <point x="226.49999999999994" y="307.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFX" target="Projet.IHMFXVueNbPoussee">
+              <point x="16.772727272727266" y="-14.5" />
+              <point x="668.626893939394" y="644.0" />
+              <point x="967.1045191197693" y="644.0" />
+              <point x="967.1045191197693" y="520.0" />
+              <point x="1014.3357896825396" y="520.0" />
+              <point x="38.75" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFXVueWin" target="Projet.CommandeInt">
+              <point x="29.999999999999886" y="-14.5" />
+              <point x="507.81270995670974" y="317.0" />
+              <point x="743.4607896825396" y="317.0" />
+              <point x="-29.0" y="14.5" />
+            </edge>
+            <edge source="Projet.Controleur" target="Projet.Animateur">
+              <point x="-4.166666666666686" y="-14.5" />
+              <point x="376.08333333333326" y="247.0" />
+              <point x="380.4168766233765" y="247.0" />
+              <point x="-12.375" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFXVueLevel" target="Projet.Controleur">
+              <point x="-31.5" y="-14.5" />
+              <point x="783.5857896825396" y="416.0" />
+              <point x="402.4722222222222" y="416.0" />
+              <point x="22.22222222222223" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFX" target="Projet.Controleur">
+              <point x="-13.045454545454504" y="-14.5" />
+              <point x="638.8087121212121" y="634.0" />
+              <point x="396.7777777777777" y="634.0" />
+              <point x="396.7777777777777" y="446.0" />
+              <point x="369.1388888888888" y="446.0" />
+              <point x="-11.111111111111143" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFXControleur" target="Projet.IHMFX">
+              <point x="16.75" y="14.5" />
+              <point x="336.0277777777777" y="654.0" />
+              <point x="631.3541666666666" y="654.0" />
+              <point x="-20.5" y="-14.5" />
+            </edge>
+            <edge source="Projet.IHMFX" target="Projet.IHMFXControleur">
+              <point x="-24.227272727272748" y="-14.5" />
+              <point x="627.6268939393939" y="664.0" />
+              <point x="302.5277777777777" y="664.0" />
+              <point x="-16.75" y="14.5" />
+            </edge>
+            <edge source="Projet.Controleur" target="Projet.Observateur">
+              <point x="-37.50000000000006" y="-14.5" />
+              <point x="342.7499999999999" y="317.0" />
+              <point x="178.99999999999994" y="317.0" />
+              <point x="178.99999999999994" y="178.0" />
+              <point x="136.4918766233764" y="178.0" />
+              <point x="-13.5" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFXVueNbCoup" target="Projet.Controleur">
+              <point x="-34.75" y="-14.5" />
+              <point x="1107.8357896825396" y="396.0" />
+              <point x="424.6944444444444" y="396.0" />
+              <point x="44.44444444444446" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFXVueNbPoussee" target="Projet.CommandeInt">
+              <point x="38.75" y="-14.5" />
+              <point x="1014.3357896825396" y="317.0" />
+              <point x="801.4607896825396" y="317.0" />
+              <point x="29.0" y="14.5" />
+            </edge>
+            <edge source="Projet.Main" target="Projet.IHMFX">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFX" target="Projet.IHMFXVueMenu">
+              <point x="24.227272727272748" y="-14.5" />
+              <point x="676.0814393939395" y="664.0" />
+              <point x="1076.3541666666667" y="664.0" />
+              <point x="32.0" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFXControleur" target="Projet.IHMFXVue">
+              <point x="-44.66666666666663" y="-14.5" />
+              <point x="274.6111111111111" y="520.0" />
+              <point x="108.33333333333326" y="520.0" />
+              <point x="33.33333333333334" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFX" target="Projet.IHMFXVueChrono">
+              <point x="-1.863636363636374" y="-14.5" />
+              <point x="649.9905303030303" y="594.0" />
+              <point x="657.3772463924965" y="594.0" />
+              <point x="657.3772463924965" y="520.0" />
+              <point x="630.8357896825396" y="520.0" />
+              <point x="-33.75" y="14.5" />
+            </edge>
+            <edge source="Projet.Controleur" target="Projet.CommandeInt">
+              <point x="45.833333333333314" y="-14.5" />
+              <point x="426.08333333333326" y="307.0" />
+              <point x="724.1274563492063" y="307.0" />
+              <point x="-48.33333333333337" y="14.5" />
+            </edge>
+            <edge source="Projet.Animateur" target="Projet.Controleur">
+              <point x="12.375" y="14.5" />
+              <point x="405.1668766233765" y="257.0" />
+              <point x="384.41666666666663" y="257.0" />
+              <point x="4.166666666666686" y="-14.5" />
+            </edge>
+            <edge source="Projet.ModeleNbCoup" target="Projet.Modele">
+              <point x="0.0" y="-14.5" />
+              <point x="627.2499999999999" y="59.0" />
+              <point x="549.4680670995668" y="59.0" />
+              <point x="24.285714285714334" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFXVueWin" target="Projet.Controleur">
+              <point x="-30.000000000000114" y="-14.5" />
+              <point x="447.81270995670974" y="436.0" />
+              <point x="380.24999999999994" y="436.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="Projet.FacadeModele" target="Projet.ModeleNbPoussee">
+              <point x="-24.200000000000045" y="-14.5" />
+              <point x="498.59187662337644" y="138.0" />
+              <point x="440.24999999999994" y="138.0" />
+              <point x="-35.0" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFXVueLevel" target="Projet.CommandeInt">
+              <point x="31.5" y="-14.5" />
+              <point x="846.5857896825396" y="327.0" />
+              <point x="782.1274563492063" y="327.0" />
+              <point x="9.666666666666629" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFXVueChrono" target="Projet.Controleur">
+              <point x="-33.75" y="-14.5" />
+              <point x="630.8357896825396" y="426.0" />
+              <point x="391.3611111111111" y="426.0" />
+              <point x="11.111111111111143" y="14.5" />
+            </edge>
+            <edge source="Projet.IHMFXVueNbCoup" target="Projet.CommandeInt">
+              <point x="34.75" y="-14.5" />
+              <point x="1177.3357896825396" y="307.0" />
+              <point x="820.7941230158731" y="307.0" />
+              <point x="48.33333333333337" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="955.7142857142857" y="285.4285714285714" />
+          <SelectedNodes>
+            <node>Projet.IHMFXVueWin</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>

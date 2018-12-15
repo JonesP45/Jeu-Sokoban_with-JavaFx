@@ -33,6 +33,7 @@ public class IHMFX extends Application implements Observateur {
                 vueNbCoup.dessine();
                 vueChrono.dessine();
                 vueLevel.dessine();
+                vueWin.dessine();
                 vue.dessine();
         });
     }
@@ -78,7 +79,7 @@ public class IHMFX extends Application implements Observateur {
                 ajoutBas(IHMFXControleur.nextLevel).
                 ajoutBas(IHMFXControleur.play).
                 setLargeur(500).
-                setHauteur(500).
+                setHauteur(300).
                 retourneScene();
 
 
@@ -97,6 +98,7 @@ public class IHMFX extends Application implements Observateur {
                 ajoutBas(vueNbCoup.label).
                 ajoutBas(vueNbPoussee.label).
                 ajoutBas(vueChrono.label).
+                ajoutBas(IHMFXControleur.closeJeu).
                 setLargeur(800).
                 setHauteur(700).
                 retourneScene();
@@ -105,8 +107,6 @@ public class IHMFX extends Application implements Observateur {
         MonteurScene monteurSceneWin = new MonteurScene();
         Scene sceneWin = monteurSceneWin.
                 setCentre(vueWin.gridPane).
-                ajoutBas(vueWin.labelLevel).
-                ajoutBas(vueWin.labelChrono).
                 ajoutBas(IHMFXControleur.close).
                 setHauteur(200).
                 setLargeur(400).

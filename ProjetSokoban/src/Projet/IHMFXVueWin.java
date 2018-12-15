@@ -7,24 +7,36 @@ public class IHMFXVueWin {
 
     public GridPane gridPane = new GridPane();
     private CommandeInt commandeIntLevel;
+    private CommandeInt commandeIntNbCoup;
+    private CommandeInt commandeIntNbPoussee;
     private CommandeInt commandeIntChrono;
-    public Label labelLevel = new Label();
-    public Label labelChrono = new Label();
+    private Label label = new Label("vous avez gagné :");
+    private Label labelLevel = new Label();
+    private Label labelChrono = new Label();
+    private Label labelNbCoup = new Label();
+    private Label labelNbPoussee = new Label();
 
     @SuppressWarnings("WeakerAccess")
     public IHMFXVueWin(Controleur controleur) {
         commandeIntLevel = controleur.commandeLevel();
         commandeIntChrono = controleur.commandeChrono();
+        commandeIntNbCoup = controleur.commandeNbCoup();
+        commandeIntNbPoussee = controleur.commandeNbPoussee();
         dessine();
     }
 
 
     public void dessine() {
         gridPane.getChildren().remove(0, gridPane.getChildren().size());
-        labelChrono.setText("vous avez gagné en " + commandeIntChrono.exec() + " secondes");
-        labelLevel.setText("vous avez gagné le niveau " + commandeIntLevel.exec());
-        gridPane.add(labelLevel, 0, 0);
-        gridPane.add(labelChrono, 0, 1);
+        labelLevel.setText("     le niveau " + commandeIntLevel.exec());
+        labelChrono.setText("     en " + commandeIntChrono.exec() + " secondes");
+        labelNbCoup.setText("     en " + commandeIntNbCoup.exec() + " deplacements");
+        labelNbPoussee.setText("     en " + commandeIntNbPoussee.exec() + " poussées");
+        gridPane.add(label, 0, 0);
+        gridPane.add(labelLevel, 0, 1);
+        gridPane.add(labelChrono, 0, 2);
+        gridPane.add(labelNbCoup, 0, 3);
+        gridPane.add(labelNbPoussee, 0, 4);
     }
 
 }

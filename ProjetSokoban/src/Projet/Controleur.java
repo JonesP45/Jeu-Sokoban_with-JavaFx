@@ -44,7 +44,7 @@ public class Controleur implements Sujet {
     private int level = 0;
     private ArrayList<char[][]> theFiles = new ArrayList<>();
 
-    private boolean firstMoveLevel = false;
+    public boolean firstMoveLevel = false;
 
 
     private Controleur(FacadeModele facadeModele) {
@@ -62,8 +62,18 @@ public class Controleur implements Sujet {
     }
 
 
-    public void incrementer() {
+    public void incrementerAnimateur() {
         animateur.incrementer();
+        notifie();
+    }
+
+    public void areterAnimateur() {
+        animateur.areter();
+        notifie();
+    }
+
+    public void reinitialiserAnimateur() {
+        animateur.reinitialiser();
         notifie();
     }
 
@@ -172,19 +182,16 @@ public class Controleur implements Sujet {
             animateur.demarer();
         }
         facadeModele.move(direction);
-        notifie();
         if (facadeModele.getEtat()) {
-            nextLevel = true;
             animateur.areter();
-            notifie();
-//            facadeModele.clear();
+            nextLevel = true;
             firstMoveLevel = false;
             if (level < theFiles.size())
                 level++;
             else
                 level = 0;
-//            play();
         }
+        notifie();
         return nextLevel;
     }
 
@@ -248,6 +255,7 @@ public class Controleur implements Sujet {
     public void reset() {
         if (animateur.getTimer().getStatus() != Animation.Status.PAUSED) {
             animateur.areter();
+            animateur.reinitialiser();
             firstMoveLevel = false;
         }
         facadeModele.reset();

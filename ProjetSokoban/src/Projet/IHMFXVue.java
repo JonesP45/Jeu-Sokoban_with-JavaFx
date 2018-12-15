@@ -11,7 +11,7 @@ public class IHMFXVue {
 
     private CommandeTab2DChar commandeGetPlateau;
     public GridPane gridPane = new GridPane();
-    private int taille = 40;
+    public int taille = 40;
 
     private Image mur = new Image(new FileInputStream("WallRound_Brown.png"), taille, taille, false, false);
     private Image soko = new Image(new FileInputStream("Character4.png"), taille, taille, false, false);

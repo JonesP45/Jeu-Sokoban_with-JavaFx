@@ -31,6 +31,7 @@ public class IHMFXControleur {
     public Button redo;
     public Button replay;
     public Button reset;
+    public Button closeJeu;
 
     //win
     public Button close;
@@ -70,6 +71,8 @@ public class IHMFXControleur {
         replay.setOnAction(new ActionReplay());
         reset = new Button("Reset");
         reset.setOnAction(new ActionReset());
+        closeJeu = new Button("Close");
+        closeJeu.setOnAction(new ActionCloseJeu());
 
         //win
         close = new Button("Close");
@@ -111,6 +114,7 @@ public class IHMFXControleur {
         @Override
         public void handle(ActionEvent event) {
             if (loadOnAction) {
+                controleur.clear();
                 controleur.play();
                 ihmfx.menuStage.close();
                 ihmfx.jeuStage.show();
@@ -123,6 +127,7 @@ public class IHMFXControleur {
                 redo.setFocusTraversable(false);
                 replay.setFocusTraversable(false);
                 reset.setFocusTraversable(false);
+                closeJeu.setFocusTraversable(false);
             }
         }
     }
@@ -135,18 +140,22 @@ public class IHMFXControleur {
             KeyCode input = event.getCode();
             if (input.equals(KeyCode.LEFT)) {
                 if (controleur.move("left")) {
+                    ihmfx.jeuStage.close();
                     ihmfx.winStage.show();
                 }
             } else if (input.equals(KeyCode.RIGHT)) {
                 if (controleur.move("right")) {
+                    ihmfx.jeuStage.close();
                     ihmfx.winStage.show();
                 }
             } else if (input.equals(KeyCode.DOWN)) {
                 if (controleur.move("down")) {
+                    ihmfx.jeuStage.close();
                     ihmfx.winStage.show();
                 }
             } else if (input.equals(KeyCode.UP)) {
                 if (controleur.move("up")) {
+                    ihmfx.jeuStage.close();
                     ihmfx.winStage.show();
                 }
             } else if (input.equals(KeyCode.U)) {
@@ -167,7 +176,10 @@ public class IHMFXControleur {
     class ActionUp implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            controleur.move("up");
+            if (controleur.move("up")) {
+                ihmfx.jeuStage.close();
+                ihmfx.winStage.show();
+            }
         }
 
     }
@@ -175,7 +187,10 @@ public class IHMFXControleur {
     class ActionDown implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            controleur.move("down");
+            if (controleur.move("down")) {
+                ihmfx.jeuStage.close();
+                ihmfx.winStage.show();
+            }
         }
 
     }
@@ -183,7 +198,10 @@ public class IHMFXControleur {
     class ActionLeft implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            controleur.move("left");
+            if (controleur.move("left")) {
+                ihmfx.jeuStage.close();
+                ihmfx.winStage.show();
+            }
         }
 
     }
@@ -191,7 +209,10 @@ public class IHMFXControleur {
     class ActionRight implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            controleur.move("right");
+            if (controleur.move("right")) {
+                ihmfx.jeuStage.close();
+                ihmfx.winStage.show();
+            }
         }
 
     }
@@ -229,13 +250,26 @@ public class IHMFXControleur {
         }
     }
 
+    class ActionCloseJeu implements EventHandler<ActionEvent> {
+        @Override
+        public void handle(ActionEvent event) {
+            ihmfx.jeuStage.close();
+            controleur.areterAnimateur();
+            controleur.reinitialiserAnimateur();
+            controleur.firstMoveLevel = false;
+            ihmfx.menuStage.show();
+        }
+    }
+
 
     class ActionClose implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
             ihmfx.winStage.close();
+            controleur.reinitialiserAnimateur();
             controleur.clear();
             controleur.play();
+            ihmfx.jeuStage.show();
         }
     }
 

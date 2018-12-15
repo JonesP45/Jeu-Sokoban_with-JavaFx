@@ -16,12 +16,12 @@ public class MonteurScene {
     private int hauteur = 400;
 
     public MonteurScene setLargeur(int l){
-        largeur=l;
+        largeur = l;
         return this;
     }
 
     public MonteurScene setHauteur(int l) {
-        hauteur=l;
+        hauteur = l;
         return this;
     }
 

@@ -23,7 +23,7 @@ public class Animateur {
     private void actualiseTimer() {
         timer = new Timeline(
                 new KeyFrame(Duration.seconds(interval),
-                        (ActionEvent event) -> controleur.incrementer()
+                        (ActionEvent event) -> controleur.incrementerAnimateur()
                 )
         );
         timer.setCycleCount(Animation.INDEFINITE);
@@ -43,7 +43,6 @@ public class Animateur {
 
     public void areter() {
         timer.stop();
-        reinitialiser();
     }
 
     public void reinitialiser() {
