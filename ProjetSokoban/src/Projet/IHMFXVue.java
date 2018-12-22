@@ -1,5 +1,6 @@
 package Projet;
 
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -9,6 +10,7 @@ public class IHMFXVue {
     private CommandeTab2DChar commandeGetPlateau;
     public GridPane gridPane = new GridPane();
     private int taille = 40;
+    public Label label = new Label("Click\nOR\nPress");
 
     private Image mur = new Image(getClass().getResourceAsStream("WallRound_Brown.png"), taille, taille, false, false);
     private Image soko = new Image(getClass().getResourceAsStream("Character4.png"), taille, taille, false, false);

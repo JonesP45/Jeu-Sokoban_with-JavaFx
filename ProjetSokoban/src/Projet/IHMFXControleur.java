@@ -63,13 +63,13 @@ public class IHMFXControleur {
         left.setOnAction(new ActionLeft());
         right = new Button("Right");
         right.setOnAction(new ActionRight());
-        undo = new Button("Undo");
+        undo = new Button("Undo\nOR\nU");
         undo.setOnAction(new ActionUndo());
-        redo = new Button("Redo");
+        redo = new Button("Redo\nOR\nR");
         redo.setOnAction(new ActionRedo());
-        replay = new Button("Replay");
+        replay = new Button("Replay\nOR\nP");
         replay.setOnAction(new ActionReplay());
-        reset = new Button("Reset");
+        reset = new Button("Reset\nOR\nZ");
         reset.setOnAction(new ActionReset());
         closeJeu = new Button("Close");
         closeJeu.setOnAction(new ActionCloseJeu());
