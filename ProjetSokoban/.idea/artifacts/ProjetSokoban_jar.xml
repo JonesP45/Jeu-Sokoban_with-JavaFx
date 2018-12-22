@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ProjetSokoban:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ProjetSokoban_jar</output-path>
+    <root id="archive" name="ProjetSokoban.jar">
+      <element id="module-output" name="ProjetSokoban" />
+      <element id="dir-copy" path="$PROJECT_DIR$/Projet" />
+    </root>
+  </artifact>
+</component>

@@ -44,7 +44,7 @@ public class IHMFX extends Application implements Observateur {
     public Stage winStage;
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         menuStage = primaryStage;
         jeuStage = new Stage();
         winStage = new Stage();

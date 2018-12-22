@@ -4,25 +4,22 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-
 public class IHMFXVue {
 
     private CommandeTab2DChar commandeGetPlateau;
     public GridPane gridPane = new GridPane();
     private int taille = 40;
 
-    private Image mur = new Image(new FileInputStream("WallRound_Brown.png"), taille, taille, false, false);
-    private Image soko = new Image(new FileInputStream("Character4.png"), taille, taille, false, false);
-    private Image caisse = new Image(new FileInputStream("CrateDark_Beige.png"), taille, taille, false, false);
-    private Image caisseBut = new Image(new FileInputStream("CrateDark_Blue.png"), taille, taille, false, false);
-    private Image sokoBut = new Image(new FileInputStream("Character7.png"), taille, taille, false, false);
-    private Image but = new Image(new FileInputStream("EndPoint_Red.png"), taille, taille, false, false);
-    private Image sol = new Image(new FileInputStream("Ground_Sand.png"), taille, taille, false, false);
+    private Image mur = new Image(getClass().getResourceAsStream("WallRound_Brown.png"), taille, taille, false, false);
+    private Image soko = new Image(getClass().getResourceAsStream("Character4.png"), taille, taille, false, false);
+    private Image caisse = new Image(getClass().getResourceAsStream("CrateDark_Beige.png"), taille, taille, false, false);
+    private Image caisseBut = new Image(getClass().getResourceAsStream("CrateDark_Blue.png"), taille, taille, false, false);
+    private Image sokoBut = new Image(getClass().getResourceAsStream("Character7.png"), taille, taille, false, false);
+    private Image but = new Image(getClass().getResourceAsStream("EndPoint_Red.png"), taille, taille, false, false);
+    private Image sol = new Image(getClass().getResourceAsStream("Ground_Sand.png"), taille, taille, false, false);
 
     @SuppressWarnings("WeakerAccess")
-    public IHMFXVue(Controleur controleur) throws FileNotFoundException {
+    public IHMFXVue(Controleur controleur) {
         commandeGetPlateau = controleur.commandeGetPlateau();
         dessine();
     }

@@ -7,7 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.util.Duration;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
@@ -82,8 +82,8 @@ public class Controleur implements Sujet {
         ArrayList<ArraylistToArray> list = new ArrayList<>();
         int largeur = 0;
         int hauteur = 0;
-        FileInputStream fis = new FileInputStream(fileName);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(fis));
+        InputStream is = getClass().getResourceAsStream(fileName);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         String line = reader.readLine();
         while (line != null) {
             if (line.equals("")) {
