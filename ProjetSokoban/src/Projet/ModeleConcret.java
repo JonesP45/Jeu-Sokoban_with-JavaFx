@@ -314,19 +314,15 @@ public class ModeleConcret implements Modele {
             switch (theUndos.get(theUndos.size() - 1)) {
                 case "up":
                     moveDown();
-                    theMoves.add("down");
                     break;
                 case "down":
                     moveUp();
-                    theMoves.add("up");
                     break;
                 case "right":
                     moveLeft();
-                    theMoves.add("left");
                     break;
                 case "left":
                     moveRight();
-                    theMoves.add("right");
                     break;
             }
             theUndos.remove(theUndos.size() - 1);
